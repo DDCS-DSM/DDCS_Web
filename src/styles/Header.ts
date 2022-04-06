@@ -24,7 +24,7 @@ export const Header = styled.div`
 export const LeftContents = styled(Link)`
   margin-left: 2vh;
 
-  width: 13.25vh;
+  width: 13.75vh;
   height: inherit;
 
   display: flex;
@@ -65,8 +65,7 @@ export const Icon = styled.img`
 `;
 
 export const Text = styled.div`
-  font-family: "COR";
+  font-family: "INF";
   color: #fff;
   font-size: 4vh;
-  line-height: 0.1vh;
 `;

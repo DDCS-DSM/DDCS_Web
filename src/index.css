@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "COR";
-  src: url("./assets/font/ConcertOne-Regular.ttf");
+  font-family: "DH";
+  src: url("./assets/font/DoHyeon-Regular.ttf");
 }
 
 @font-face {
-  font-family: "DoHyeon";
-  src: url("./assets/font/DoHyeon-Regular.ttf");
+  font-family: "INF";
+  src: url("./assets/font/InfinitySansWMR-Regular.ttf");
 }
 
 body {

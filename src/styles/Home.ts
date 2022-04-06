@@ -17,7 +17,7 @@ export const Icon = styled.img`
 `;
 
 export const Text = styled.div`
-  font-family: "DoHyeon";
+  font-family: "DH";
   font-size: 6vh;
   color: #eee;
 `;
