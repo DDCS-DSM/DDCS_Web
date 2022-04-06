@@ -10,6 +10,8 @@ function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/signup" element={<P.SignUp />} />
+        <Route path="/change_privacy" element={<P.ChangePrivacy />} />
         <Route path="/" element={<P.Home />} />
       </Routes>
     </>
