@@ -1,7 +1,7 @@
-import ChangePrivacy from "../components/pages/ChangePrivacy"
+import ChangePrivacy from "../components/pages/ChangePrivacy";
 
 const ChangePrivacyPage = () => {
-    return <ChangePrivacy/>
+    return <ChangePrivacy/>;
 }
 
-export default ChangePrivacyPage
+export default ChangePrivacyPage;

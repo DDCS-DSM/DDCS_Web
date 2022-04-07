@@ -10,7 +10,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/signup" element={<P.SignUp />} />
+        <Route path="/list/?:page" element={<P.List />} />
+        <Route path="/confirm" element={<P.Confirm/>}/>
         <Route path="/change_privacy" element={<P.ChangePrivacy />} />
         <Route path="/" element={<P.Home />} />
       </Routes>

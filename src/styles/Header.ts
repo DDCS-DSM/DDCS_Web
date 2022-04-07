@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const PreHeader = styled.div`
-  background-color: #ff5050;
+  background-color: white;
 
   width: 100%;
   height: 8vh;
@@ -60,12 +60,12 @@ export const RightContents = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 6vh;
-  height: 6vh;
+  width: 5vh;
+  height: 5vh;
 `;
 
 export const Text = styled.div`
   font-family: "INF";
-  color: #fff;
+  color: #717171;
   font-size: 4vh;
 `;
