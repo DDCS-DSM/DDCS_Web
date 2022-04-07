@@ -2,10 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const PreHeader = styled.div`
-  background-color: #ff5050;
-
   width: 100%;
-  height: 8vh;
+  height: 7vh;
 
   display: flex;
   justify-content: center;
@@ -24,7 +22,7 @@ export const Header = styled.div`
 export const LeftContents = styled(Link)`
   margin-left: 2vh;
 
-  width: 13.75vh;
+  width: 11.75vh;
   height: inherit;
 
   display: flex;
@@ -60,12 +58,14 @@ export const RightContents = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 6vh;
-  height: 6vh;
+  width: 4.5vh;
+  height: 4.5vh;
 `;
 
 export const Text = styled.div`
-  font-family: "INF";
-  color: #fff;
-  font-size: 4vh;
+  font-family: "B612";
+  color: #717171;
+  font-size: 3vh;
+  font-weight: 600;
+  margin-top: 0.4vh;
 `;

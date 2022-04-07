@@ -23,6 +23,7 @@ export const Background = styled.div`
   align-items: center;
 
   box-sizing: border-box;
+  border-radius: 1.5vh;
 `;
 
 export const Content = styled.div`
@@ -63,7 +64,7 @@ export const Content = styled.div`
     position: absolute;
 
     margin-bottom: 6.25vh;
-    margin-left: 9vh;
+    margin-left: 10.4vh;
 
     width: 0;
     height: 0;
@@ -80,7 +81,7 @@ export const Content = styled.div`
     position: absolute;
 
     margin-bottom: 5.85vh;
-    margin-left: 9vh;
+    margin-left: 10.4vh;
 
     width: 0;
     height: 0;
