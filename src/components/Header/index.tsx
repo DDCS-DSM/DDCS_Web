@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-import DropDown from "./DropDown";
-
-import * as S from "../styles/Header";
-
-const Logo = require("../assets/png/logo.png");
-const Login = require("../assets/png/login.png");
+import DropDown from "../DropDown/index";
+import * as S from "./style";
 
 const Header = () => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
@@ -14,11 +10,14 @@ const Header = () => {
     <S.PreHeader>
       <S.Header>
         <S.LeftContents to="/">
-          <S.Icon src={Logo} />
+          <S.Icon src="https://cdn.discordapp.com/attachments/921423896270491668/961795761077633034/logo.png" />
           <S.Text>DCS</S.Text>
         </S.LeftContents>
         <S.RightContents>
-          <S.Icon src={Login} onClick={() => setDropDownVisible(true)} />
+          <S.Icon
+            src="https://cdn.discordapp.com/attachments/921423896270491668/961795748431794286/login.png"
+            onClick={() => setDropDownVisible(true)}
+          />
           {dropDownVisible === true && (
             <DropDown setDropDownVisible={setDropDownVisible} />
           )}

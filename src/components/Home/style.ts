@@ -1,39 +1,5 @@
 import styled from "styled-components";
 
-export const Banner = styled.img`
-  position: relative;
-
-  width: 100vw;
-  height: 30vh;
-
-  object-fit: cover;
-
-  z-index: -1;
-  filter: brightness(90%) blur(0.1vh);
-`;
-
-export const Wrapper = styled.div`
-  margin-top: 20vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  filter: brightness(80%) opacity(20%);
-`;
-
-export const Icon = styled.img`
-  width: 36vh;
-  height: 36vh;
-`;
-
-export const Text = styled.div`
-  font-family: "HAN";
-  font-size: 6vh;
-  color: #eee;
-`;
-
 export const TitleWrapper = styled.div`
   position: absolute;
 
@@ -44,6 +10,17 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      margin-top: 2.5vh;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation: fade 1s ease-in-out;
 `;
 
 export const Title = styled.div`
@@ -70,6 +47,21 @@ export const PhraseWrapper = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+      margin-top: 2.5vh;
+    }
+    50% {
+      opacity: 0;
+      margin-top: 2.5vh;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  animation: fade 1.5s ease-in-out;
 `;
 
 export const SubPhraseWrapper = styled.div`
