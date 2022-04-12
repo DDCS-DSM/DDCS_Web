@@ -11,8 +11,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/list/?:page" element={<P.List />} />
-        <Route path="/confirm" element={<P.Confirm/>}/>
+        <Route path="/confirm" element={<P.Confirm />}/>
         <Route path="/change_privacy" element={<P.ChangePrivacy />} />
+        <Route path="/regist" element={<P.Regist />} />
         <Route path="/" element={<P.Home />} />
       </Routes>
     </>
