@@ -14,6 +14,7 @@ function App() {
         <Route path="/confirm" element={<P.Confirm />}/>
         <Route path="/change_privacy" element={<P.ChangePrivacy />} />
         <Route path="/regist" element={<P.Regist />} />
+        <Route path="/confirm" element={<P.Confirm />} />
         <Route path="/" element={<P.Home />} />
       </Routes>
     </>

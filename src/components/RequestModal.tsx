@@ -1,11 +1,12 @@
-import * as S from '../styles/Confirm'
+import * as S from '../styles/Request'
 import Background from '../styles/Modal'
 
-const ConfirmModal = () => {
+const RequestModal = () => {
     return(
         <Background>
+
         </Background>
     )
 }
 
-export default ConfirmModal
+export default RequestModal

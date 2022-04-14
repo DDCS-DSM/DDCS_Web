@@ -1,11 +1,12 @@
-import * as S from '../styles/Confirm'
+import * as S from '../styles/Login'
 import Background from '../styles/Modal'
 
-const ConfirmModal = () => {
+const SignupModal = () => {
     return(
         <Background>
+            
         </Background>
     )
 }
 
-export default ConfirmModal
+export default SignupModal

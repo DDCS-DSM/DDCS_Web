@@ -13,7 +13,13 @@ const Regist = () => {
                 {list.map(i => {
                     return(
                         <li>
-                            
+                            <div>
+                                <input />
+                                <select>
+
+                                </select>
+                            </div>
+                            <input/>
                         </li>
                     )
                 })}
