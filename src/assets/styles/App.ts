@@ -17,15 +17,6 @@ const GlobalStyle = createGlobalStyle`
         user-select: none;
         -webkit-user-drag: none;
     }
-
-    button{
-
-    }
-
-    ul{
-        list-style: none;
-        padding: 0;
-    }
 `;
 
 export default GlobalStyle;
