@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Body = styled.div`
+
+`
+
 export const List = styled.ul`
     list-style: none;
     padding: 0;

@@ -1,5 +1,5 @@
 import * as S from '../styles/Request'
-import Background from '../styles/Modal'
+import { Background } from '../styles/Modal'
 
 const RequestModal = () => {
     return(

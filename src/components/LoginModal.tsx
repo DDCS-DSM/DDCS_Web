@@ -1,5 +1,5 @@
 import * as S from '../styles/Login';
-import Background from '../styles/Modal';
+import { Background } from '../styles/Modal';
 
 const LoginModal = () => {
     return(
