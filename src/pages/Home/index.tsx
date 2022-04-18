@@ -1,5 +1,6 @@
-import * as S from "./style";
-import Image from "../Image";
+import * as S from "./styles";
+import Image from "../../components/Image";
+import Menu from "../../components/Menu";
 
 function Home() {
   return (
@@ -22,6 +23,7 @@ function Home() {
         </S.SubPhraseWrapper>
         <Image index="Bike" />
       </S.PhraseWrapper>
+      <Menu />
     </>
   );
 }
