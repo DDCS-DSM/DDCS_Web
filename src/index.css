@@ -1,16 +1,16 @@
 @font-face {
   font-family: "HAN";
-  src: url("./assets/font/HANDotum.ttf");
+  src: url("./assets/fonts/HANDotum.ttf");
 }
 
 @font-face {
   font-family: "INF";
-  src: url("./assets/font/InfinitySansWMR-Regular.ttf");
+  src: url("./assets/fonts/InfinitySansWMR-Regular.ttf");
 }
 
 @font-face {
   font-family: "B612";
-  src: url("./assets/font/B612-Regular.ttf");
+  src: url("./assets/fonts/B612-Regular.ttf");
 }
 
 body {

@@ -1,7 +1,7 @@
-import * as S from "./style";
+import * as S from "./styles";
 
-const Banner = require("../../assets/png/banner.png");
-const Bike = require("../../assets/png/bike.png");
+const Banner = require("../../assets/images/banner.png");
+const Bike = require("../../assets/images/bike.png");
 
 interface ImageProps {
   index: string;

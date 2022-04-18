@@ -1,4 +1,4 @@
-import * as S from "./style";
+import * as S from "./styles";
 
 interface DropDownProps {
   setDropDownVisible: React.Dispatch<React.SetStateAction<boolean>>;
