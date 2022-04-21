@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   position: absolute;
+  right: 2vh;
 
   width: 15vh;
   height: max-content;
 
-  z-index: 3;
+  z-index: 1;
 `;
 
 export const Background = styled.div`
@@ -43,7 +44,9 @@ export const Content = styled.div`
   box-sizing: border-box;
   border: 0.1vh solid #000;
   border-bottom: 0;
+  z-index: 2;
   transition: filter 0.1s;
+  cursor: pointer;
 
   :first-child {
     border-top-left-radius: 0.5vh;
@@ -74,7 +77,6 @@ export const Content = styled.div`
     border-right: 0.75vh solid transparent;
 
     content: " ";
-    z-index: 3;
   }
 
   :first-child:after {
@@ -91,6 +93,5 @@ export const Content = styled.div`
     border-right: 0.75vh solid transparent;
 
     content: " ";
-    z-index: 4;
   }
 `;

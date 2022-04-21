@@ -18,10 +18,10 @@ const Header = () => {
         </S.LeftContents>
         <S.RightContents>
           <S.Icon src={login} onClick={() => setDropDownVisible(true)} />
-          {dropDownVisible === true && (
-            <DropDown setDropDownVisible={setDropDownVisible} />
-          )}
-        </S.RightContents>
+        </S.RightContents>{" "}
+        {dropDownVisible === true && (
+          <DropDown setDropDownVisible={setDropDownVisible} />
+        )}
       </S.Header>
     </S.PreHeader>
   );
