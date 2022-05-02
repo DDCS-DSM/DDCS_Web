@@ -14,13 +14,13 @@ export const TitleWrapper = styled.div`
   @keyframes fade {
     from {
       opacity: 0;
-      margin-top: 2.5vh;
+      padding-top: 1.5vh;
     }
     to {
       opacity: 1;
     }
   }
-  animation: fade 1s ease-in-out;
+  //animation: fade 1s ease-in-out;
 `;
 
 export const Title = styled.div`

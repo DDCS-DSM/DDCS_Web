@@ -4,11 +4,6 @@
 }
 
 @font-face {
-  font-family: "INF";
-  src: url("./assets/fonts/InfinitySansWMR-Regular.ttf");
-}
-
-@font-face {
   font-family: "B612";
   src: url("./assets/fonts/B612-Regular.ttf");
 }

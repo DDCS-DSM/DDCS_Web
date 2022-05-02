@@ -38,8 +38,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 7.5vh;
-
   font-family: "HCR";
   color: #fff;
   font-size: 3.5vh;

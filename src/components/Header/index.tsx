@@ -2,9 +2,7 @@ import { useState } from "react";
 
 import DropDown from "../DropDown/index";
 import * as S from "./styles";
-
-const logo = require("../../assets/images/logo.png");
-const login = require("../../assets/images/login.png");
+import { logo, login } from "../../assets/images";
 
 const Header = () => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);

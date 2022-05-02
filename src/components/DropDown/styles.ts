@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -27,7 +28,7 @@ export const Background = styled.div`
   border-radius: 1.5vh;
 `;
 
-export const Content = styled.div`
+export const Content = styled(Link)`
   background-color: #fff;
 
   width: inherit;
@@ -37,9 +38,11 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-family: "INF";
-  font-size: 2.5vh;
-  font-weight: 100;
+  font-family: "HAN";
+  font-size: 2.25vh;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
 
   box-sizing: border-box;
   border: 0.1vh solid #000;
