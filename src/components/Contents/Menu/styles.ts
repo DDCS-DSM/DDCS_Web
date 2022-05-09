@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Background = styled.img`
   position: absolute;
@@ -12,7 +13,7 @@ export const Background = styled.img`
   filter: brightness(75%) drop-shadow(0 0.5vh 0.25vh #333);
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Link)`
   width: 25vh;
   height: 32.5vh;
 
@@ -20,6 +21,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  text-decoration: none;
 
   cursor: pointer;
 

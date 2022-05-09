@@ -12,54 +12,25 @@ export const Title = styled.div`
   font-weight: 600;
 `;
 
-export const Table = styled.div`
+export const SchemaWrapper = styled.div`
   margin: 0 auto;
 
   width: 75vw;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  border-top: 0.25vh solid #000;
-  border-bottom: 0.25vh solid #000;
-`;
-
-export const Item = styled.div`
-  width: inherit;
   height: 6.5vh;
 
   display: flex;
+  justify-content: right;
+  align-items: center;
 
-  font-family: "HAN";
-  font-size: 2.5vh;
-
-  border-bottom: 0.1vh solid #aaa;
-
-  :last-child {
-    border-bottom: none;
-  }
+  border-bottom: 0.25vh solid #000;
 `;
 
 export const Schema = styled.div`
-  width: 15vw;
+  width: 22.5vw;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-right: 0.1vh solid #aaa;
-`;
-
-export const Instance = styled.div`
-  padding-left: 2vw;
-
-  width: 58vw;
-
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  font-family: "HAN";
+  font-size: 2.25vh;
+  text-align: center;
 `;
 
 export const Button = styled.div`
