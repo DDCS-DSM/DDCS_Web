@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Title = styled.div`
   height: 20vh;
@@ -48,6 +48,7 @@ export const Button = styled.div`
 
   font-size: 2.5vh;
   font-family: "HAN";
+  font-weight: 600;
 
   border-radius: 1.5vh;
   cursor: pointer;
