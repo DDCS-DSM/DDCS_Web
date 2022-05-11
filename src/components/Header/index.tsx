@@ -4,7 +4,12 @@ import DropDown from "../DropDown/index";
 import * as S from "./styles";
 import { logo, login } from "../../assets/images";
 
-const Header = () => {
+interface HeaderInterface {
+  loginState: boolean;
+  setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header = ({ loginState, setLoginVisible }: HeaderInterface) => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
   return (
@@ -14,9 +19,17 @@ const Header = () => {
           <S.Icon src={logo} />
           <S.Text>DCS</S.Text>
         </S.LeftContents>
-        <S.RightContents>
-          <S.Icon src={login} onClick={() => setDropDownVisible(true)} />
-        </S.RightContents>{" "}
+        {loginState ? (
+          <S.RightContents onClick={() => setDropDownVisible(true)}>
+            <S.Text>{"2216 이진형"}</S.Text>
+            <S.Icon src={login} />
+          </S.RightContents>
+        ) : (
+          <S.RightContents onClick={() => setLoginVisible(true)}>
+            <S.Text>로그인 후 이용해주세요</S.Text>
+            <S.Icon src={login} />
+          </S.RightContents>
+        )}
         {dropDownVisible === true && (
           <DropDown setDropDownVisible={setDropDownVisible} />
         )}

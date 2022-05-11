@@ -63,9 +63,20 @@ export const Icon = styled.img`
 `;
 
 export const Text = styled.div`
-  font-family: "B612";
-  color: #717171;
-  font-size: 3vh;
-  font-weight: 600;
-  margin-top: 0.4vh;
+  :nth-child(2) {
+    margin-top: 0.4vh;
+
+    font-family: "B612";
+    color: #717171;
+    font-size: 3vh;
+    font-weight: 600;
+  }
+  :nth-child(1) {
+    margin-bottom: 0.25vh;
+    margin-right: 1.75vh;
+
+    font-family: "HAN";
+    color: #717171;
+    font-size: 2vh;
+  }
 `;
