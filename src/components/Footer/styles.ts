@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Footer = styled.div`
   background-color: #f6f6f6;
 
-  margin-top: 6.5vh;
+  margin-top: 8.5vh;
 
   width: 100%;
   height: 20vh;
@@ -13,7 +13,7 @@ export const Footer = styled.div`
 `;
 
 export const Table = styled.div`
-  margin-top: 1vh;
+  margin-top: 2.5vh;
   margin-left: 1vh;
 
   display: flex;
@@ -36,7 +36,8 @@ export const Schema = styled.div`
   width: 10vw;
 
   font-family: "HAN";
-  font-size: 1.5vh;
+  font-size: 1.8vh;
+  font-weight: bold;
   text-align: center;
 
   border-bottom: 0.1vh solid #000;
@@ -56,6 +57,6 @@ export const InstanceWrapper = styled.div`
 
 export const Instance = styled.div`
   font-family: "HAN";
-  font-size: 1.5vh;
+  font-size: 1.7vh;
   text-align: center;
 `;

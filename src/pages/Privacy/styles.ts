@@ -1,17 +1,5 @@
 import styled from "styled-components";
 
-export const Title = styled.div`
-  height: 20vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-family: "HAN";
-  font-size: 4vh;
-  font-weight: 600;
-`;
-
 export const Table = styled.div`
   margin: 0 auto;
 
@@ -62,27 +50,16 @@ export const Instance = styled.div`
   align-items: center;
 `;
 
-export const Button = styled.div`
-  margin: 0 auto;
-  margin-top: 6.5vh;
-
-  background-color: #f6f6f6;
-
-  width: 20vh;
-  height: 6.5vh;
+export const InstanceInput = styled.input`
+  padding-left: 2vw;
+  width: 56vw;
 
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 
+  outline: 0;
+  border: 0;
+
   font-size: 2.5vh;
-  font-family: "HAN";
-
-  border-radius: 1.5vh;
-  cursor: pointer;
-  transition: filter 0.25s;
-
-  :hover {
-    filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
-  }
 `;

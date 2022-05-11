@@ -45,7 +45,7 @@ export const Content = styled(Link)`
   text-decoration: none;
 
   box-sizing: border-box;
-  border: 0.1vh solid #000;
+  border: 0.1vh solid #ddd;
   border-bottom: 0;
   z-index: 2;
   transition: filter 0.1s;
@@ -57,7 +57,7 @@ export const Content = styled(Link)`
   }
 
   :last-child {
-    border-bottom: 0.1vh solid #000;
+    border-bottom: 0.1vh solid #ddd;
     border-bottom-left-radius: 0.5vh;
     border-bottom-right-radius: 0.5vh;
   }
@@ -75,7 +75,7 @@ export const Content = styled(Link)`
     width: 0;
     height: 0;
 
-    border-bottom: 1.25vh solid #000;
+    border-bottom: 1.25vh solid #ddd;
     border-left: 0.75vh solid transparent;
     border-right: 0.75vh solid transparent;
 

@@ -1,11 +1,6 @@
 import * as S from "./styles";
 import { box } from "../../../assets/images";
-
-interface PackageContentProps {
-  company: string;
-  presentee: string;
-  date: string;
-}
+import PackageContentProps from "./type";
 
 const PackageContent = ({ company, presentee, date }: PackageContentProps) => {
   return (
@@ -18,4 +13,13 @@ const PackageContent = ({ company, presentee, date }: PackageContentProps) => {
   );
 };
 
-export default PackageContent;
+const List = ({lists} : {lists: PackageContentProps[]}) => {
+  const itemList = lists.map(i => {
+    return(
+      <PackageContent company={i.company} presentee={i.presentee} date={i.date}/>
+    )
+  })
+  return itemList;
+}
+
+export default List;

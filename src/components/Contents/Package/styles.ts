@@ -28,6 +28,7 @@ export const Instance = styled.div`
 
   font-family: "HAN";
   font-size: 2.25vh;
+  font-weight: 600;
   text-align: center;
 
   :last-child {

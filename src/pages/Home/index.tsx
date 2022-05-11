@@ -1,13 +1,11 @@
 import Menu from "../../components/Menu";
-import Title from "../../components/Title";
-
 import * as S from "./styles";
+import { Title } from '../../styles/common'
 
 function Home() {
   return (
     <>
-      <Title />
-      <S.Title>DCS란 무엇인가요?</S.Title>
+      <Title>DCS란 무엇인가요?</Title>
       <S.PhraseWrapper>
         <S.Phrase>DCS란 Delivery Check System 의 약자로,</S.Phrase>
         <S.Phrase>기존에는 기숙사로 오는 택배의 정보를</S.Phrase>
