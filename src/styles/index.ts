@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 1.5vh;
-        box-shadow: inset 0 0 1.5vh #a1a1a1;
+        background-color: #ddd;
+        //box-shadow: inset 0 0 1.5vh #a1a1a1;
     }
 
     html {

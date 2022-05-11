@@ -6,15 +6,15 @@ export const Footer = styled.div`
   margin-top: 15vh;
 
   width: 100%;
-  height: 20vh;
+  height: 25vh;
 
   display: flex;
   align-items: flex-start;
 `;
 
 export const Table = styled.div`
-  margin-top: 2.5vh;
-  margin-left: 1vh;
+  margin-top: 3.5vh;
+  margin-left: 1.5vh;
 
   display: flex;
   flex-direction: column;
@@ -36,11 +36,11 @@ export const Schema = styled.div`
   width: 10vw;
 
   font-family: "HAN";
-  font-size: 1.8vh;
+  font-size: 2.2vh;
   font-weight: bold;
   text-align: center;
 
-  border-bottom: 0.1vh solid #000;
+  border-bottom: 0.2vh solid #000;
 `;
 
 export const InstanceWrapper = styled.div`
@@ -57,6 +57,6 @@ export const InstanceWrapper = styled.div`
 
 export const Instance = styled.div`
   font-family: "HAN";
-  font-size: 1.7vh;
+  font-size: 2vh;
   text-align: center;
 `;
