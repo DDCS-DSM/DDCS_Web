@@ -4,11 +4,13 @@ import * as S from "./styles";
 interface LoginModalInterface {
   setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
+  setRegisterVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const LoginModal = ({
   setLoginVisible,
   setLoginState,
+  setRegisterVisible,
 }: LoginModalInterface) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -40,6 +42,20 @@ const LoginModal = ({
             <S.Label htmlFor="saveid">아이디 저장</S.Label>
           </S.CheckboxWrapper>
           <S.Button>로그인</S.Button>
+          <S.TextWrapper>
+            <S.Text>
+              계정이 없으신가요?{" "}
+              <S.Link
+                onClick={() => {
+                  setLoginVisible(false);
+                  setRegisterVisible(true);
+                }}
+              >
+                회원가입
+              </S.Link>
+            </S.Text>
+            <S.Link>아이디 / 비밀번호 찾기</S.Link>
+          </S.TextWrapper>
         </S.Wrapper>
       </S.Background>
     </S.Filter>

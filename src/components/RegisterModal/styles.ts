@@ -50,40 +50,75 @@ export const Title = styled.div`
   font-weight: 600;
 `;
 
-export const Wrapper = styled.form`
-  margin-bottom: 5vh;
-
-  width: 45vh;
-`;
-
-export const Input = styled.input`
-  all: unset;
-  background-color: #f6f6f6;
-
-  padding-left: 1.5vh;
-  padding-right: 1.5vh;
-  margin-bottom: 5vh;
-
-  width: 42vh;
-  height: 6vh;
+export const Text = styled.div`
+  margin-bottom: 0.4vh;
 
   font-family: "HAN";
   font-size: 2vh;
+`;
 
-  border-radius: 1.5vh;
+export const SchemaWrapper = styled.div`
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 1.25vh;
+
+  width: 54vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Schema = styled.div`
+  width: 18vh;
+
+  color: #a1a1a1;
+  font-size: 1.5vh;
+  text-align: center;
+`;
+
+export const InstanceWrapper = styled.div`
+  margin: 0 auto;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  margin-bottom: 1.25vh;
+
+  width: 54vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 0.1vh solid #000;
+  border-bottom: 0.1vh solid #000;
+`;
+
+export const Instance = styled.div`
+  width: 18vh;
+
+  font-size: 1.5vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const CheckboxWrapper = styled.div`
-  display: inline-flex;
+  margin-bottom: 5vh;
+
+  display: flex;
+  justify-content: center;
   align-items: center;
 
-  width: 12.775vh;
+  width: 54vh;
   height: 3.5vh;
 `;
 export const Checkbox = styled.input`
   all: unset;
 
-  margin-right: 0.5vh;
+  margin-left: 0.5vh;
 
   width: 1.75vh;
   height: 1.75vh;
@@ -103,13 +138,20 @@ export const Label = styled.label`
   margin-bottom: 0.4vh;
 
   font-family: "HAN";
-  font-size: 2vh;
+  font-size: 1.75vh;
+`;
+
+export const SubText = styled.div`
+  color: #a1a1a1;
+  font-size: 1.5vh;
+  text-align: center;
 `;
 
 export const Button = styled.button`
   all: unset;
   background-color: #f6f6f6;
 
+  margin-top: 5vh;
   margin-bottom: 5vh;
 
   width: 45vh;
@@ -124,33 +166,12 @@ export const Button = styled.button`
   cursor: pointer;
   transition: filter 0.25s;
 
-  :hover {
+  :disabled {
+    cursor: default;
+    filter: brightness(90%);
+  }
+
+  :hover:enabled {
     filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
   }
-`;
-
-export const TextWrapper = styled.div`
-  height: 7vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Text = styled.div`
-  margin-bottom: 0.4vh;
-
-  font-family: "HAN";
-  font-size: 2vh;
-`;
-
-export const Link = styled.div`
-  margin-bottom: 0.4vh;
-
-  font-family: "HAN";
-  font-size: 2vh;
-  color: blue;
-
-  border-bottom: 0.1vh solid blue;
-  cursor: pointer;
 `;
