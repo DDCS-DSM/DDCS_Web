@@ -131,6 +131,7 @@ export const Button = styled.button`
 
 export const TextWrapper = styled.div`
   height: 7vh;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -140,12 +141,19 @@ export const TextWrapper = styled.div`
 export const Text = styled.div`
   margin-bottom: 0.4vh;
 
+  display: flex;
+
   font-family: "HAN";
   font-size: 2vh;
 `;
 
 export const Link = styled.div`
   margin-bottom: 0.4vh;
+  :first-child {
+    margin-left: 0.8vh;
+  }
+
+  width: max-content;
 
   font-family: "HAN";
   font-size: 2vh;

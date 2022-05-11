@@ -44,7 +44,7 @@ const LoginModal = ({
           <S.Button>로그인</S.Button>
           <S.TextWrapper>
             <S.Text>
-              계정이 없으신가요?{" "}
+              계정이 없으신가요?
               <S.Link
                 onClick={() => {
                   setLoginVisible(false);
