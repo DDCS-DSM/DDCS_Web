@@ -27,6 +27,13 @@ const GlobalStyle = createGlobalStyle`
         user-select: none;
         -webkit-user-drag: none;
     }
+
+    input, select{
+        outline: 0;
+        :hover{
+            cursor: pointer;
+        }
+    }
 `;
 
 export default GlobalStyle;

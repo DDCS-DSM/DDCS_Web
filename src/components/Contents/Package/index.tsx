@@ -1,10 +1,25 @@
 import * as S from "./styles";
 import { box } from "../../../assets/images";
 import PackageContentProps from "./type";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
-const PackageContent = ({ company, presentee, date }: PackageContentProps) => {
+const PackageContent = ({ id, company, presentee, date }: PackageContentProps) => {
+  
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  function packageClickEvent(){
+    if(pathname === "list"){
+
+    }
+    else if (pathname === "accept"){
+
+    }
+  }
+
   return (
-    <S.Package>
+    <S.Package onClick={() => packageClickEvent()}>
       <S.Icon src={box} />
       <S.Instance>{company}</S.Instance>
       <S.Instance>{presentee}</S.Instance>
@@ -13,13 +28,16 @@ const PackageContent = ({ company, presentee, date }: PackageContentProps) => {
   );
 };
 
-const List = ({lists} : {lists: PackageContentProps[]}) => {
-  const itemList = lists.map(i => {
-    return(
-      <PackageContent company={i.company} presentee={i.presentee} date={i.date}/>
-    )
-  })
-  return itemList;
+const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
+  return(
+    <>
+      {lists.map(i => {
+        return(
+          <PackageContent id={i.id} company={i.company} presentee={i.presentee} date={i.date}/>
+        )
+      })}
+    </>
+  )
 }
 
 export default List;

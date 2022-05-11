@@ -24,11 +24,7 @@ const PackageList = () => {
         <Schema>수령자</Schema>
         <Schema>날짜</Schema>
       </SchemaWrapper>
-      {lists.length ?
-        <></>
-        :
-        <></>
-      }
+      <Package lists={lists}/>
       <Button>더보기</Button>
     </>
   );
