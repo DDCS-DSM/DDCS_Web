@@ -1,12 +1,22 @@
 import styled from "styled-components";
 
+export const List = styled.div`
+  height: 60vw;
+  margin: 0 auto;
+  width: 75vw;
+  h2{
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 1.5vw;
+    color: #ccc;
+  }
+`
+
 export const Package = styled.div`
   background-color: #f6f6f6;
 
-  margin: 0 auto;
   margin-top: 3.25vh;
 
-  width: 75vw;
   height: 8vh;
 
   display: flex;

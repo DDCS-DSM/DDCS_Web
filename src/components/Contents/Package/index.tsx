@@ -30,13 +30,19 @@ const PackageContent = ({ id, company, presentee, date }: PackageContentProps) =
 
 const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
   return(
-    <>
-      {lists.map(i => {
-        return(
-          <PackageContent id={i.id} company={i.company} presentee={i.presentee} date={i.date}/>
-        )
-      })}
-    </>
+    <S.List>
+      {lists.length ?
+        <>
+          {lists.map(i => {
+            return(
+              <PackageContent id={i.id} company={i.company} presentee={i.presentee} date={i.date}/>
+            )
+          })}
+        </>
+      :
+        <h2>택배가 없습니다.</h2>
+      }
+    </S.List>
   )
 }
 

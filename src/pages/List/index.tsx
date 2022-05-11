@@ -12,7 +12,6 @@ const PackageList = () => {
     /*
     axios.get("/")
       .then(res => setLists(res.data))
-      .catch(err => alert("에러가 발생 했습니다."));
     */
   },[])
 
