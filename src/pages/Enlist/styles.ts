@@ -3,23 +3,28 @@ import styled from 'styled-components'
 export const Body = styled.div`
   width: 75vw;
   margin: 0 auto;
-`
-
-export const Company = styled.select`
-  display: flex;
-  margin: 0 auto;
-  width: 75vw;
-  margin: 2vw 0;
-  height: 2.5vw;
-  border-radius: 0.3vw;
-  outline: 0;
-  :hover{
-    cursor: pointer;
+  @media ( max-width: 375px ){
+    width: 90vw;
   }
 `
 
 export const SchemaWrapper = styled.div`
-  border-bottom: 0.25vh solid #000;
+  border-bottom: 0.25vh solid #000; 
+`
+
+export const Company = styled.select`
+  height: 2.5vw;
+  border-radius: 1vh;
+  border: 1px solid #ccc;
+  outline: 0;
+  width: 100%;
+  margin-top: 2vw;
+  padding: 0vw 0.6vw;
+  @media ( max-width: 375px ){
+    height: 8vw;
+    margin-top: 3vw;
+    font-size: 1.4vh;
+  }
 `
 
 export const ButtonDiv = styled.div`
@@ -50,5 +55,11 @@ export const Button = styled.div`
 
   :hover {
     filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
+  }
+
+  @media ( max-width: 375px ){
+    width: 15vh;
+    height: 5vh;
+    font-size: 2vh;
   }
 `

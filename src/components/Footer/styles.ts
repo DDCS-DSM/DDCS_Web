@@ -12,6 +12,7 @@ export const Footer = styled.div`
   align-items: flex-start;
   @media ( max-width: 375px ){
     margin-top: 5vh;
+    height: 18vh;
   }
 `;
 
@@ -37,14 +38,15 @@ export const Schema = styled.div`
   margin-bottom: 1vh;
   width: 10vw;
 
-  @media ( max-width: 375px ){
-    width: auto;
-  }
-
   font-family: "HAN";
   font-size: 2.2vh;
   font-weight: bold;
   text-align: center;
+
+  @media ( max-width: 375px ){
+    width: auto;
+    font-size: 1.6vh;
+  }
 
   border-bottom: 0.2vh solid #000;
 `;
@@ -68,4 +70,7 @@ export const Instance = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   text-align: center;
+  @media ( max-width: 375px ){
+    font-size: 1.5vh;
+  }
 `;

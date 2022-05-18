@@ -1,10 +1,11 @@
 import * as S from './styles'
 import ElistPackageContentProps from "./type"
 
-const ElistPackageContent = ({ recipient, phone, name}: ElistPackageContentProps) => {
+const ElistPackageContent = ({ recipient, phone, name }: ElistPackageContentProps) => {
     return(
         <S.Package>
           <input placeholder='전화번호를 입력해주세요.'/>
+          <S.Close>✕</S.Close>
         </S.Package>
     )
 }
