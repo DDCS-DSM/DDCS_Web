@@ -1,16 +1,38 @@
 import styled from "styled-components";
 
+export const List = styled.div`
+  height: 60vw;
+  margin: 0 auto;
+  width: 75vw;
+  @media ( max-width: 375px ){
+    width: 90vw;
+  }
+  h2{
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 1.5vw;
+    color: #ccc;
+    @media ( max-width: 375px ){
+      font-size: 5vw;
+    }
+  }
+`
+
 export const Package = styled.div`
   background-color: #f6f6f6;
 
-  margin: 0 auto;
   margin-top: 3.25vh;
 
-  width: 75vw;
   height: 8vh;
 
   display: flex;
   justify-content: right;
+  @media ( max-width: 375px ){
+    justify-content: normal;
+    img{
+      padding: 0 5vw;
+    }
+  }
   align-items: center;
 
   border-radius: 1.5vh;
@@ -28,6 +50,7 @@ export const Instance = styled.div`
 
   font-family: "HAN";
   font-size: 2.25vh;
+  font-weight: 600;
   text-align: center;
 
   :last-child {

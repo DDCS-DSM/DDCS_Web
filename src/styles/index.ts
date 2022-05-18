@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     }
     ::-webkit-scrollbar-thumb {
         border-radius: 1.5vh;
-        box-shadow: inset 0 0 1.5vh #a1a1a1;
+        background-color: #ddd;
+        //box-shadow: inset 0 0 1.5vh #a1a1a1;
     }
 
     html {
@@ -21,17 +22,18 @@ const GlobalStyle = createGlobalStyle`
 
         overflow: overlay;
         overflow-x: hidden;
-
-        -ms-user-select: none; 
-        -moz-user-select: -moz-none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        user-select: none;
     }
 
     img {
         user-select: none;
         -webkit-user-drag: none;
+    }
+
+    input, select{
+        outline: 0;
+        :hover{
+            cursor: pointer;
+        }
     }
 `;
 

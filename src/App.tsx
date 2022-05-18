@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Footer from "./components/Footer";
+import axios from 'axios';
 
+import { Home, Privacy, Enlist, List, Accept } from './pages';
+
+import GlobalStyle from "./styles";
+import Title from "./components/Title";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import LoginModal from "./components/LoginModal";
 import RegisterModal from "./components/RegisterModal";
-import Home from "./pages/Home";
-import PackageList from "./pages/List/Package";
-import Privacy from "./pages/Privacy";
-import GlobalStyle from "./styles";
+
+axios.defaults.baseURL = "";
 
 function App() {
+  
   const [loginState, setLoginState] = useState<boolean>(false);
   const [loginVisible, setLoginVisible] = useState<boolean>(false);
   const [registerVisible, setRegisterVisible] = useState<boolean>(false);
@@ -32,12 +36,15 @@ function App() {
         />
       )}
       <Header loginState={loginState} setLoginVisible={setLoginVisible} />
+      <Title />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
-        <Route path="/list" element={<PackageList />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/enlist" element={<Enlist />} />
+        <Route path="/accept" element={<Accept />} />
       </Routes>
-      <Footer />
+      <Footer/>
     </BrowserRouter>
   );
 }

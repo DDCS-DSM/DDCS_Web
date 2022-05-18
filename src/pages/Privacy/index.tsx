@@ -1,11 +1,10 @@
-import Title from "../../components/Title";
 import * as S from "./styles";
+import { Title, Button } from "../../styles/common";
 
 const Privacy = () => {
   return (
     <>
-      <Title />
-      <S.Title>개인 정보 수정</S.Title>
+      <Title>개인 정보 수정</Title>
       <S.Table>
         <S.Item>
           <S.Schema>아이디</S.Schema>
@@ -17,11 +16,11 @@ const Privacy = () => {
         </S.Item>
         <S.Item>
           <S.Schema>이메일</S.Schema>
-          <S.Instance>DummyMail</S.Instance>
+          <S.InstanceInput />
         </S.Item>
       </S.Table>
 
-      <S.Button>수정하기</S.Button>
+      <Button>수정하기</Button>
     </>
   );
 };

@@ -9,7 +9,7 @@ interface HeaderInterface {
   setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Header = ({ loginState, setLoginVisible }: HeaderInterface) => {
+const Header = ({ loginState, setLoginVisible }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
   return (
