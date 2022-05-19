@@ -1,7 +1,14 @@
+import { useEffect } from "react";
+import axios from "axios";
 import * as S from "./styles";
 import { Title, Button } from "../../styles/common";
 
 const Privacy = () => {
+
+  useEffect(()=>{
+
+  },[])
+
   return (
     <>
       <Title>개인 정보 수정</Title>
@@ -19,7 +26,6 @@ const Privacy = () => {
           <S.InstanceInput />
         </S.Item>
       </S.Table>
-
       <Button>수정하기</Button>
     </>
   );

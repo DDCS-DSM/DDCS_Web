@@ -4,6 +4,9 @@ export const Table = styled.div`
   margin: 0 auto;
 
   width: 75vw;
+  @media ( max-width: 375px ){
+    width: 90vw;
+  }
 
   display: flex;
   flex-direction: column;
@@ -22,6 +25,9 @@ export const Item = styled.div`
 
   font-family: "HAN";
   font-size: 2.5vh;
+  @media ( max-width: 375px ){
+    font-size: 2vh;
+  }
 
   border-bottom: 0.1vh solid #aaa;
 
@@ -62,4 +68,7 @@ export const InstanceInput = styled.input`
   border: 0;
 
   font-size: 2.5vh;
+  @media ( max-width: 375px ){
+    font-size: 2vh;
+  }
 `;

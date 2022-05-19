@@ -37,10 +37,12 @@ const LoginModal = ({
         <S.Wrapper>
           <S.Input ref={inputRef} placeholder="아이디" />
           <S.Input type="password" placeholder="비밀번호" />
+          <S.CheckboxDiv>
           <S.CheckboxWrapper>
             <S.Checkbox id="saveid" type="checkbox" />
             <S.Label htmlFor="saveid">아이디 저장</S.Label>
           </S.CheckboxWrapper>
+          </S.CheckboxDiv>
           <S.Button>로그인</S.Button>
         </S.Wrapper>
         <S.TextWrapper>

@@ -26,7 +26,7 @@ const Header = ({ loginState, setLoginVisible }: HeaderInterface): JSX.Element =
           </S.RightContents>
         ) : (
           <S.RightContents onClick={() => setLoginVisible(true)}>
-            <S.Text>로그인 후 이용해주세요</S.Text>
+            <S.Text>로그인</S.Text>
             <S.Icon src={login} />
           </S.RightContents>
         )}
