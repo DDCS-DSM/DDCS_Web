@@ -50,101 +50,53 @@ export const Title = styled.div`
   font-weight: 600;
 `;
 
-export const Text = styled.div`
-  margin-bottom: 0.4vh;
-
-  font-family: "HAN";
-  font-size: 2vh;
-`;
-
-export const SchemaWrapper = styled.div`
-  margin: 0 auto;
-  margin-top: 5vh;
-  margin-bottom: 1.25vh;
-
-  width: 54vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const Schema = styled.div`
-  width: 18vh;
-
-  color: #a1a1a1;
-  font-size: 1.5vh;
-  text-align: center;
-`;
-
-export const InstanceWrapper = styled.div`
-  margin: 0 auto;
-  padding-top: 2.5vh;
-  padding-bottom: 2.5vh;
-  margin-bottom: 1.25vh;
-
-  width: 54vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-top: 0.1vh solid #000;
-  border-bottom: 0.1vh solid #000;
-`;
-
-export const Instance = styled.div`
-  width: 18vh;
-
-  font-size: 1.5vh;
-  text-align: center;
+export const Wrapper = styled.form`
+  height: 72.5vh;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 `;
 
-export const CheckboxWrapper = styled.div`
-  margin-bottom: 5vh;
+export const Input = styled.input`
+  all: unset;
+  background-color: #f6f6f6;
+
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+
+  width: 42vh;
+  height: 6vh;
+
+  font-family: "HAN";
+  font-size: 2vh;
+
+  border-radius: 1.5vh;
+
+  :nth-child(3) {
+    width: 37vh;
+    padding-right: 6vh;
+  }
+`;
+
+export const VerifyEmail = styled.div`
+  position: absolute;
+
+  margin-left: 36vh;
+  margin-bottom: 27.5vh;
+
+  width: 8vh;
+  height: 6vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 54vh;
-  height: 3.5vh;
-`;
-export const Checkbox = styled.input`
-  all: unset;
-
-  margin-left: 0.5vh;
-
-  width: 1.75vh;
-  height: 1.75vh;
-
-  border: 0.1vh solid #000;
-  border-radius: 0.25vh;
-
-  :checked {
-    background-image: url(${checkmark});
-    background-repeat: no-repeat;
-    background-size: 1.25vh 1.25vh;
-    background-position: center;
-  }
-`;
-
-export const Label = styled.label`
-  margin-bottom: 0.4vh;
-
   font-family: "HAN";
-  font-size: 1.75vh;
-`;
-
-export const SubText = styled.div`
-  color: #a1a1a1;
   font-size: 1.5vh;
-  text-align: center;
+
+  cursor: pointer;
 `;
 
 export const Button = styled.button`
