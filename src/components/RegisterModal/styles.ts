@@ -19,6 +19,9 @@ export const Background = styled.div`
   background-color: #fff;
 
   width: 60vh;
+  @media ( max-width: 375px ){
+    width: 90vw;
+  }
 
   display: flex;
   flex-direction: column;
@@ -47,6 +50,9 @@ export const Title = styled.div`
 
   font-family: "HAN";
   font-size: 5vh;
+  @media ( max-width: 375px ){
+    font-size: 4vh;
+  }
   font-weight: 600;
 `;
 

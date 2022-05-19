@@ -36,6 +36,9 @@ export const Close = styled.div`
 
   margin-right: 54vh;
   margin-top: 1vh;
+  @media ( max-width: 375px ){
+    margin-right: 80vw;
+  }
 
   font-family: "HAN";
   font-size: 2.25vh;
@@ -62,7 +65,9 @@ export const Wrapper = styled.form`
   align-items: center;
 
   margin-bottom: 5vh;
-
+  @media ( max-width: 375px ){
+    margin-bottom: 2vh;
+  }
   width: 45vh;
 `;
 
@@ -75,15 +80,17 @@ export const Input = styled.input`
   margin-bottom: 5vh;
 
   width: 42vh;
+  height: 6vh;
   @media ( max-width: 375px ){
     width: 38vh;
+    margin-bottom: 2.5vh;
   }
-  height: 6vh;
 
   font-family: "HAN";
   font-size: 2vh;
 
   border-radius: 1.5vh;
+  box-sizing: border-box;
 `;
 
 export const CheckboxDiv = styled.div`
@@ -174,6 +181,9 @@ export const Text = styled.div`
 
   font-family: "HAN";
   font-size: 2vh;
+  @media ( max-width: 375px ){
+    font-size: 1.3vh;
+  }
 `;
 
 export const Link = styled.div`
@@ -186,6 +196,9 @@ export const Link = styled.div`
 
   font-family: "HAN";
   font-size: 2vh;
+  @media ( max-width: 375px ){
+    font-size: 1.3vh;
+  }
   color: blue;
 
   border-bottom: 0.1vh solid blue;
