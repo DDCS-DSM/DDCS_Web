@@ -51,8 +51,6 @@ export const Title = styled.div`
 `;
 
 export const Wrapper = styled.form`
-  margin-bottom: 5vh;
-
   width: 45vh;
 `;
 
@@ -130,6 +128,8 @@ export const Button = styled.button`
 `;
 
 export const TextWrapper = styled.div`
+  margin-bottom: 5vh;
+
   height: 7vh;
 
   display: flex;
