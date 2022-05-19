@@ -80,6 +80,9 @@ export const Input = styled.input`
   margin-bottom: 5vh;
 
   width: 42vh;
+  @media ( max-width: 375px ){
+    width: 38vh;
+  }
   height: 6vh;
   @media ( max-width: 375px ){
     width: 38vh;
