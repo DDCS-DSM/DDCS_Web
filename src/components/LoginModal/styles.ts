@@ -19,6 +19,9 @@ export const Background = styled.div`
   background-color: #fff;
 
   width: 60vh;
+  @media ( max-width: 375px ){
+    width: 90vw;
+  }
 
   display: flex;
   flex-direction: column;
@@ -47,10 +50,19 @@ export const Title = styled.div`
 
   font-family: "HAN";
   font-size: 5vh;
+  @media ( max-width: 375px ){
+    font-size: 4vh;
+  }
   font-weight: 600;
 `;
 
 export const Wrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 5vh;
+
   width: 45vh;
 `;
 
@@ -63,6 +75,9 @@ export const Input = styled.input`
   margin-bottom: 5vh;
 
   width: 42vh;
+  @media ( max-width: 375px ){
+    width: 38vh;
+  }
   height: 6vh;
 
   font-family: "HAN";
@@ -70,6 +85,14 @@ export const Input = styled.input`
 
   border-radius: 1.5vh;
 `;
+
+export const CheckboxDiv = styled.div`
+  width: 100%;
+  @media ( max-width: 375px )
+  {
+    width: 38vh;
+  }
+`
 
 export const CheckboxWrapper = styled.div`
   display: inline-flex;
@@ -102,6 +125,9 @@ export const Label = styled.label`
 
   font-family: "HAN";
   font-size: 2vh;
+  @media ( max-width: 375px ){
+    font-size: 1.5vh;
+  }
 `;
 
 export const Button = styled.button`
@@ -111,6 +137,9 @@ export const Button = styled.button`
   margin-bottom: 5vh;
 
   width: 45vh;
+  @media ( max-width: 375px ){
+    width: 38vh;
+  }
   height: 6vh;
 
   font-family: "HAN";
