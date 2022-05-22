@@ -43,6 +43,7 @@ const LoginModal = ({
             <S.Label htmlFor="saveid">아이디 저장</S.Label>
           </S.CheckboxWrapper>
           </S.CheckboxDiv>
+          
           <S.Button>로그인</S.Button>
         </S.Wrapper>
         <S.TextWrapper>

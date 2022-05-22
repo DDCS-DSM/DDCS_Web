@@ -56,6 +56,8 @@ export const InstanceWrapper = styled.div`
   flex-direction: row;
 
   span {
+    justify-content: normal;
+    width: auto;
     display: flex;
     flex-direction: column;
   }
@@ -65,6 +67,11 @@ export const Instance = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   text-align: center;
+  width: 10vw;
+  
+  margin-left: 1.25vw;
+  margin-right: 1.25vw;
+
   @media ( max-width: 375px ){
     font-size: 1.5vh;
     margin-left: 1.25vw;

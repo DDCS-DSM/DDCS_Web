@@ -76,7 +76,7 @@ export const SchemaWrapper = styled.div`
 
   width: 54vh;
   @media ( max-width: 375px ){
-    width: 90vw;  
+    width: 85vw;
   }
 
   display: flex;
@@ -102,6 +102,9 @@ export const InstanceWrapper = styled.div`
   margin-bottom: 1.25vh;
 
   width: 54vh;
+  @media ( max-width: 375px ){
+    width: 85vw;
+  }
 
   display: flex;
   justify-content: center;
