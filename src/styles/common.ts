@@ -10,7 +10,7 @@ export const Title = styled.div`
   font-family: "HAN";
   font-size: 4vh;
   font-weight: 600;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 3.5vh;
     height: 15vh;
   }
@@ -27,7 +27,7 @@ export const SchemaWrapper = styled.div`
   align-items: center;
 
   border-bottom: 0.25vh solid #000;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     justify-content: normal;
     width: 90vw;
     div:nth-child(1){
@@ -42,7 +42,7 @@ export const Schema = styled.div`
   font-family: "HAN";
   font-size: 2.25vh;
   text-align: center;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 1.8vh;
   }
 `;
@@ -72,7 +72,7 @@ export const Button = styled.div`
     filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
   }
 
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 15vh;
     height: 5vh;
     font-size: 2vh;

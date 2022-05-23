@@ -21,3 +21,12 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const CardDiv = styled.div`
+  height: 37.5vh;
+  padding: 3.5vh 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`

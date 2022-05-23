@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Body = styled.div`
   width: 75vw;
   margin: 0 auto;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 90vw;
   }
 `
@@ -20,7 +20,7 @@ export const Company = styled.select`
   width: 100%;
   margin-top: 2vw;
   padding: 0vw 0.6vw;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     height: 8vw;
     margin-top: 3vw;
     font-size: 1.4vh;
@@ -57,7 +57,7 @@ export const Button = styled.div`
     filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
   }
 
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 15vh;
     height: 5vh;
     font-size: 2vh;

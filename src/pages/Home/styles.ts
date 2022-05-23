@@ -4,6 +4,9 @@ export const PhraseWrapper = styled.div`
   margin-bottom: 2.5vh;
 
   height: 60vh;
+  @media ( max-width: 426px ){
+    height: 35vh;
+  }
 
   display: flex;
   flex-direction: column;
@@ -16,5 +19,10 @@ export const Phrase = styled.p`
 
   font-family: "HAN";
   font-size: 3.5vh;
+  @media ( max-width: 426px ){
+    font-size: 2.5vh;
+    width: 90vw;
+    text-align: center;
+  }
   color: #333;
 `;

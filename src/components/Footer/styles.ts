@@ -10,7 +10,7 @@ export const Footer = styled.div`
 
   display: flex;
   align-items: flex-start;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     margin-top: 5vh;
     height: 18vh;
   }
@@ -43,7 +43,7 @@ export const Schema = styled.div`
   font-weight: bold;
   text-align: center;
 
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 17vw;
     font-size: 1.6vh;
   }
@@ -72,7 +72,7 @@ export const Instance = styled.div`
   margin-left: 1.25vw;
   margin-right: 1.25vw;
 
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 1.5vh;
     margin-left: 1.25vw;
     margin-right: 1.25vw;

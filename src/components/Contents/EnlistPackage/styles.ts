@@ -23,7 +23,7 @@ export const Package = styled.div`
         margin: 1.5vw 0;
     }
 
-    @media ( max-width: 375px ){
+    @media ( max-width: 425px ){
         padding: 1.5vw 3vw;
         padding-right: 0; 
         margin-top: 3vw;
@@ -36,7 +36,7 @@ export const Package = styled.div`
 `
 export const Close = styled.div`
     text-align: center;
-    @media ( max-width: 375px ){
+    @media ( max-width: 425px ){
         width: 3vw;
         font-size: 3vw;
         padding: 0 1.5vw;

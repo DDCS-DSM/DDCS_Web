@@ -4,7 +4,7 @@ export const List = styled.div`
   height: 60vw;
   margin: 0 auto;
   width: 75vw;
-  @media ( max-width: 375px ){
+  @media ( max-width: 425px ){
     width: 90vw;
   }
   h2{
@@ -12,7 +12,7 @@ export const List = styled.div`
     margin-top: 10vw;
     font-size: 1.5vw;
     color: #ccc;
-    @media ( max-width: 375px ){
+    @media ( max-width: 425px ){
       font-size: 5vw;
     }
   }
@@ -27,7 +27,7 @@ export const Package = styled.div`
 
   display: flex;
   justify-content: right;
-  @media ( max-width: 375px ){
+  @media ( max-width: 425px ){
     justify-content: normal;
     img{
       padding: 0 5vw;

@@ -19,7 +19,7 @@ export const Background = styled.div`
   background-color: #fff;
 
   width: 60vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 90vw;
   }
 
@@ -36,7 +36,7 @@ export const Close = styled.div`
 
   margin-right: 54vh;
   margin-top: 1vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     margin-right: 80vw;
   }
 
@@ -53,7 +53,7 @@ export const Title = styled.div`
 
   font-family: "HAN";
   font-size: 5vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 4vh;
   }
   font-weight: 600;
@@ -65,7 +65,7 @@ export const Wrapper = styled.form`
   align-items: center;
 
   margin-bottom: 5vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     margin-bottom: 2vh;
   }
   width: 45vh;
@@ -79,9 +79,9 @@ export const Input = styled.input`
   padding-right: 1.5vh;
   margin-bottom: 5vh;
 
-  width: 42vh;
+  width: 45vh;
   height: 6vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 38vh;
     margin-bottom: 2.5vh;
   }
@@ -95,7 +95,7 @@ export const Input = styled.input`
 
 export const CheckboxDiv = styled.div`
   width: 100%;
-  @media ( max-width: 375px )
+  @media ( max-width: 426px )
   {
     width: 38vh;
   }
@@ -132,7 +132,7 @@ export const Label = styled.label`
 
   font-family: "HAN";
   font-size: 2vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 1.5vh;
   }
 `;
@@ -144,7 +144,7 @@ export const Button = styled.button`
   margin-bottom: 5vh;
 
   width: 45vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 38vh;
   }
   height: 6vh;
@@ -181,7 +181,7 @@ export const Text = styled.div`
 
   font-family: "HAN";
   font-size: 2vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 1.3vh;
   }
 `;
@@ -196,7 +196,7 @@ export const Link = styled.div`
 
   font-family: "HAN";
   font-size: 2vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 1.3vh;
   }
   color: blue;

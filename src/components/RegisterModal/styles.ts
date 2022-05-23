@@ -19,7 +19,7 @@ export const Background = styled.div`
   background-color: #fff;
 
   width: 60vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     width: 90vw;
   }
 
@@ -50,7 +50,7 @@ export const Title = styled.div`
 
   font-family: "HAN";
   font-size: 5vh;
-  @media ( max-width: 375px ){
+  @media ( max-width: 426px ){
     font-size: 4vh;
   }
   font-weight: 600;
