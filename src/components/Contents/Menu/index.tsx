@@ -6,9 +6,10 @@ const Note = require("../../../assets/images/note.png");
 
 interface MenuContentProps {
   index: number;
+  setClaimVisible?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MenuContent = ({ index }: MenuContentProps) => {
+const MenuContent = ({ index, setClaimVisible }: MenuContentProps) => {
   switch (index) {
     case 1:
       return (
@@ -20,7 +21,12 @@ const MenuContent = ({ index }: MenuContentProps) => {
       );
     case 2:
       return (
-        <S.Wrapper to="/">
+        <S.Wrapper
+          to="/"
+          onClick={() => {
+            if (setClaimVisible) setClaimVisible(true);
+          }}
+        >
           <S.Background src={Cat} />
           <S.Title>택배 수령 인증하기</S.Title>
           <S.SubTitle>택배 수령을 인증합니다.</S.SubTitle>

@@ -6,30 +6,29 @@ import { useMediaQuery } from "react-responsive";
 
 import * as S from "./styles";
 
-const Menu = () => {
+interface MenuProps {
+  setClaimVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  const isMobile = useMediaQuery({query: '(max-width: 426px)'});
+const Menu = ({ setClaimVisible }: MenuProps) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 426px)" });
 
   return (
     <S.PreWrapper>
-      {isMobile ?
-        <></>
-        :
-        <Bike />
-      }
-      {isMobile ?
+      {isMobile ? <></> : <Bike />}
+      {isMobile ? (
         <S.CardDiv>
-          <Card index={1}/>
-          <Card index={2}/>
-          <Card index={3}/>
+          <Card index={1} />
+          <Card index={2} setClaimVisible={setClaimVisible} />
+          <Card index={3} />
         </S.CardDiv>
-        :
+      ) : (
         <S.Wrapper>
           <MenuContent index={1} />
-          <MenuContent index={2} />
+          <MenuContent index={2} setClaimVisible={setClaimVisible} />
           <MenuContent index={3} />
         </S.Wrapper>
-      }
+      )}
     </S.PreWrapper>
   );
 };
