@@ -81,29 +81,49 @@ export const UploadFileInput = styled.input`
   display: none;
 `;
 
-export const UploadFileLabel = styled.label`
+interface UploadFileLabelProps {
+  previewImg?: string | ArrayBuffer;
+}
+
+export const UploadFileLabel = styled.label<UploadFileLabelProps>`
   all: unset;
 
   background-color: #f6f6f6;
-  background-image: url(${download});
-  background-repeat: no-repeat;
-  background-size: 7.5vh 7.5vh;
-  background-position: 18.75vh 3.5vh;
 
-  padding-top: 11.5vh;
+  ${(props) =>
+    props.previewImg
+      ? `background-image: url(${props.previewImg});
+      background-size: cover;
+      background-position: center;`
+      : `background-image: url(${download});
+      background-size: 7.5vh 7.5vh;
+      background-position: 18.75vh 17.5vh;
+      @media (max-width: 426px) {
+        background-position: 15.5vh 17.5vh;
+      }`}
+
+  background-repeat: no-repeat;
+
+  padding-top: 10vh;
   margin-bottom: 3vh;
 
   width: 45vh;
-  height: 18vh;
+  height: 45vh;
   @media (max-width: 426px) {
     width: 38vh;
     margin-bottom: 2.5vh;
   }
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   color: #d0d0d0;
   font-family: "HAN";
   font-size: 2vh;
   text-align: center;
+
+  ${(props) => props.previewImg && "font-size: 0;"}
 
   border-radius: 1.5vh;
   box-sizing: border-box;
