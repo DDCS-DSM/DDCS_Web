@@ -21,7 +21,7 @@ const ClaimModal = ({ setClaimVisible }: ClaimModalProps) => {
     };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
-  }, []);
+  }, [setClaimVisible, ]);
 
   const readFile = () => {
     setPreviewImage("");

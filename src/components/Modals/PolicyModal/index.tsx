@@ -25,7 +25,7 @@ const PolicyModal = ({
     };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
-  }, []);
+  }, [setPolicyVisible, setLoginVisible, ]);
 
   return (
     <S.Filter>

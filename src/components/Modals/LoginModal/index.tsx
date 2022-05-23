@@ -25,7 +25,7 @@ const LoginModal = ({
     };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
-  }, []);
+  }, [setLoginVisible, ]);
 
   return (
     <S.Filter>

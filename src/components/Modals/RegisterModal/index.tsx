@@ -27,7 +27,7 @@ const RegisterModal = ({
     };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
-  }, []);
+  }, [setRegisterVisible, setPolicyVisible, ]);
 
   const confirmRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
