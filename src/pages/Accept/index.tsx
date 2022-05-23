@@ -1,11 +1,12 @@
-import { useState } from "react";
+//import { useState } from "react";
 import Package from "../../components/Contents/Package";
 import { Title, SchemaWrapper, Schema, Button } from "../../styles/common"
 import PackageContentProps from "../../components/Contents/Package/type";
 
 const Accept = () => {
 
-    const [lists, setLists] = useState<PackageContentProps[]>([]);
+    const lists : PackageContentProps[] = [];
+    //const [lists, setLists] = useState<PackageContentProps[]>([]);
 
     return(
         <>

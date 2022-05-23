@@ -6,7 +6,8 @@ import PackageContentProps from "../../components/Contents/Package/type";
 
 const PackageList = () => {
   
-  const [lists, setLists] = useState<PackageContentProps[]>([{company: "asdasdas", presentee: "1", date: "1", id: 1}]);
+  const lists : PackageContentProps[] = [];
+  //const [lists, setLists] = useState<PackageContentProps[]>([{company: "asdasdas", presentee: "1", date: "1", id: 1}]);
 
   useEffect(()=>{
     /*

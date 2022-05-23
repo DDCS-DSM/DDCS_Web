@@ -6,7 +6,8 @@ import { useState } from 'react';
 
 const Enlist = () => {
 
-    const [lists, setLists] = useState<EnlistPackageContentProps[]>([{recipient: "1", phone: "1", name: "1"}]);
+    const lists : EnlistPackageContentProps[] = [];
+    //const [lists, setLists] = useState<EnlistPackageContentProps[]>([{recipient: "1", phone: "1", name: "1"}]);
 
     return(
         <S.Body>

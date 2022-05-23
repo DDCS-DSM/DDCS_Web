@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
 import * as S from "./styles";
 import { Title, Button } from "../../styles/common";
 
