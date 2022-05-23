@@ -8,9 +8,10 @@ import GlobalStyle from "./styles";
 import Title from "./components/Title";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LoginModal from "./components/LoginModal";
-import PolicyModal from "./components/PolicyModal";
-import RegisterModal from "./components/RegisterModal";
+import LoginModal from "./components/Modals/LoginModal";
+import PolicyModal from "./components/Modals/PolicyModal";
+import RegisterModal from "./components/Modals/RegisterModal";
+import ClaimModal from "./components/Modals/ClaimModal";
 
 axios.defaults.baseURL = "";
 
@@ -19,6 +20,7 @@ function App() {
   const [loginVisible, setLoginVisible] = useState<boolean>(false);
   const [policyVisible, setPolicyVisible] = useState<boolean>(false);
   const [registerVisible, setRegisterVisible] = useState<boolean>(false);
+  const [claimVisible, setClaimVisible] = useState<boolean>(false);
 
   return (
     <BrowserRouter>
@@ -44,6 +46,7 @@ function App() {
           setRegisterVisible={setRegisterVisible}
         />
       )}
+      {!claimVisible && <ClaimModal setClaimVisible={setClaimVisible} />}
       <Header loginState={loginState} setLoginVisible={setLoginVisible} />
       <Title />
       <Routes>

@@ -27,10 +27,8 @@ const LoginModal = ({
     return () => window.removeEventListener("keydown", close);
   }, []);
 
-  const onClose = (e: any) => {};
-
   return (
-    <S.Filter onClick={(e) => onClose(e)}>
+    <S.Filter>
       <S.Background>
         <S.Close onClick={() => setLoginVisible(false)}>✕</S.Close>
         <S.Title>로그인</S.Title>
@@ -38,12 +36,12 @@ const LoginModal = ({
           <S.Input ref={inputRef} placeholder="아이디" />
           <S.Input type="password" placeholder="비밀번호" />
           <S.CheckboxDiv>
-          <S.CheckboxWrapper>
-            <S.Checkbox id="saveid" type="checkbox" />
-            <S.Label htmlFor="saveid">아이디 저장</S.Label>
-          </S.CheckboxWrapper>
+            <S.CheckboxWrapper>
+              <S.Checkbox id="saveid" type="checkbox" />
+              <S.Label htmlFor="saveid">아이디 저장</S.Label>
+            </S.CheckboxWrapper>
           </S.CheckboxDiv>
-          
+
           <S.Button>로그인</S.Button>
         </S.Wrapper>
         <S.TextWrapper>
