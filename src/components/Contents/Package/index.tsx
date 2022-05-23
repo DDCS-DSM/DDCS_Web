@@ -2,7 +2,7 @@ import * as S from "./styles";
 import { box } from "../../../assets/images";
 import PackageContentProps from "./type";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 
 const PackageContent = ({ id, company, presentee, date }: PackageContentProps) => {
   

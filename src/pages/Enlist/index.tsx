@@ -2,7 +2,7 @@ import * as S from './styles';
 import { Title } from '../../styles/common';
 import EnlistPackage from '../../components/Contents/EnlistPackage';
 import EnlistPackageContentProps from '../../components/Contents/EnlistPackage/type';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 const Enlist = () => {
 

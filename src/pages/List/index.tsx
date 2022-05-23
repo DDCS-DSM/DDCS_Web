@@ -1,5 +1,5 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+//import axios from "axios";
+import { useEffect } from "react";
 import Package from "../../components/Contents/Package";
 import { Title, SchemaWrapper, Schema, Button } from "../../styles/common";
 import PackageContentProps from "../../components/Contents/Package/type";
