@@ -14,15 +14,17 @@ export const Card = styled(Link)`
     box-shadow: 0.2vw 0.2vw 0.3vw 0.2vw rgba(0, 0, 0, 0.2);
     cursor: pointer;
     
-    width: 85%;
+    width: 90vw;
 
-    padding: 15px 30px;
+    padding: 7.5px 15px;
 
-    border-radius: 2vw;
+    border-radius: 10px;
+
+    box-sizing: border-box;
 
     img{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
 `
 
@@ -31,6 +33,8 @@ export const LeftDiv = styled.div`
     align-items: center;
 
     img{
+        width: 30px;
+        height: 30px;
         margin-right: 15px;
     }
 `

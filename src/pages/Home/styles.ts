@@ -5,7 +5,7 @@ export const PhraseWrapper = styled.div`
 
   height: 60vh;
   @media ( max-width: 426px ){
-    height: 35vh;
+    height: 30vh;
   }
 
   display: flex;
@@ -20,7 +20,7 @@ export const Phrase = styled.p`
   font-family: "HAN";
   font-size: 3.5vh;
   @media ( max-width: 426px ){
-    font-size: 2.5vh;
+    font-size: 2vh;
     width: 90vw;
     text-align: center;
   }
