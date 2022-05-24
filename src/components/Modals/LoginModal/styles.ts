@@ -21,7 +21,6 @@ export const Background = styled.div`
   width: 60vh;
   @media (max-width: 426px) {
     width: 80%;
-    height: 320px;
   }
 
   position: absolute;
@@ -98,7 +97,7 @@ export const Input = styled.input`
     width: 70vw;
     height: 35px;
     margin-bottom: 15px;
-    font-size: 10px;
+    font-size: 11px;
     border-radius: 5px;
   }
 
@@ -172,7 +171,7 @@ export const Button = styled.button`
   @media (max-width: 426px) {
     width: 70vw;
     height: 35px;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 20px;
   }
 

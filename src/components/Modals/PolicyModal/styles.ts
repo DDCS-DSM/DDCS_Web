@@ -170,7 +170,7 @@ export const SubText = styled.div`
   font-size: 1.5vh;
   text-align: center;
   @media (max-width: 426px) {
-    font-size: 1vh;
+    font-size: 10px;
   }
 `;
 

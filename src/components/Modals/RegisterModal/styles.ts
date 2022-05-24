@@ -119,6 +119,9 @@ export const Button = styled.button`
 
   font-family: "HAN";
   font-size: 2.5vh;
+  @media (max-width: 426px) {
+    font-size: 12px;
+  }
   text-align: center;
 
   border-radius: 1.5vh;
