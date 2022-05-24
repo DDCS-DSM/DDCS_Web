@@ -41,14 +41,15 @@ export const Close = styled.div`
   margin-left: 4vh;
   margin-top: 2vh;
 
-  @media (max-width: 426px) {
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-
   font-family: "HAN";
   font-size: 2.25vh;
   font-weight: 100;
+
+  @media (max-width: 426px) {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
 
   cursor: pointer;
 `;

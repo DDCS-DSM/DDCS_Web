@@ -14,15 +14,15 @@ export const Card = styled(Link)`
     box-shadow: 0.2vw 0.2vw 0.3vw 0.2vw rgba(0, 0, 0, 0.2);
     cursor: pointer;
     
-    width: 85vw;
+    width: 85%;
 
-    padding: 1.5vw 3vw;
+    padding: 15px 30px;
 
     border-radius: 2vw;
 
     img{
-        width: 5vw;
-        height: 5vw;
+        width: 30px;
+        height: 30px;
     }
 `
 
@@ -31,7 +31,7 @@ export const LeftDiv = styled.div`
     align-items: center;
 
     img{
-        margin-right: 3vw;
+        margin-right: 15px;
     }
 `
 
@@ -41,9 +41,9 @@ export const TitleDiv = styled.div`
 `
 
 export const Title = styled.div`
-    font-size: 2.5vh;
+    font-size: 15px;
 `
 
 export const SubTitle = styled.div`
-    font-size: 1.2vh;
+    font-size: 12px;
 `
