@@ -174,6 +174,7 @@ export const Button = styled.button`
     height: 35px;
     font-size: 12px;
     margin-bottom: 20px;
+    border-radius: 10px;
   }
 
   cursor: pointer;

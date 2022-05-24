@@ -183,15 +183,19 @@ export const Button = styled.button`
 
   width: 45vh;
   height: 6vh;
-  @media (max-width: 426px) {
-    width: 70vw;
-  }
 
   font-family: "HAN";
   font-size: 2.5vh;
   text-align: center;
 
   border-radius: 1.5vh;
+
+  @media (max-width: 426px) {
+    width: 70vw;
+    height: 35px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
 
   cursor: pointer;
   transition: filter 0.25s;
