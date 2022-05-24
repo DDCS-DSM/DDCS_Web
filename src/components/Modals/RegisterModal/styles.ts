@@ -19,7 +19,7 @@ export const Background = styled.div`
 
   width: 60vh;
   @media (max-width: 426px) {
-    width: 90vw;
+    width: 80vw;
   }
 
   display: flex;
