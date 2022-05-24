@@ -5,8 +5,8 @@ export const Filter = styled.div`
   position: fixed;
   background-color: rgba(0, 0, 0, 0.25);
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   justify-content: center;
@@ -20,8 +20,11 @@ export const Background = styled.div`
 
   width: 60vh;
   @media (max-width: 426px) {
-    width: 80vw;
+    width: 80%;
+    height: 380px;
   }
+
+  position: absolute;
 
   display: flex;
   flex-direction: column;
@@ -34,10 +37,14 @@ export const Background = styled.div`
 export const Close = styled.div`
   position: absolute;
 
-  margin-right: 54vh;
-  margin-top: 1vh;
+  width: 100%;
+
+  margin-left: 4vh;
+  margin-top: 2vh;
+
   @media (max-width: 426px) {
-    margin-right: 70vw;
+    margin-left: 20px;
+    margin-top: 10px;
   }
 
   font-family: "HAN";
@@ -54,7 +61,7 @@ export const Title = styled.div`
   font-family: "HAN";
   font-size: 5vh;
   @media (max-width: 426px) {
-    font-size: 4vh;
+    font-size: 20px;
   }
   font-weight: 600;
 `;
@@ -69,7 +76,7 @@ export const Wrapper = styled.form`
   width: 45vh;
 
   @media (max-width: 426px) {
-    margin-bottom: 2vh;
+    margin-bottom: 40px;
   }
 `;
 
@@ -85,7 +92,8 @@ export const Input = styled.input`
   height: 6vh;
   @media (max-width: 426px) {
     width: 70vw;
-    margin-bottom: 2.5vh;
+    height: 35px;
+    margin-bottom: 15px;
   }
 
   font-family: "HAN";
@@ -106,7 +114,6 @@ export const CheckboxWrapper = styled.div`
   display: inline-flex;
   align-items: center;
 
-  width: 12.775vh;
   height: 3.5vh;
 `;
 export const Checkbox = styled.input`
@@ -133,9 +140,9 @@ export const Label = styled.label`
 
   font-family: "HAN";
   font-size: 2vh;
-  width: 100%;
+
   @media (max-width: 426px) {
-    font-size: 1.5vh;
+    font-size: 10px;
   }
 `;
 
@@ -148,6 +155,7 @@ export const Button = styled.button`
   width: 45vh;
   @media (max-width: 426px) {
     width: 70vw;
+    height: 35px;
   }
   height: 6vh;
 

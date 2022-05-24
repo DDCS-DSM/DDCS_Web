@@ -4,8 +4,8 @@ export const Filter = styled.div`
   position: fixed;
   background-color: rgba(0, 0, 0, 0.25);
 
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   justify-content: center;
@@ -17,9 +17,9 @@ export const Filter = styled.div`
 export const Background = styled.div`
   background-color: #fff;
 
-  width: 60vh;
+  width: 60vw;
   @media (max-width: 426px) {
-    width: 80vw;
+    width: 80%;
   }
 
   display: flex;

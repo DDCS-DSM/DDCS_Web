@@ -103,11 +103,11 @@ export const InstanceWrapper = styled.div`
 
   width: 54vh;
   @media (max-width: 426px) {
-    width: 85vw;
+    width: 90%;
   }
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   border-top: 0.1vh solid #000;
@@ -133,7 +133,6 @@ export const CheckboxWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 54vh;
   height: 3.5vh;
 `;
 export const Checkbox = styled.input`
@@ -160,6 +159,7 @@ export const Label = styled.label`
 
   font-family: "HAN";
   font-size: 1.75vh;
+
   @media (max-width: 426px) {
     font-size: 1.3vh;
   }
