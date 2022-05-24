@@ -36,6 +36,8 @@ export const Package = styled.div`
 `
 export const Close = styled.div`
     text-align: center;
+    width: 1.5vw;
+    cursor: pointer;
     @media ( max-width: 425px ){
         width: 3vw;
         font-size: 3vw;
