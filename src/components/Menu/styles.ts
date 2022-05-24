@@ -7,6 +7,9 @@ export const PreWrapper = styled.div`
 
   width: 100vw;
   height: 37.5vh;
+  @media ( max-width: 426px ){
+    height: 23vh;
+  }
 
   display: flex;
   justify-content: center;
@@ -23,7 +26,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CardDiv = styled.div`
-  height: 37.5vh;
+  height: 24vh;
   padding: 3.5vh 0;
   box-sizing: border-box;
   display: flex;

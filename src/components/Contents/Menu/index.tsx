@@ -1,7 +1,6 @@
 import * as S from "./styles";
 
 const Storage = require("../../../assets/images/storage.png");
-const Cat = require("../../../assets/images/cat.png");
 const Note = require("../../../assets/images/note.png");
 
 interface MenuContentProps {
@@ -20,19 +19,6 @@ const MenuContent = ({ index, setClaimVisible }: MenuContentProps) => {
         </S.Wrapper>
       );
     case 2:
-      return (
-        <S.Wrapper
-          to="/"
-          onClick={() => {
-            if (setClaimVisible) setClaimVisible(true);
-          }}
-        >
-          <S.Background src={Cat} />
-          <S.Title>택배 수령 인증하기</S.Title>
-          <S.SubTitle>택배 수령을 인증합니다.</S.SubTitle>
-        </S.Wrapper>
-      );
-    case 3:
       return (
         <S.Wrapper to="/">
           <S.Background src={Note} />

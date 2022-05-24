@@ -11,7 +11,6 @@ import Footer from "./components/Footer";
 import LoginModal from "./components/Modals/LoginModal";
 import PolicyModal from "./components/Modals/PolicyModal";
 import RegisterModal from "./components/Modals/RegisterModal";
-import ClaimModal from "./components/Modals/ClaimModal";
 
 axios.defaults.baseURL = "";
 
@@ -20,7 +19,6 @@ function App() {
   const [loginVisible, setLoginVisible] = useState<boolean>(false);
   const [policyVisible, setPolicyVisible] = useState<boolean>(false);
   const [registerVisible, setRegisterVisible] = useState<boolean>(false);
-  const [claimVisible, setClaimVisible] = useState<boolean>(false);
 
   return (
     <BrowserRouter>
@@ -46,11 +44,10 @@ function App() {
           setRegisterVisible={setRegisterVisible}
         />
       )}
-      {claimVisible && <ClaimModal setClaimVisible={setClaimVisible} />}
       <Header loginState={loginState} setLoginVisible={setLoginVisible} />
       <Title />
       <Routes>
-        <Route path="/" element={<Home setClaimVisible={setClaimVisible} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/list" element={<List />} />
         <Route path="/enlist" element={<Enlist />} />

@@ -14,7 +14,7 @@ const ElistPackageContent = ({ name, phone, index } : {name: ElistPackageContent
     )
 }
 
-const List = ({ lists, setLists } : {lists: ElistPackageContentProps[], setLists: Function}): JSX.Element => {
+const List = ({ lists, setLists } : {lists: ElistPackageContentProps[], setLists: React.Dispatch<React.SetStateAction<ElistPackageContentProps[]>>}): JSX.Element => {
 
   remove = (removeIndex: number) => {
     console.log("r" + removeIndex);
