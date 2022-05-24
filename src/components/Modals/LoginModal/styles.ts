@@ -21,7 +21,7 @@ export const Background = styled.div`
   width: 60vh;
   @media (max-width: 426px) {
     width: 80%;
-    height: 380px;
+    height: 320px;
   }
 
   position: absolute;
@@ -73,10 +73,8 @@ export const Wrapper = styled.form`
 
   margin-bottom: 5vh;
 
-  width: 45vh;
-
   @media (max-width: 426px) {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 `;
 
@@ -90,16 +88,20 @@ export const Input = styled.input`
 
   width: 45vh;
   height: 6vh;
-  @media (max-width: 426px) {
-    width: 70vw;
-    height: 35px;
-    margin-bottom: 15px;
-  }
 
   font-family: "HAN";
   font-size: 2vh;
 
   border-radius: 1.5vh;
+
+  @media (max-width: 426px) {
+    width: 70vw;
+    height: 35px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    border-radius: 5px;
+  }
+
   box-sizing: border-box;
 `;
 
@@ -127,6 +129,12 @@ export const Checkbox = styled.input`
   border: 0.1vh solid #000;
   border-radius: 0.25vh;
 
+  @media (max-width: 426px) {
+    width: 9px;
+    height: 9px;
+    border-radius: 2px;
+  }
+
   :checked {
     background-image: url(${checkmark});
     background-repeat: no-repeat;
@@ -153,10 +161,6 @@ export const Button = styled.button`
   margin-bottom: 5vh;
 
   width: 45vh;
-  @media (max-width: 426px) {
-    width: 70vw;
-    height: 35px;
-  }
   height: 6vh;
 
   font-family: "HAN";
@@ -164,6 +168,13 @@ export const Button = styled.button`
   text-align: center;
 
   border-radius: 1.5vh;
+
+  @media (max-width: 426px) {
+    width: 70vw;
+    height: 35px;
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
 
   cursor: pointer;
   transition: filter 0.25s;
@@ -192,7 +203,7 @@ export const Text = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   @media (max-width: 426px) {
-    font-size: 1.3vh;
+    font-size: 10px;
   }
 `;
 

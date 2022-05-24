@@ -184,7 +184,7 @@ export const Button = styled.button`
   width: 45vh;
   height: 6vh;
   @media (max-width: 426px) {
-    width: 38vh;
+    width: 70vw;
   }
 
   font-family: "HAN";
