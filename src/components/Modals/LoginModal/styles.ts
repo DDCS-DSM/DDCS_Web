@@ -192,6 +192,9 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 426px) {
+    height: 26px;
+  }
 `;
 
 export const Text = styled.div`
@@ -202,7 +205,7 @@ export const Text = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   @media (max-width: 426px) {
-    font-size: 10px;
+    font-size: 11px;
   }
 `;
 
@@ -217,7 +220,7 @@ export const Link = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   @media (max-width: 426px) {
-    font-size: 1.3vh;
+    font-size: 12px;
   }
   color: blue;
 
