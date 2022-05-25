@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CardDiv = styled.div`
-  height: 100%;
+  height: 135px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
