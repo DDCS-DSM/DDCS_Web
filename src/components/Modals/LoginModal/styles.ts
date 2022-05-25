@@ -71,8 +71,6 @@ export const Wrapper = styled.form`
   flex-direction: column;
   align-items: center;
 
-  margin-bottom: 5vh;
-
   @media (max-width: 426px) {
     margin-bottom: 0;
   }
@@ -84,7 +82,7 @@ export const Input = styled.input`
 
   padding-left: 1.5vh;
   padding-right: 1.5vh;
-  margin-bottom: 5vh;
+  margin-bottom: 2vh;
 
   width: 45vh;
   height: 6vh;
@@ -97,7 +95,7 @@ export const Input = styled.input`
   @media (max-width: 426px) {
     width: 70vw;
     height: 35px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 11px;
     border-radius: 5px;
   }
@@ -107,7 +105,9 @@ export const Input = styled.input`
 
 export const CheckboxDiv = styled.div`
   width: 100%;
+  margin-top: 2vh;
   @media (max-width: 426px) {
+    margin-top: 5px;
     width: 70vw;
   }
 `;
@@ -222,7 +222,7 @@ export const Link = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   @media (max-width: 426px) {
-    font-size: 12px;
+    font-size: 11px;
   }
   color: blue;
 
