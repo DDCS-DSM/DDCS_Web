@@ -6,7 +6,7 @@ export const PreWrapper = styled.div`
   margin: 0 auto;
 
   width: 100vw;
-  height: 37.5vh;
+  height: 40vh;
   @media ( max-width: 426px ){
     height: 150px;
   }

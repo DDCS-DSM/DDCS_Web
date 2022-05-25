@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Image = styled.img`
   position: absolute;
   left: 0;
-  transform: translateY(-35vh);
+  transform: translateY(-36.2vh);
 
   width: 40vh;
   height: 32.5vh;

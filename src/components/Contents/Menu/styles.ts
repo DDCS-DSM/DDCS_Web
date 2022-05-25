@@ -34,7 +34,8 @@ export const Wrapper = styled(Link)`
     filter: brightness(100%) drop-shadow(0 0.5vh 0.25vh #333);
   }
 
-  margin-right: 15vh;
+  margin-right: 10vh;
+  
   :last-child {
     margin-right: 0;
   }
