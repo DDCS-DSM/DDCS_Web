@@ -8,7 +8,7 @@ let setInput: Function;
 const ElistPackageContent = ({ name, phone, index } : {name: ElistPackageContentProps["name"] , phone : ElistPackageContentProps["phone"], index: number}) => {
   return(
         <S.Package>
-          <input placeholder={'전화번호를 입력해주세요.' + index} value={phone} onChange={(e)=>setInput(e.target.value, index)}/>
+          <input placeholder={'전화번호를 입력해주세요.'} value={phone} onChange={(e)=>setInput(e.target.value, index)}/>
           <S.Close onClick={()=>remove(index)}>✕</S.Close>
         </S.Package>
     )

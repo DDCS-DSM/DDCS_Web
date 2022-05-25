@@ -40,7 +40,7 @@ const MenuCard = ({ index, setClaimVisible }: CardProps): JSX.Element => {
       );
     case 3:
       return(
-        <S.Card to="/">
+        <S.Card to="/enlist">
           <S.LeftDiv>
             <img src={logo} alt="logo" />
             <S.TitleDiv>

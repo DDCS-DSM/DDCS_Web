@@ -20,7 +20,7 @@ export const Background = styled.div`
 
   width: 60vh;
   @media (max-width: 426px) {
-    width: 90vw;
+    width: 80%;
   }
 
   display: flex;
@@ -32,17 +32,21 @@ export const Background = styled.div`
 `;
 
 export const Close = styled.div`
-  position: absolute;
 
-  margin-right: 54vh;
-  margin-top: 1vh;
-  @media (max-width: 426px) {
-    margin-right: 80vw;
-  }
+  width:  100%;
+
+  margin-left: 4vh;
+  margin-top: 2vh;
 
   font-family: "HAN";
   font-size: 2.25vh;
   font-weight: 100;
+
+  @media (max-width: 426px) {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 20px;
+  }
 
   cursor: pointer;
 `;
@@ -54,7 +58,7 @@ export const Title = styled.div`
   font-family: "HAN";
   font-size: 5vh;
   @media (max-width: 426px) {
-    font-size: 4vh;
+    font-size: 20px;
   }
   font-weight: 600;
 `;
@@ -65,20 +69,30 @@ export const Wrapper = styled.form`
   align-items: center;
 
   margin-bottom: 5vh;
+
+  width: 45vh;
+
   @media (max-width: 426px) {
     margin-bottom: 2vh;
   }
-  width: 45vh;
 `;
 
 export const UploadFileWrapper = styled.div`
   display: flex;
+  @media (max-width: 426px) {
+    width: 70vw;
+    border-radius: 10px;
+  }
 `;
 
 export const UploadFileInput = styled.input`
   position: absolute;
 
   display: none;
+  @media (max-width: 426px) {
+    width: 70vw;
+    font-size: 12px;
+  }
 `;
 
 export const UploadFileLabel = styled.label`
@@ -96,8 +110,10 @@ export const UploadFileLabel = styled.label`
   width: 45vh;
   height: 18vh;
   @media (max-width: 426px) {
-    width: 38vh;
-    margin-bottom: 2.5vh;
+    background-size: 30px;
+    background-position: 50% 20px;
+    width: 100%;
+    height: 100px;
   }
 
   color: #d0d0d0;
@@ -114,22 +130,26 @@ export const Input = styled.input`
   all: unset;
   background-color: #f6f6f6;
 
-  padding-left: 1.5vh;
-  padding-right: 1.5vh;
+  padding: 0 1.5vh;
   margin-bottom: 3vh;
 
   width: 45vh;
   height: 6vh;
-  @media (max-width: 426px) {
-    width: 38vh;
-    margin-bottom: 2.5vh;
-  }
 
   font-family: "HAN";
   font-size: 2vh;
 
   border-radius: 1.5vh;
   box-sizing: border-box;
+
+  @media (max-width: 426px) {
+    margin-bottom: 2.5vh;
+    width: 70vw;
+    height: 35px;
+    font-size: 10px;
+    border-radius: 10px;
+    padding: 2.5px 10px;
+  }
 `;
 
 export const Button = styled.button`
@@ -139,9 +159,6 @@ export const Button = styled.button`
   margin-bottom: 3vh;
 
   width: 45vh;
-  @media (max-width: 426px) {
-    width: 38vh;
-  }
   height: 6vh;
 
   font-family: "HAN";
@@ -156,6 +173,15 @@ export const Button = styled.button`
   :hover {
     filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
   }
+
+  @media (max-width: 426px) {
+    width: 70vw;
+    height: 35px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
 `;
 
 export const TextWrapper = styled.div`

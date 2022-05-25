@@ -33,7 +33,7 @@ const MenuContent = ({ index, setClaimVisible }: MenuContentProps) => {
       );
     case 3:
       return (
-        <S.Wrapper to="/">
+        <S.Wrapper to="/enlist">
           <S.Background src={Note} />
           <S.Title>수령한 택배 확인하기</S.Title>
           <S.SubTitle>수령한 택배를 확인합니다.</S.SubTitle>
