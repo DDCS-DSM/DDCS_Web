@@ -6,10 +6,10 @@ const Cat = require("../../../assets/images/cat.png");
 
 interface MenuContentProps {
   index: number;
-  setClaimVisible?: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState?: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const MenuContent = ({ index, setClaimVisible }: MenuContentProps) => {
+const MenuContent = ({ index, setModalState }: MenuContentProps) => {
   switch (index) {
     case 1:
       return (
@@ -21,9 +21,10 @@ const MenuContent = ({ index, setClaimVisible }: MenuContentProps) => {
       );
     case 2:
       return (
-        <S.Wrapper to="/"
+        <S.Wrapper
+          to="/"
           onClick={() => {
-            if (setClaimVisible) setClaimVisible(true);
+            if (setModalState) setModalState("claim");
           }}
         >
           <S.Background src={Cat} />

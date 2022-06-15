@@ -3,10 +3,10 @@ import { arrow, logo } from "../../../assets/images";
 
 interface CardProps {
   index: number;
-  setClaimVisible?: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState?: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const MenuCard = ({ index, setClaimVisible }: CardProps): JSX.Element => {
+const MenuCard = ({ index, setModalState }: CardProps): JSX.Element => {
   switch (index) {
     case 1:
       return (
@@ -23,9 +23,10 @@ const MenuCard = ({ index, setClaimVisible }: CardProps): JSX.Element => {
       );
     case 2:
       return (
-        <S.Card to="/"           
+        <S.Card
+          to="/"
           onClick={() => {
-            if(setClaimVisible) setClaimVisible(true);
+            if (setModalState) setModalState("claim");
           }}
         >
           <S.LeftDiv>
@@ -39,7 +40,7 @@ const MenuCard = ({ index, setClaimVisible }: CardProps): JSX.Element => {
         </S.Card>
       );
     case 3:
-      return(
+      return (
         <S.Card to="/enlist">
           <S.LeftDiv>
             <img src={logo} alt="logo" />
@@ -49,8 +50,8 @@ const MenuCard = ({ index, setClaimVisible }: CardProps): JSX.Element => {
             </S.TitleDiv>
           </S.LeftDiv>
           <img src={arrow} alt="arrow" />
-        </S.Card> 
-      )
+        </S.Card>
+      );
   }
 
   return <></>;

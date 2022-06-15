@@ -6,10 +6,13 @@ import { logo, login } from "../../assets/images";
 
 interface HeaderInterface {
   loginState: boolean;
-  setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const Header = ({ loginState, setLoginVisible }: HeaderInterface): JSX.Element => {
+const Header = ({
+  loginState,
+  setModalState,
+}: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
   return (
@@ -25,7 +28,7 @@ const Header = ({ loginState, setLoginVisible }: HeaderInterface): JSX.Element =
             <S.Icon src={login} />
           </S.RightContents>
         ) : (
-          <S.RightContents onClick={() => setLoginVisible(true)}>
+          <S.RightContents onClick={() => setModalState("login")}>
             <S.Text>로그인</S.Text>
             <S.Icon src={login} />
           </S.RightContents>
