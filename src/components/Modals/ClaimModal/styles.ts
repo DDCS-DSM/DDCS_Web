@@ -32,8 +32,7 @@ export const Background = styled.div`
 `;
 
 export const Close = styled.div`
-
-  width:  100%;
+  width: 100%;
 
   margin-left: 4vh;
   margin-top: 2vh;
@@ -52,7 +51,6 @@ export const Close = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 5vh;
   margin-bottom: 3vh;
 
   font-family: "HAN";
@@ -181,7 +179,6 @@ export const Button = styled.button`
     margin-bottom: 20px;
     border-radius: 10px;
   }
-
 `;
 
 export const TextWrapper = styled.div`

@@ -188,7 +188,7 @@ export const Button = styled.button`
 export const TextWrapper = styled.div`
   margin-bottom: 5vh;
 
-  height: 7vh;
+  height: 10vh;
 
   display: flex;
   flex-direction: column;
@@ -212,7 +212,6 @@ export const Text = styled.div`
 `;
 
 export const Link = styled.div`
-  margin-bottom: 0.4vh;
   :first-child {
     margin-left: 0.8vh;
   }

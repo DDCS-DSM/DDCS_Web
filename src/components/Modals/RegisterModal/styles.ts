@@ -17,9 +17,9 @@ export const Filter = styled.div`
 export const Background = styled.div`
   background-color: #fff;
 
-  width: 60vw;
+  width: 60vh;
   @media (max-width: 426px) {
-    width: 80%;
+    width: 90vw;
   }
 
   display: flex;
@@ -83,15 +83,15 @@ export const Input = styled.input`
   border-radius: 1.5vh;
 
   :nth-child(3) {
-    width: 37vh;
-    padding-right: 6vh;
+    width: 34vh;
+    padding-right: 9vh;
   }
 `;
 
 export const VerifyEmail = styled.div`
   position: absolute;
 
-  margin-left: 36vh;
+  margin-left: 35vh;
   margin-bottom: 27.5vh;
 
   width: 8vh;
