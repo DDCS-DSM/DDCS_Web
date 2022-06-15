@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
@@ -12,45 +12,45 @@ import LoginModal from "./components/Modals/LoginModal";
 import PolicyModal from "./components/Modals/PolicyModal";
 import RegisterModal from "./components/Modals/RegisterModal";
 import ClaimModal from "./components/Modals/ClaimModal";
+import FindIdModal from "./components/Modals/FindIdModal";
+import FindPwModal from "./components/Modals/FindPwModal";
 
 axios.defaults.baseURL = "";
 
 function App() {
   const [loginState, setLoginState] = useState<boolean>(false);
-  const [loginVisible, setLoginVisible] = useState<boolean>(false);
-  const [policyVisible, setPolicyVisible] = useState<boolean>(false);
-  const [registerVisible, setRegisterVisible] = useState<boolean>(false);
-  const [claimVisible, setClaimVisible] = useState<boolean>(false);
+  const [modalState, setModalState] = useState<String>("");
+
+  useEffect(() => {
+    const close = (e: any) => {
+      if (e.keyCode === 27) {
+        setModalState("");
+      }
+    };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, [setModalState]);
 
   return (
     <BrowserRouter>
       <GlobalStyle />
-      {loginVisible && (
+      {modalState === "login" && (
         <LoginModal
-          setLoginVisible={setLoginVisible}
+          setModalState={setModalState}
           setLoginState={setLoginState}
-          setPolicyVisible={setPolicyVisible}
         />
       )}
-      {policyVisible && (
-        <PolicyModal
-          setLoginVisible={setLoginVisible}
-          setPolicyVisible={setPolicyVisible}
-          setRegisterVisible={setRegisterVisible}
-        />
+      {modalState === "policy" && <PolicyModal setModalState={setModalState} />}
+      {modalState === "register" && (
+        <RegisterModal setModalState={setModalState} />
       )}
-      {registerVisible && (
-        <RegisterModal
-          setLoginVisible={setLoginVisible}
-          setPolicyVisible={setPolicyVisible}
-          setRegisterVisible={setRegisterVisible}
-        />
-      )}
-      {claimVisible && <ClaimModal setClaimVisible={setClaimVisible} />}
-      <Header loginState={loginState} setLoginVisible={setLoginVisible} />
+      {modalState === "claim" && <ClaimModal setModalState={setModalState} />}
+      {modalState === "findid" && <FindIdModal setModalState={setModalState} />}
+      {modalState === "findpw" && <FindPwModal setModalState={setModalState} />}
+      <Header loginState={loginState} setModalState={setModalState} />
       <Title />
       <Routes>
-        <Route path="/" element={<Home setClaimVisible={setClaimVisible} />} />
+        <Route path="/" element={<Home setModalState={setModalState} />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/list" element={<List />} />
         <Route path="/enlist" element={<Enlist />} />
