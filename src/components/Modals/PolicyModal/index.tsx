@@ -1,39 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import * as S from "./styles";
 
 interface RegisterModalInterface {
-  setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setPolicyVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setRegisterVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const PolicyModal = ({
-  setLoginVisible,
-  setPolicyVisible,
-  setRegisterVisible,
-}: RegisterModalInterface) => {
+const PolicyModal = ({ setModalState }: RegisterModalInterface) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [checkedState, setCheckedState] = useState<boolean>(true);
-
-  useEffect(() => {
-    const close = (e: any) => {
-      if (e.keyCode === 27) {
-        setPolicyVisible(false);
-        setLoginVisible(true);
-        window.removeEventListener("keydown", close);
-      }
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, [setPolicyVisible, setLoginVisible, ]);
 
   return (
     <S.Filter>
       <S.Background>
         <S.Close
           onClick={() => {
-            setPolicyVisible(false);
-            setLoginVisible(true);
+            setModalState("login");
           }}
         >
           ←
@@ -87,8 +68,7 @@ const PolicyModal = ({
         <S.SubText>추가정보 수집이 있을 수 있습니다.</S.SubText>
         <S.Button
           onClick={() => {
-            setPolicyVisible(false);
-            setRegisterVisible(true);
+            setModalState("register");
           }}
           disabled={checkedState}
         >

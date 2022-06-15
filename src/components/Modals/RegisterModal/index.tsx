@@ -1,33 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import * as S from "./styles";
 
 interface RegisterModalInterface {
-  setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setPolicyVisible: React.Dispatch<React.SetStateAction<boolean>>;
-  setRegisterVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const RegisterModal = ({
-  setLoginVisible,
-  setPolicyVisible,
-  setRegisterVisible,
-}: RegisterModalInterface) => {
+const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   const nameInput = useRef<HTMLInputElement>(null);
   const emailInput = useRef<HTMLInputElement>(null);
   const idInput = useRef<HTMLInputElement>(null);
   const pwInput = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const close = (e: any) => {
-      if (e.keyCode === 27) {
-        setRegisterVisible(false);
-        setPolicyVisible(true);
-        window.removeEventListener("keydown", close);
-      }
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, [setRegisterVisible, setPolicyVisible, ]);
 
   const confirmRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -42,8 +24,7 @@ const RegisterModal = ({
       pwInput.current &&
       pwInput.current.value
     ) {
-      setRegisterVisible(false);
-      setLoginVisible(true);
+      setModalState("login");
     } else alert("값을 모두 입력해주세요!");
   };
 
@@ -52,8 +33,7 @@ const RegisterModal = ({
       <S.Background>
         <S.Close
           onClick={() => {
-            setRegisterVisible(false);
-            setPolicyVisible(true);
+            setModalState("policy");
           }}
         >
           ←

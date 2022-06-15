@@ -1,36 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import * as S from "./styles";
 
 interface LoginModalInterface {
-  setLoginVisible: React.Dispatch<React.SetStateAction<boolean>>;
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
-  setPolicyVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const LoginModal = ({
-  setLoginVisible,
-  setLoginState,
-  setPolicyVisible,
-}: LoginModalInterface) => {
+const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
-
-  useEffect(() => {
-    inputRef.current?.focus();
-
-    const close = (e: any) => {
-      if (e.keyCode === 27) {
-        setLoginVisible(false);
-        window.removeEventListener("keydown", close);
-      }
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, [setLoginVisible, ]);
 
   return (
     <S.Filter>
       <S.Background>
-        <S.Close onClick={() => setLoginVisible(false)}>✕</S.Close>
+        <S.Close onClick={() => setModalState("")}>✕</S.Close>
         <S.Title>로그인</S.Title>
         <S.Wrapper>
           <S.Input ref={inputRef} placeholder="아이디" />
@@ -49,14 +31,14 @@ const LoginModal = ({
             계정이 없으신가요?
             <S.Link
               onClick={() => {
-                setLoginVisible(false);
-                setPolicyVisible(true);
+                setModalState("policy");
               }}
             >
               회원가입
             </S.Link>
           </S.Text>
-          <S.Link>아이디 / 비밀번호 찾기</S.Link>
+          <S.Link onClick={() => setModalState("findid")}>아이디 찾기</S.Link>
+          <S.Link onClick={() => setModalState("findpw")}>비밀번호 찾기</S.Link>
         </S.TextWrapper>
       </S.Background>
     </S.Filter>

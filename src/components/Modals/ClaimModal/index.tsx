@@ -1,14 +1,14 @@
 import * as S from "./styles";
 
 interface ClaimModalProps {
-  setClaimVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setModalState: React.Dispatch<React.SetStateAction<String>>;
 }
 
-const ClaimModal = ({ setClaimVisible }: ClaimModalProps) => {
+const ClaimModal = ({ setModalState }: ClaimModalProps) => {
   return (
     <S.Filter>
       <S.Background>
-        <S.Close onClick={() => setClaimVisible(false)}>✕</S.Close>
+        <S.Close onClick={() => setModalState("")}>←</S.Close>
         <S.Title>택배 수령 인증</S.Title>
         <S.Wrapper>
           <S.UploadFileWrapper>
