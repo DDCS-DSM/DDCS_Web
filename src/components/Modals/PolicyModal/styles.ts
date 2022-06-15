@@ -55,7 +55,7 @@ export const Title = styled.div`
   font-size: 5vh;
   font-weight: 600;
   @media (max-width: 426px) {
-    font-size: 4vh;
+    font-size: 25px;
   }
 `;
 
