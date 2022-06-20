@@ -1,12 +1,14 @@
 import { useEffect } from "react";
-//import axios from "axios";
+import axios from "axios";
 import * as S from "./styles";
 import { Title, Button } from "../../styles/common";
 
 const Privacy = () => {
 
   useEffect(()=>{
-
+    axios.get("/delivery")
+      .then(res => res.data)
+      .catch(err => alert("로그인을 먼저 해주세요."));
   },[])
 
   return (

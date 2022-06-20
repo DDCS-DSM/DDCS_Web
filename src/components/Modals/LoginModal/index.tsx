@@ -1,5 +1,7 @@
+import axios from "axios";
 import { useRef } from "react";
 import * as S from "./styles";
+import { useCookies } from 'react-cookie';
 
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
@@ -7,7 +9,44 @@ interface LoginModalInterface {
 }
 
 const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
-  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const idInput = useRef<HTMLInputElement | null>(null);
+  const pwInput = useRef<HTMLInputElement | null>(null);
+
+  const [setCookie] = useCookies(['DCS_token']);
+
+  const checkInput = () => {
+    if(
+      idInput.current &&
+      idInput.current.value &&
+      pwInput.current &&
+      pwInput.current.value
+    )
+    {
+      return true;
+    }
+    else {
+      alert("값을 모두 입력해주세요.");
+      return false;
+    }
+  }
+
+  const login = () => {
+    if(checkInput()) {
+      axios.post("/users/token", {
+        accountId: idInput.current?.value,
+        password: pwInput.current?.value
+      })
+      .then(res => {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (30 * 60 * 1000))
+        //setCookie('access_token', res.data.access_token, { path: '/',  expires})
+        //setCookie('refresh_token', res.data.refresh_token, {path: '/', expires})
+        alert("로그인 완료");
+      })
+      .catch(err => alert(`에러 ${err.status}`))
+    }
+  }
 
   return (
     <S.Filter>
@@ -15,8 +54,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
         <S.Close onClick={() => setModalState("")}>✕</S.Close>
         <S.Title>로그인</S.Title>
         <S.Wrapper>
-          <S.Input ref={inputRef} placeholder="아이디" />
-          <S.Input type="password" placeholder="비밀번호" />
+          <S.Input ref={idInput} placeholder="아이디" />
+          <S.Input type="password" ref={pwInput} placeholder="비밀번호" />
           <S.CheckboxDiv>
             <S.CheckboxWrapper>
               <S.Checkbox id="saveid" type="checkbox" />
@@ -24,7 +63,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
             </S.CheckboxWrapper>
           </S.CheckboxDiv>
 
-          <S.Button>로그인</S.Button>
+          <S.Button onClick={()=>login()}>로그인</S.Button>
         </S.Wrapper>
         <S.TextWrapper>
           <S.Text>
