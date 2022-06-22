@@ -15,6 +15,8 @@ import ClaimModal from "./components/Modals/ClaimModal";
 import FindIdModal from "./components/Modals/FindIdModal";
 import FindPwModal from "./components/Modals/FindPwModal";
 
+import { setCookie, getCookie } from './cookie'
+
 axios.defaults.baseURL = "http://3.34.216.253:8080";
 
 function App() {
