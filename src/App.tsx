@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { CookiesProvider, useCookies } from "react-cookie";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
@@ -22,8 +21,6 @@ function App() {
   const [loginState, setLoginState] = useState<boolean>(false);
   const [modalState, setModalState] = useState<String>("");
 
-  const [cookies] = useCookies(['DCS_token']);
-
   //자동 로그인
   useEffect(() => {
 
@@ -40,34 +37,32 @@ function App() {
   }, [setModalState]);
 
   return (
-    <CookiesProvider>
-      <BrowserRouter>
-        <GlobalStyle />
-        {modalState === "login" && (
-          <LoginModal
-            setModalState={setModalState}
-            setLoginState={setLoginState}
-          />
-        )}
-        {modalState === "policy" && <PolicyModal setModalState={setModalState} />}
-        {modalState === "register" && (
-          <RegisterModal setModalState={setModalState} />
-        )}
-        {modalState === "claim" && <ClaimModal setModalState={setModalState} />}
-        {modalState === "findid" && <FindIdModal setModalState={setModalState} />}
-        {modalState === "findpw" && <FindPwModal setModalState={setModalState} />}
-        <Header loginState={loginState} setModalState={setModalState} />
-        <Title />
-        <Routes>
-          <Route path="/" element={<Home setModalState={setModalState} />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/list" element={<List />} />
-          <Route path="/enlist" element={<Enlist />} />
-          <Route path="/accept" element={<Accept />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </CookiesProvider>
+    <BrowserRouter>
+      <GlobalStyle />
+      {modalState === "login" && (
+        <LoginModal
+          setModalState={setModalState}
+          setLoginState={setLoginState}
+        />
+      )}
+      {modalState === "policy" && <PolicyModal setModalState={setModalState} />}
+      {modalState === "register" && (
+        <RegisterModal setModalState={setModalState} />
+      )}
+      {modalState === "claim" && <ClaimModal setModalState={setModalState} />}
+      {modalState === "findid" && <FindIdModal setModalState={setModalState} />}
+      {modalState === "findpw" && <FindPwModal setModalState={setModalState} />}
+      <Header loginState={loginState} setModalState={setModalState} />
+      <Title />
+      <Routes>
+        <Route path="/" element={<Home setModalState={setModalState} />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/list" element={<List />} />
+        <Route path="/enlist" element={<Enlist />} />
+        <Route path="/accept" element={<Accept />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

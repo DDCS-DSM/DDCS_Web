@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useRef } from "react";
 import * as S from "./styles";
-import { useCookies } from 'react-cookie';
 
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,8 +11,6 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
 
   const idInput = useRef<HTMLInputElement | null>(null);
   const pwInput = useRef<HTMLInputElement | null>(null);
-
-  const [setCookie] = useCookies(['DCS_token']);
 
   const checkInput = () => {
     if(
