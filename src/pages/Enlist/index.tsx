@@ -7,13 +7,13 @@ import axios from 'axios';
 
 const Enlist = () => {
 
-    const [lists, setLists] = useState<EnlistPackageContentProps[]>([{name: "1", phone: "1"}]);
+    const [list, setList] = useState<EnlistPackageContentProps>({company: "", package: []});
 
     //택배 추가
     const addPackage = () => {
-        const list = lists;
-        list.push({name: "",  phone: ""});
-        setLists([...list]);
+        const newList: EnlistPackageContentProps = list;
+        newList.package.push({name: "",  phone: ""});
+        setList(newList);
     }
 
     //택배 등록
@@ -35,7 +35,7 @@ const Enlist = () => {
                 <option>롯대택배</option>
                 <option>기타</option>
             </S.Company>
-            <EnlistPackage lists={lists} setLists={setLists} />
+            <EnlistPackage list={list} setList={setList} />
             <S.ButtonDiv>
                 <S.Button onClick={()=>addPackage()}>추가</S.Button>
                 <S.Button onClick={()=>enlistPackageList()}>등록</S.Button>

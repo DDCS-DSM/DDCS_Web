@@ -1,11 +1,10 @@
 import * as S from './styles'
-import EnlistPackageContentProps from './type';
-import ElistPackageContentProps from "./type"
+import EnlistPackageContentProps, {PackageProps} from './type';
 
 let remove: Function;
 let setInput: Function;
 
-const ElistPackageContent = ({ name, phone, index } : {name: ElistPackageContentProps["name"] , phone : ElistPackageContentProps["phone"], index: number}) => {
+const ElistPackageContent = ({ name, phone, index } : {name: PackageProps["name"] , phone : PackageProps["phone"], index: number}) => {
   return(
         <S.Package>
           <input placeholder={'전화번호를 입력해주세요.'} value={phone} onChange={(e)=>setInput(e.target.value, index)}/>
@@ -14,29 +13,29 @@ const ElistPackageContent = ({ name, phone, index } : {name: ElistPackageContent
     )
 }
 
-const List = ({ lists, setLists } : {lists: ElistPackageContentProps[], setLists: React.Dispatch<React.SetStateAction<ElistPackageContentProps[]>>}): JSX.Element => {
+const List = ({ list, setList } : {list: EnlistPackageContentProps, setList: React.Dispatch<React.SetStateAction<EnlistPackageContentProps>>}): JSX.Element => {
 
   remove = (removeIndex: number) => {
     console.log("r" + removeIndex);
-    let newLists: EnlistPackageContentProps[] = [];
-    lists.forEach((i: ElistPackageContentProps, index: number)=>{
+    let newList: EnlistPackageContentProps = list;
+    list.package.forEach((i: PackageProps, index: number)=>{
       if(index !== removeIndex){
-        newLists.push(i); 
+        newList.package.push(i); 
         console.log(index);
       }
     })
-    setLists(newLists);
+    setList(newList);
   }
 
   setInput = (text: string, index: number) => {
-    let newLists: EnlistPackageContentProps[] = [...lists];
-    newLists[index].phone = text;
-    setLists(newLists);
+    let newList: EnlistPackageContentProps = list;
+    newList.package[index].phone = text;
+    setList(newList);
   }
 
   return(
     <>
-    {lists.map((i: ElistPackageContentProps, index: number) => {
+    {list.package.map((i: PackageProps, index: number) => {
       return(
         <ElistPackageContent phone={i.phone} name={i.name} index={index}/>
       )
