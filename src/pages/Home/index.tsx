@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { Title } from "../../styles/common";
 
 interface HomeProps {
-  setModalState: React.Dispatch<React.SetStateAction<String>>;
+  setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function Home({ setModalState }: HomeProps) {

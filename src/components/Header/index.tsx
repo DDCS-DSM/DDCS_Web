@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import DropDown from "../DropDown/index";
 import * as S from "./styles";
@@ -6,7 +6,7 @@ import { logo, login } from "../../assets/images";
 
 interface HeaderInterface {
   loginState: boolean;
-  setModalState: React.Dispatch<React.SetStateAction<String>>;
+  setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Header = ({
@@ -14,6 +14,10 @@ const Header = ({
   setModalState,
 }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
+
+  useEffect(()=>{
+
+  },[])
 
   return (
     <S.PreHeader>

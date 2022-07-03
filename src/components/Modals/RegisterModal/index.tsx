@@ -3,7 +3,7 @@ import { useRef } from "react";
 import * as S from "./styles";
 
 interface RegisterModalInterface {
-  setModalState: React.Dispatch<React.SetStateAction<String>>;
+  setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const RegisterModal = ({ setModalState }: RegisterModalInterface) => {

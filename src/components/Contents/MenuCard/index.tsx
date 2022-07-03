@@ -3,7 +3,7 @@ import { arrow, logo } from "../../../assets/images";
 
 interface CardProps {
   index: number;
-  setModalState?: React.Dispatch<React.SetStateAction<String>>;
+  setModalState?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const MenuCard = ({ index, setModalState }: CardProps): JSX.Element => {

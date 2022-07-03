@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import * as S from "./styles";
 
 interface MenuProps {
-  setModalState: React.Dispatch<React.SetStateAction<String>>;
+  setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const Menu = ({ setModalState }: MenuProps) => {

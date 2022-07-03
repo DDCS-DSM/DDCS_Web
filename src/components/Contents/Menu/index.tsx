@@ -6,7 +6,7 @@ const Cat = require("../../../assets/images/cat.png");
 
 interface MenuContentProps {
   index: number;
-  setModalState?: React.Dispatch<React.SetStateAction<String>>;
+  setModalState?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const MenuContent = ({ index, setModalState }: MenuContentProps) => {

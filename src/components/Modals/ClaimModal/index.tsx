@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 interface ClaimModalProps {
-  setModalState: React.Dispatch<React.SetStateAction<String>>;
+  setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const ClaimModal = ({ setModalState }: ClaimModalProps) => {

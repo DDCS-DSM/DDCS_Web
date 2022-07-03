@@ -4,7 +4,7 @@ import * as S from "./styles";
 
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
-  setModalState: React.Dispatch<React.SetStateAction<String>>;
+  setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
