@@ -3,21 +3,20 @@ import { useEffect, useState } from "react";
 import DropDown from "../DropDown/index";
 import * as S from "./styles";
 import { logo, login } from "../../assets/images";
+import userProps from "../../userProps";
 
 interface HeaderInterface {
   loginState: boolean;
   setModalState: React.Dispatch<React.SetStateAction<string>>;
+  user: userProps;
 }
 
 const Header = ({
   loginState,
   setModalState,
+  user
 }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
-
-  useEffect(()=>{
-
-  },[])
 
   return (
     <S.PreHeader>
@@ -28,7 +27,7 @@ const Header = ({
         </S.LeftContents>
         {loginState ? (
           <S.RightContents onClick={() => setDropDownVisible(true)}>
-            <S.Text>{"2216 이진형"}</S.Text>
+            <S.Text>{user.studentNumber} {user.name}</S.Text>
             <S.Icon src={login} />
           </S.RightContents>
         ) : (

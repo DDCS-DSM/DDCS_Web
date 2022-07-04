@@ -6,10 +6,16 @@ import { Title, Button } from "../../styles/common";
 const Privacy = () => {
 
   useEffect(()=>{
-    axios.get("/delivery")
+    axios.get("/")
       .then(res => res.data)
       .catch(err => alert("로그인을 먼저 해주세요."));
   },[])
+
+  const rectifyPrivacy = () => {
+    axios.post("/")
+      .then(res => res.data)
+      .catch(err => alert("에러가 발생했습니다."));
+  }
 
   return (
     <>

@@ -8,6 +8,10 @@ interface LoginModalInterface {
 const FindPwModal = ({ setModalState }: LoginModalInterface) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
+  const changePw = () => {
+
+  }
+
   return (
     <S.Filter>
       <S.Background>

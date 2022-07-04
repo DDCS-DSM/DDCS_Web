@@ -2,6 +2,8 @@ import axios from "axios";
 import { useRef } from "react";
 import * as S from "./styles";
 
+import { setCookie, getCookie } from "../../../cookie";
+
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -35,11 +37,9 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
         password: pwInput.current?.value
       })
       .then(res => {
-        const expires = new Date();
-        expires.setTime(expires.getTime() + (30 * 60 * 1000))
-        //setCookie('access_token', res.data.access_token, { path: '/',  expires})
-        //setCookie('refresh_token', res.data.refresh_token, {path: '/', expires})
-        alert("로그인 완료");
+        setCookie('access_token', res.data.access_token, 30);
+        setCookie('refresh_token', res.data.refresh_token, 100);
+        window.location.reload();
       })
       .catch(err => alert(`에러 ${err.status}`))
     }

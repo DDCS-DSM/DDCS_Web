@@ -15,18 +15,40 @@ import ClaimModal from "./components/Modals/ClaimModal";
 import FindIdModal from "./components/Modals/FindIdModal";
 import FindPwModal from "./components/Modals/FindPwModal";
 
-import { setCookie, getCookie } from './cookie'
+import { setCookie, getCookie } from './cookie';
+
+import userProps from './userProps';
 
 axios.defaults.baseURL = "http://3.34.216.253:8080";
 
 function App() {
   const [loginState, setLoginState] = useState<boolean>(false);
-  const [modalState, setModalState] = useState<String>("");
+  const [modalState, setModalState] = useState<string>("");
+  const [user, setUser] = useState<any>();
 
   //자동 로그인
   useEffect(() => {
+    const accessToken = getCookie("DCS_accessToken");
+    const refreshToken = getCookie("DCS_refreshToken");
+    
+    if(accessToken) {
+      axios.get("users/mypage", {headers: {Authorization: `Barer ${accessToken}`}})
+        .then(res => setUser(res.data))
+        .catch(err => {
+          if(err.status === 401 && refreshToken){
+            axios.post("/users/token", 
+            {accessToken: accessToken, refreshToken: refreshToken})
+              .then(res => {
+                setCookie("DCS_accessToken", res.data.accessToken, 30);
+                setCookie("DCS_refreshToken", res.data.refreshToken, 100);
 
-  })
+                axios.get("users/mypage", {headers: {Authorization: `Barer ${res.data.accessToken}`}})
+                  .then(res => setUser(res.data))
+              })
+          }
+        })
+    }
+  },[])
 
   useEffect(() => {
     const close = (e: any) => {
