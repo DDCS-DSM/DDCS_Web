@@ -152,7 +152,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <S.Input ref={nameInput} placeholder="이름" />
 
           <S.Input ref={phoneNumberInput} placeholder="전화번호" />
-          <S.Check down={50} onClick={(e)=>duplicationCheck("phone-number")}>중복 확인</S.Check>
+          <S.Check down={50} onClick={()=>duplicationCheck("phone-number")}>중복 확인</S.Check>
 
           <S.Input ref={emailInput} placeholder="이메일" />
 
