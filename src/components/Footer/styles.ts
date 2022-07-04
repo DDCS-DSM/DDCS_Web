@@ -6,7 +6,7 @@ export const Footer = styled.div`
   margin-top: 15vh;
 
   width: 100%;
-  height: 25vh;
+  height: 30vh;
 
   display: flex;
   align-items: flex-start;
