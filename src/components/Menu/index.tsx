@@ -11,7 +11,7 @@ interface MenuProps {
 }
 
 const Menu = ({ setModalState }: MenuProps) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 426px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   return (
     <S.PreWrapper>

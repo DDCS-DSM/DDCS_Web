@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import DropDown from "../DropDown/index";
 import * as S from "./styles";

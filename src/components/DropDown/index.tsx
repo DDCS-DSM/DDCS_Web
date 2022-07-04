@@ -1,5 +1,5 @@
 import axios from "axios";
-import { setCookie } from "../../cookie";
+//import { setCookie } from "../../cookie";
 import * as S from "./styles";
 
 interface DropDownProps {
