@@ -4,10 +4,13 @@ import EnlistPackage from '../../components/Contents/EnlistPackage';
 import EnlistPackageContentProps from '../../components/Contents/EnlistPackage/type';
 import { useState } from 'react';
 import axios from 'axios';
+import { useRef } from 'react';
 
 const Enlist = () => {
 
     const [list, setList] = useState<EnlistPackageContentProps>({couriercompany: "", phoneNumberRequestList: []});
+    
+    const selectRef = useRef<HTMLSelectElement>(null);
 
     //택배 추가
     const addPackage = () => {
@@ -18,19 +21,32 @@ const Enlist = () => {
 
     //택배 등록
     const enlistPackageList = () => {
-        axios.post("/delivery", {
-            couriercompany: "",
-            phoneNumberRequestList: list.phoneNumberRequestList
-        })
-        .then(res => alert("등록 성공"))
-        .catch(err => alert("등록에 실패했습니다."))
+        if(selectRef.current?.innerText !== "회사를 선택해 주세요."){
+            axios.post("/delivery", {
+                couriercompany: selectRef.current?.innerText,
+                phoneNumberRequestList: list.phoneNumberRequestList
+            })
+            .then(res => alert("등록 성공"))
+            .catch(err => {
+                if(err.status === 401){
+                    alert("로그인을 먼저 해주세요.");
+                    window.location.href = "/";
+                }
+                else {
+                    alert(`등록에 실패했습니다. ${err.status}`);
+                }
+            })
+        }
+        else{
+            alert("회사를 입력해주세요.");
+        }
     }
 
     return(
         <S.Body>
             <Title>택배 등록</Title>
             <S.SchemaWrapper/>
-            <S.Company>
+            <S.Company ref={selectRef}>
                 <option>회사를 선택해 주세요.</option>
                 <option>우체국 택배</option>
                 <option>CJ 대한통운</option>
