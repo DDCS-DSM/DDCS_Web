@@ -23,6 +23,10 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media ( max-width: 1050px ){
+    width: 80vw;
+  }
 `;
 
 export const CardDiv = styled.div`
