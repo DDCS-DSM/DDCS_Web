@@ -89,7 +89,7 @@ export const Input = styled.input`
 `;
 
 interface downPorps {
-  down: number
+  down: number;
 }
 
 export const CheckOverlap = styled.div<downPorps>`

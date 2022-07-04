@@ -9,9 +9,12 @@ interface RegisterModalInterface {
 const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   const nameInput = useRef<HTMLInputElement>(null);
   const emailInput = useRef<HTMLInputElement>(null);
+  const emailCheckInput = useRef<HTMLInputElement>(null);
   const idInput = useRef<HTMLInputElement>(null);
   const pwInput = useRef<HTMLInputElement>(null);
-  const pwcInput = useRef<HTMLInputElement>(null);
+  const pwCheckInput = useRef<HTMLInputElement>(null);
+
+  const [onVerification, setOnVerification] = useState<boolean>(false);
 
   const [check, setCheck] = useState({});
 
@@ -25,10 +28,10 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       idInput.current.value &&
       pwInput.current &&
       pwInput.current.value &&
-      pwcInput.current &&
-      pwcInput.current.value
+      pwCheckInput.current &&
+      pwCheckInput.current.value
     ) {
-      if(pwInput.current.value === pwcInput.current.value) 
+      if(pwInput.current.value === pwCheckInput.current.value) 
         return true;
       else {
         alert("비밀번호가 일치하지 않습니다.");
@@ -59,8 +62,12 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   }
 
   //이메일 인증
-  const EmailAuthentication = () => {
-    
+  const emailAuthentication = () => {
+    if(emailInput.current?.value && emailCheckInput.current?.value) {
+      axios.put("/users/email-verifications", {email: emailInput.current?.value, code: emailCheckInput.current?.value})
+        .then(res => alert("인증 되었습니다."))
+        .catch(err => alert(`에러 ${err.status}`))
+    }
   }
 
   //회원가입
@@ -100,8 +107,12 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <S.CheckOverlap down={48}>중복 확인</S.CheckOverlap>
           <S.Input ref={emailInput} placeholder="이메일" />
           <S.CheckOverlap down={64.5}>중복 확인</S.CheckOverlap>
-          <S.Input placeholder="이메일 인증 번호" />
-          <S.VerifyEmail onClick={()=>requestEmailVerification()}>전송 요청</S.VerifyEmail>
+          <S.Input ref={emailCheckInput} placeholder="이메일 인증 번호" />
+          {onVerification ?
+            <S.VerifyEmail onClick={()=>emailAuthentication()}>인증</S.VerifyEmail>
+            :
+            <S.VerifyEmail onClick={()=>requestEmailVerification()}>전송 요청</S.VerifyEmail>
+          }
           <S.Input ref={pwInput} placeholder="비밀번호" />
           <S.Input placeholder="비밀번호 확인" />
 
