@@ -163,8 +163,8 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
             :
             <S.Check down={83} onClick={()=>requestEmailVerification()}>전송 요청</S.Check>
           }
-          <S.Input ref={pwInput} placeholder="비밀번호" />
-          <S.Input placeholder="비밀번호 확인" />
+          <S.Input ref={pwInput} type="password" placeholder="비밀번호" />
+          <S.Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
 
           <S.Button onClick={()=>signup()}>회원가입</S.Button>
         </S.Wrapper>
