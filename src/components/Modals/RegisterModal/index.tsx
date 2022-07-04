@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import * as S from "./styles";
 
 interface RegisterModalInterface {
@@ -87,6 +87,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       axios.post("/users/email-verifications", {email: emailInput.current.value})
         .then(res => alert("요청 되었습니다."))
         .catch(err => alert(`에러 ${err.response.status}`))
+      setOnVerification(true);
     }
     else{
       alert("이메일을 입력해주세요.");
