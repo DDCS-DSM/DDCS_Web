@@ -11,7 +11,7 @@ export const PreHeader = styled.div`
 `;
 
 export const Header = styled.div`
-  width: inherit;
+  width: 98%;
   height: inherit;
 
   display: flex;
