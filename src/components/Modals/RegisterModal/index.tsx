@@ -75,17 +75,21 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           alert("가능합니다.");
         }
         else{
-          alert("에러");
+          alert(`에러 ${err.response.status}`);
         }
       })
   }
 
   //이메일 인증 요청
   const requestEmailVerification = () => {
-    if(emailInput.current?.value){
-      axios.post("/email-verifications", {action: "SIGNUP", value: pwInput})
+    console.log(emailInput.current?.value);
+    if(emailInput.current?.value) {
+      axios.post("/users/email-verifications", {email: emailInput.current.value})
         .then(res => alert("요청 되었습니다."))
-        .catch(err => alert(`에러 ${err.status}`))
+        .catch(err => alert(`에러 ${err.response.status}`))
+    }
+    else{
+      alert("이메일을 입력해주세요.");
     }
   }
 
@@ -97,7 +101,10 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           alert("인증 되었습니다.");
           setOnVerification(true);
         })
-        .catch(err => alert(`에러 ${err.status}`))
+        .catch(err => alert(`에러 ${err.status}`));
+    }
+    else{
+      alert("이메일과 코드를 입력해주세요.");
     }
   }
 
@@ -109,8 +116,15 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
         password: pwInput.current?.value, // 영어, 숫자, 특수문자 포함 8자 이상
         email: emailInput.current?.value, // 학교 이메일
         name: nameInput.current?.value, // 이름
-        phoneNumber: "010-1122-1211", // 전화번호
-        studentNumber: "2211" // 학번
+        phoneNumber: phoneNumberInput.current?.value, // 전화번호
+        studentNumber: studentNumberInput.current?.value // 학번
+      })
+      .then(res => {
+        alert("회원가입 완료.");
+        window.location.href = "/";
+      })
+      .catch(err => {
+        alert(`에러 ${err.response.status}`);
       })
     }
   }
