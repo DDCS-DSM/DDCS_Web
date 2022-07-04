@@ -92,11 +92,15 @@ export const Input = styled.input`
 `;
 
 interface downPorps {
-  down: number;
+  down?: number;
+  check?: boolean;
 }
 
 export const Check = styled.div<downPorps>`
-  margin-bottom: ${props => 72.5 - props.down}vh;
+
+  color: ${props => props.check ? "blue" : "black"};
+
+  margin-bottom: ${(props) => props.down ? 72.5 - props.down : 72.5}vh;
   margin-left: 35vh;
   
   position: absolute;
