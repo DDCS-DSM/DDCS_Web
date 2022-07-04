@@ -1,20 +1,33 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import * as S from "./styles";
 import { Title, Button } from "../../styles/common";
+import userProps from "../../userProps";
+import { useRef } from "react";
 
 const Privacy = () => {
 
+  const [user, setUser] = useState<userProps>();
+  const emailRef = useRef<HTMLInputElement>(null);
+
   useEffect(()=>{
     axios.get("/")
-      .then(res => res.data)
-      .catch(err => alert("로그인을 먼저 해주세요."));
+      .then(res => setUser(res.data))
+      .catch(err => {
+        alert("로그인을 먼저 해주세요.");
+        window.location.href = "/";
+      });
   },[])
 
   const rectifyPrivacy = () => {
-    axios.post("/")
-      .then(res => res.data)
-      .catch(err => alert("에러가 발생했습니다."));
+    if(user?.email !== emailRef.current?.value) {
+      axios.post("/")
+        .then(res => {
+          alert("성공했습니다.");
+          window.location.href = "/";
+        })
+        .catch(err => alert(`에러가 발생했습니다. ${err.status}`));
+    }
   }
 
   return (
@@ -23,18 +36,18 @@ const Privacy = () => {
       <S.Table>
         <S.Item>
           <S.Schema>아이디</S.Schema>
-          <S.Instance>DummyId</S.Instance>
+          <S.Instance>{user?.accountId ? user.accountId : ""}</S.Instance>
         </S.Item>
         <S.Item>
           <S.Schema>이름</S.Schema>
-          <S.Instance>DummyName</S.Instance>
+          <S.Instance>{user?.name ? user.name : ""}</S.Instance>
         </S.Item>
         <S.Item>
           <S.Schema>이메일</S.Schema>
           <S.InstanceInput />
         </S.Item>
       </S.Table>
-      <Button>수정하기</Button>
+      <Button onClick={()=>rectifyPrivacy()}>수정하기</Button>
     </>
   );
 };
