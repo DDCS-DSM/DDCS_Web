@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef } from "react";
 import * as S from "./styles";
 
-import { setCookie, getCookie } from "../../../cookie";
+import { setCookie } from "../../../cookie";
 
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
@@ -38,8 +38,9 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
       })
       .then(res => {
         setCookie('access_token', res.data.access_token, 30);
-        setCookie('refresh_token', res.data.refresh_token, 100);
-        window.location.reload();
+        setCookie('refresh_token', res.data.refresh_token, 60*24*7);
+        alert("로그인 완료.");
+        window.location.href = "/";
       })
       .catch(err => alert(`에러 ${err.status}`))
     }

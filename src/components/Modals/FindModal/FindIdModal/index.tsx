@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import * as S from "./styles";
+import * as S from "../styles";
 
 interface LoginModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;

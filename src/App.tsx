@@ -12,8 +12,8 @@ import LoginModal from "./components/Modals/LoginModal";
 import PolicyModal from "./components/Modals/PolicyModal";
 import RegisterModal from "./components/Modals/RegisterModal";
 import ClaimModal from "./components/Modals/ClaimModal";
-import FindIdModal from "./components/Modals/FindIdModal";
-import FindPwModal from "./components/Modals/FindPwModal";
+import FindIdModal from "./components/Modals/FindModal/FindIdModal";
+import FindPwModal from "./components/Modals/FindModal/FindPwModal";
 
 import { setCookie, getCookie } from './cookie';
 import userProps from "./userProps";
@@ -39,7 +39,8 @@ function App() {
     const refreshToken = getCookie("DCS_refreshToken");
     
     if(accessToken) {
-      axios.get("users/mypage", {headers: {Authorization: `Barer ${accessToken}`}})
+      axios.get("users/mypage", 
+      {headers: {Authorization: `Barer ${accessToken}`}})
         .then(res => {
           setUser(res.data);
           axios.defaults.headers.common['Authorization'] = accessToken;
@@ -50,7 +51,7 @@ function App() {
             {accessToken: accessToken, refreshToken: refreshToken})
               .then(res => {
                 setCookie("DCS_accessToken", res.data.accessToken, 30);
-                setCookie("DCS_refreshToken", res.data.refreshToken, 100);
+                setCookie("DCS_refreshToken", res.data.refreshToken, 60*24*7);
 
                 axios.defaults.headers.common['Authorization'] = res.data.accessToken;
 
