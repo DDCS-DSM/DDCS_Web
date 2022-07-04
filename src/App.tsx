@@ -76,7 +76,7 @@ function App() {
       {modalState === "claim" && <ClaimModal setModalState={setModalState} />}
       {modalState === "findid" && <FindIdModal setModalState={setModalState} />}
       {modalState === "findpw" && <FindPwModal setModalState={setModalState} />}
-      <Header loginState={loginState} setModalState={setModalState} />
+      <Header loginState={loginState} setModalState={setModalState} user={user}/>
       <Title />
       <Routes>
         <Route path="/" element={<Home setModalState={setModalState} />} />
