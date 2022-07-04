@@ -7,12 +7,12 @@ import axios from 'axios';
 
 const Enlist = () => {
 
-    const [list, setList] = useState<EnlistPackageContentProps>({company: "", package: []});
+    const [list, setList] = useState<EnlistPackageContentProps>({couriercompany: "", phoneNumberRequestList: []});
 
     //택배 추가
     const addPackage = () => {
         const newList: EnlistPackageContentProps = list;
-        newList.package.push({name: "",  phone: ""});
+        newList.phoneNumberRequestList.push({phoneNumber: ""});
         setList(newList);
     }
 
@@ -20,7 +20,10 @@ const Enlist = () => {
     const enlistPackageList = () => {
         axios.post("/delivery", {
             couriercompany: "",
+            phoneNumberRequestList: list.phoneNumberRequestList
         })
+        .then(res => alert("등록 성공"))
+        .catch(err => alert("등록에 실패했습니다."))
     }
 
     return(

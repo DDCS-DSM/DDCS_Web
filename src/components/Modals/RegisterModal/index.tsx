@@ -49,7 +49,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
 
   //이메일 인증 요청
   const requestEmailVerification = () => {
-    if(checkInput()){
+    if(emailInput.current?.value){
       axios.post("/email-verifications", {action: "SIGNUP", value: pwInput})
         .then(res => alert("요청 되었습니다."))
         .catch(err => alert(`에러 ${err.status}`))

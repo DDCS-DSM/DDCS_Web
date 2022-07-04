@@ -7,12 +7,24 @@ import PackageContentProps from "../../components/Contents/Package/type";
 const PackageList = () => {
   
   const [lists, setLists] = useState<PackageContentProps[]>([]);
+  const [page, setPage] = useState<number>(1);
 
   useEffect(()=>{
     axios.get("/delivery")
       .then(res => setLists(res.data))
-      .catch(err => alert("로그인을 먼저 해주세요."));
+      .catch(err => {
+        if(err.status === 401) {
+          alert("로그인을 먼저 해주세요.");
+          window.location.href = "/";
+        }
+      });
   },[])
+
+  const loadNextPage = () => {
+    axios.get("/delivery")
+      .then()
+    setPage(page+1);
+  }
 
   return (
     <>

@@ -34,6 +34,7 @@ export const Package = styled.div`
         }
     }
 `
+
 export const Close = styled.div`
     text-align: center;
     width: 1.5vw;

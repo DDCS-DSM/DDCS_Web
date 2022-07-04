@@ -1,9 +1,8 @@
 export default interface EnlistPackageContentProps {
-    company: string;
-    package : PackageProps[];
+    couriercompany: "", 
+    phoneNumberRequestList: phoneNumberProps[]
 }
 
-export interface PackageProps {
-    phone: string;
-    name: string;
+export interface phoneNumberProps {
+    phoneNumber: string
 }
