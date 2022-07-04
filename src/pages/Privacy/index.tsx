@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import * as S from "./styles";
 import { Title, Button } from "../../styles/common";
@@ -15,17 +15,6 @@ const Privacy = ({user}: {user: userProps}) => {
       window.location.href = "/";
     }
   },[])
-
-  const rectifyPrivacy = () => {
-    if(user?.email !== emailRef.current?.value) {
-      axios.post("/")
-        .then(res => {
-          alert("성공했습니다.");
-          window.location.href = "/";
-        })
-        .catch(err => alert(`에러가 발생했습니다. ${err.status}`));
-    }
-  }
 
   return (
     <>
@@ -44,7 +33,6 @@ const Privacy = ({user}: {user: userProps}) => {
           <S.InstanceInput ref={emailRef}/>
         </S.Item>
       </S.Table>
-      <Button onClick={()=>rectifyPrivacy()}>수정하기</Button>
     </>
   );
 };
