@@ -36,7 +36,7 @@ export const Schema = styled.div`
   margin-left: 1.25vw;
   margin-right: 1.25vw;
   margin-bottom: 1vh;
-  width: 10vw;
+  width: 20vw;
 
   font-family: "HAN";
   font-size: 2.2vh;
@@ -67,13 +67,15 @@ export const Instance = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   text-align: center;
-  width: 10vw;
+  width: 20vw;
   
+  margin-top: 1.25vw;
   margin-left: 1.25vw;
   margin-right: 1.25vw;
 
   @media ( max-width: 426px ){
     font-size: 1.5vh;
+    margin-top: 1.25vw;
     margin-left: 1.25vw;
     margin-right: 1.25vw;
     width: 17vw;
