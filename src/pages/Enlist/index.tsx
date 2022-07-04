@@ -8,14 +8,14 @@ import { useRef } from 'react';
 
 const Enlist = () => {
 
-    const [list, setList] = useState<EnlistPackageContentProps>({couriercompany: "", phoneNumberRequestList: []});
+    const [list, setList] = useState<EnlistPackageContentProps[]>([]);
     
     const selectRef = useRef<HTMLSelectElement>(null);
 
     //택배 추가
     const addPackage = () => {
-        const newList: EnlistPackageContentProps = list;
-        newList.phoneNumberRequestList.push({phoneNumber: ""});
+        const newList: EnlistPackageContentProps[] = list;
+        newList.push({phoneNumber: ""});
         setList(newList);
     }
 
@@ -24,7 +24,7 @@ const Enlist = () => {
         if(selectRef.current?.innerText !== "회사를 선택해 주세요."){
             axios.post("/delivery", {
                 couriercompany: selectRef.current?.innerText,
-                phoneNumberRequestList: list.phoneNumberRequestList
+                phoneNumberRequestList: list
             })
             .then(res => alert("등록 성공"))
             .catch(err => {
