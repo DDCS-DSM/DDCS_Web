@@ -5,18 +5,15 @@ import { Title, Button } from "../../styles/common";
 import userProps from "../../userProps";
 import { useRef } from "react";
 
-const Privacy = () => {
+const Privacy = ({user}: {user: userProps}) => {
 
-  const [user, setUser] = useState<userProps>();
   const emailRef = useRef<HTMLInputElement>(null);
 
   useEffect(()=>{
-    axios.get("/")
-      .then(res => setUser(res.data))
-      .catch(err => {
-        alert("로그인을 먼저 해주세요.");
-        window.location.href = "/";
-      });
+    if(user.studentNumber === 0){
+      alert("로그인을 먼저 해주세요.");
+      window.location.href = "/";
+    }
   },[])
 
   const rectifyPrivacy = () => {
@@ -44,7 +41,7 @@ const Privacy = () => {
         </S.Item>
         <S.Item>
           <S.Schema>이메일</S.Schema>
-          <S.InstanceInput />
+          <S.InstanceInput ref={emailRef}/>
         </S.Item>
       </S.Table>
       <Button onClick={()=>rectifyPrivacy()}>수정하기</Button>

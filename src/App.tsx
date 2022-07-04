@@ -16,6 +16,7 @@ import FindIdModal from "./components/Modals/FindIdModal";
 import FindPwModal from "./components/Modals/FindPwModal";
 
 import { setCookie, getCookie } from './cookie';
+import userProps from "./userProps";
 
 //import userProps from './userProps';
 
@@ -24,7 +25,13 @@ axios.defaults.baseURL = "http://3.34.216.253:8080";
 function App() {
   const [loginState, setLoginState] = useState<boolean>(false);
   const [modalState, setModalState] = useState<string>("");
-  const [user, setUser] = useState<any>();
+  const [user, setUser] = useState<userProps>({    
+    name: "",
+    accountId: "",
+    email: "",
+    studentNumber: 0,
+    phoneNumber: ""
+  });
 
   //자동 로그인
   useEffect(() => {
@@ -85,7 +92,7 @@ function App() {
       <Title />
       <Routes>
         <Route path="/" element={<Home setModalState={setModalState} />} />
-        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/privacy" element={<Privacy user={user}/>} />
         <Route path="/list" element={<List />} />
         <Route path="/enlist" element={<Enlist />} />
         <Route path="/accept" element={<Accept />} />
