@@ -35,7 +35,7 @@ const PackageList = () => {
         <Schema>날짜</Schema>
       </SchemaWrapper>
       <Package lists={lists}/>
-      <Button>더보기</Button>
+      <Button onClick={()=>loadNextPage()}>더보기</Button>
     </>
   );
 };

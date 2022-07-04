@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import * as S from "./styles";
 
 interface RegisterModalInterface {
@@ -12,6 +12,8 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   const idInput = useRef<HTMLInputElement>(null);
   const pwInput = useRef<HTMLInputElement>(null);
   const pwcInput = useRef<HTMLInputElement>(null);
+
+  const [check, setCheck] = useState({});
 
   const checkInput = () => {
     if (
@@ -88,11 +90,18 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
         <S.Title>회원가입</S.Title>
 
         <S.Wrapper onSubmit={(e) => confirmRegister(e)}>
+          <S.Input ref={idInput} placeholder="아이디" />
+          <S.CheckOverlap down={0}>중복 확인</S.CheckOverlap>
+          <S.Input ref={nameInput} placeholder="학번" />
+          <S.CheckOverlap down={16}>중복 확인</S.CheckOverlap>
           <S.Input ref={nameInput} placeholder="이름" />
+          <S.CheckOverlap down={32}>중복 확인</S.CheckOverlap>
+          <S.Input ref={nameInput} placeholder="전화번호" />
+          <S.CheckOverlap down={48}>중복 확인</S.CheckOverlap>
           <S.Input ref={emailInput} placeholder="이메일" />
+          <S.CheckOverlap down={64.5}>중복 확인</S.CheckOverlap>
           <S.Input placeholder="이메일 인증 번호" />
           <S.VerifyEmail onClick={()=>requestEmailVerification()}>전송 요청</S.VerifyEmail>
-          <S.Input ref={idInput} placeholder="아이디" />
           <S.Input ref={pwInput} placeholder="비밀번호" />
           <S.Input placeholder="비밀번호 확인" />
 

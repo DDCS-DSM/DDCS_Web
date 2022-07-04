@@ -47,8 +47,8 @@ export const Close = styled.div`
 `;
 
 export const Title = styled.div`
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 
   font-family: "HAN";
   font-size: 5vh;
@@ -59,7 +59,7 @@ export const Title = styled.div`
 `;
 
 export const Wrapper = styled.form`
-  height: 72.5vh;
+  height: 82.5vh;
 
   display: flex;
   flex-direction: column;
@@ -88,11 +88,34 @@ export const Input = styled.input`
   }
 `;
 
+interface downPorps {
+  down: number
+}
+
+export const CheckOverlap = styled.div<downPorps>`
+  margin-bottom: ${props => 72.5 - props.down}vh;
+  margin-left: 35vh;
+  
+  position: absolute;
+
+  width: 8vh;
+  height: 6vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "HAN";
+  font-size: 1.5vh;
+
+  cursor: pointer;
+`
+
 export const VerifyEmail = styled.div`
   position: absolute;
 
   margin-left: 35vh;
-  margin-bottom: 27.5vh;
+  margin-top: 7.8vh;
 
   width: 8vh;
   height: 6vh;
@@ -111,8 +134,8 @@ export const Button = styled.button`
   all: unset;
   background-color: #f6f6f6;
 
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
 
   width: 45vh;
   height: 6vh;
