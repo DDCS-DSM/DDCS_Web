@@ -17,7 +17,7 @@ import FindPwModal from "./components/Modals/FindPwModal";
 
 import { setCookie, getCookie } from './cookie';
 
-import userProps from './userProps';
+//import userProps from './userProps';
 
 axios.defaults.baseURL = "http://3.34.216.253:8080";
 
