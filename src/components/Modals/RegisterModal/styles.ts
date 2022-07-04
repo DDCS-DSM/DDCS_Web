@@ -87,7 +87,7 @@ export const Input = styled.input`
   border-radius: 1.5vh;
 
   @media (max-width: 426px) {
-    width: 83%;
+    width: 72vw;
   }
 `;
 
@@ -115,7 +115,7 @@ export const Check = styled.div<downPorps>`
 
   @media (max-width: 426px) {
     font-size: 10px;
-    margin-left: 50vw;
+    margin-left: 56vw;
   }
 `
 
