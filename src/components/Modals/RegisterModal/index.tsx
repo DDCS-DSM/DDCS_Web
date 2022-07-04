@@ -98,20 +98,19 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
 
         <S.Wrapper onSubmit={(e) => confirmRegister(e)}>
           <S.Input ref={idInput} placeholder="아이디" />
-          <S.CheckOverlap down={0}>중복 확인</S.CheckOverlap>
+          <S.Check down={0}>중복 확인</S.Check>
           <S.Input ref={nameInput} placeholder="학번" />
-          <S.CheckOverlap down={16}>중복 확인</S.CheckOverlap>
+          <S.Check down={16}>중복 확인</S.Check>
           <S.Input ref={nameInput} placeholder="이름" />
-          <S.CheckOverlap down={32}>중복 확인</S.CheckOverlap>
           <S.Input ref={nameInput} placeholder="전화번호" />
-          <S.CheckOverlap down={48}>중복 확인</S.CheckOverlap>
+          <S.Check down={50}>중복 확인</S.Check>
           <S.Input ref={emailInput} placeholder="이메일" />
-          <S.CheckOverlap down={64.5}>중복 확인</S.CheckOverlap>
+          <S.Check down={66}>중복 확인</S.Check>
           <S.Input ref={emailCheckInput} placeholder="이메일 인증 번호" />
           {onVerification ?
-            <S.VerifyEmail onClick={()=>emailAuthentication()}>인증</S.VerifyEmail>
+            <S.Check down={83} onClick={()=>emailAuthentication()}>인증</S.Check>
             :
-            <S.VerifyEmail onClick={()=>requestEmailVerification()}>전송 요청</S.VerifyEmail>
+            <S.Check down={83} onClick={()=>requestEmailVerification()}>전송 요청</S.Check>
           }
           <S.Input ref={pwInput} placeholder="비밀번호" />
           <S.Input placeholder="비밀번호 확인" />

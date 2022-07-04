@@ -65,6 +65,10 @@ export const Wrapper = styled.form`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  
+  @media (max-width: 426px) {
+    width: 80vw;
+  }
 `;
 
 export const Input = styled.input`
@@ -82,9 +86,8 @@ export const Input = styled.input`
 
   border-radius: 1.5vh;
 
-  :nth-child(3) {
-    width: 34vh;
-    padding-right: 9vh;
+  @media (max-width: 426px) {
+    width: 83%;
   }
 `;
 
@@ -92,7 +95,7 @@ interface downPorps {
   down: number;
 }
 
-export const CheckOverlap = styled.div<downPorps>`
+export const Check = styled.div<downPorps>`
   margin-bottom: ${props => 72.5 - props.down}vh;
   margin-left: 35vh;
   
@@ -109,33 +112,19 @@ export const CheckOverlap = styled.div<downPorps>`
   font-size: 1.5vh;
 
   cursor: pointer;
+
+  @media (max-width: 426px) {
+    font-size: 10px;
+    margin-left: 50vw;
+  }
 `
-
-export const VerifyEmail = styled.div`
-  position: absolute;
-
-  margin-left: 35vh;
-  margin-top: 7.8vh;
-
-  width: 8vh;
-  height: 6vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-family: "HAN";
-  font-size: 1.5vh;
-
-  cursor: pointer;
-`;
 
 export const Button = styled.button`
   all: unset;
   background-color: #f6f6f6;
 
-  margin-top: 4vh;
-  margin-bottom: 4vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
 
   width: 45vh;
   height: 6vh;
@@ -144,6 +133,7 @@ export const Button = styled.button`
   font-size: 2.5vh;
   @media (max-width: 426px) {
     font-size: 12px;
+    width: 75vw;
   }
   text-align: center;
 
