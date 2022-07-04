@@ -33,7 +33,10 @@ function App() {
     
     if(accessToken) {
       axios.get("users/mypage", {headers: {Authorization: `Barer ${accessToken}`}})
-        .then(res => setUser(res.data))
+        .then(res => {
+          setUser(res.data);
+          axios.defaults.headers.common['Authorization'] = accessToken;
+        })
         .catch(err => {
           if(err.status === 401 && refreshToken){
             axios.post("/users/token", 
@@ -41,6 +44,8 @@ function App() {
               .then(res => {
                 setCookie("DCS_accessToken", res.data.accessToken, 30);
                 setCookie("DCS_refreshToken", res.data.refreshToken, 100);
+
+                axios.defaults.headers.common['Authorization'] = res.data.accessToken;
 
                 axios.get("users/mypage", {headers: {Authorization: `Barer ${res.data.accessToken}`}})
                   .then(res => setUser(res.data))
