@@ -7,7 +7,7 @@ let setInput: Function;
 const ElistPackageContent = ({ phone, index } : {phone : EnlistPackageContentProps["phoneNumber"], index: number}) => {
   return(
         <S.Package>
-          <input placeholder={'전화번호를 입력해주세요.'} value={phone} onChange={e =>setInput(e)}/>
+          <input placeholder={'전화번호를 입력해주세요.'} value={phone} onChange={e =>setInput(e.target.value, index)}/>
           <S.Close onClick={()=>remove(index)}>✕</S.Close>
         </S.Package>
     )
@@ -28,8 +28,8 @@ const List = ({ list, setList } : {list: EnlistPackageContentProps[], setList: R
 
   setInput = (text: string, index: number) => {
     let newList: EnlistPackageContentProps[] = list;
-    newList[index].phoneNumber = text;
-    setList(newList);
+    newList[index].phoneNumber = text.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1').slice(0, 11);
+    setList([...newList]);
   }
 
   return(

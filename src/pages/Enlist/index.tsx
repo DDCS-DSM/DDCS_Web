@@ -17,7 +17,7 @@ const Enlist = () => {
     const addPackage = () => {
         const newList: EnlistPackageContentProps[] = list;
         newList.push({phoneNumber: ""});
-        setList(newList);
+        setList([...newList]);
     }
 
     const navigate = useNavigate();
