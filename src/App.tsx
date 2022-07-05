@@ -39,7 +39,7 @@ function App() {
     const accessToken = cookie.load("DCS_accessToken");
     const refreshToken = cookie.load("DCS_refreshToken");
     if(accessToken) {
-      axios.defaults.headers.common['Authorization'] = `Barer ${accessToken}`;
+      axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
       axios.get("users/mypage")
         .then(res => {
           console.log(1);
@@ -56,7 +56,7 @@ function App() {
                 cookie.save("DCS_accessToken", res.data.accessToken, { path: '/' });
                 cookie.save("DCS_refreshToken", res.data.refreshToken, { path: '/' });
 
-                axios.defaults.headers.common['Authorization'] = `Barer ${res.data.accessToken}`;
+                axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
 
                 axios.get("users/mypage")
                   .then(res => setUser(res.data))
@@ -66,19 +66,25 @@ function App() {
     }
   },[])
 
+  interface winProps extends globalThis.Window { 
+    ReactNativeWebView?: {
+      postMessage(msg: string): void; 
+    }
+  };
+
+  useEffect(()=>{
+    const win: winProps = window;
+    if(user.studentNumber !== 0 && win.ReactNativeWebView) {
+      win.ReactNativeWebView.postMessage(String(user.studentNumber));
+    }
+  },[user])
+
   useEffect(() => {
     if(user.studentNumber === 0 && location.pathname !== "/"){
       navigate("/");  
       alert("로그인을 먼저 해주십쇼.");
     }
   },[location.pathname])
-
-  const loginCheck = () => {
-    if(user.studentNumber === 0){
-      alert("로그인을 먼저 해주십쇼.");
-      navigate("/");
-    }
-  }
 
   useEffect(() => {
     const close = (e: any) => {
