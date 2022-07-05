@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
 import { setCookie } from "../../../cookie";
@@ -30,6 +31,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
     }
   }
 
+  const navigate = useNavigate();
+
   const login = () => {
     if(checkInput()) {
       axios.post("/users/token", {
@@ -40,7 +43,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
         setCookie('access_token', res.data.access_token, 30);
         setCookie('refresh_token', res.data.refresh_token, 60*24*7);
         alert("로그인 완료.");
-        window.location.href = "/";
+        navigate("/");
       })
       .catch(err => alert(`에러 ${err.status}`))
     }

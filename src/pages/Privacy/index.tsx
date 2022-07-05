@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import axios from "axios";
 import * as S from "./styles";
 import { Title, Button } from "../../styles/common";
 import userProps from "../../userProps";
@@ -8,13 +6,6 @@ import { useRef } from "react";
 const Privacy = ({user}: {user: userProps}) => {
 
   const emailRef = useRef<HTMLInputElement>(null);
-
-  useEffect(()=>{
-    if(user.studentNumber === 0){
-      alert("로그인을 먼저 해주세요.");
-      window.location.href = "/";
-    }
-  },[])
 
   return (
     <>

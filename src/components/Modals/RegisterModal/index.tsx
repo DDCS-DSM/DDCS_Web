@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
 interface RegisterModalInterface {
@@ -109,6 +110,8 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
     }
   }
 
+  const navigate = useNavigate();
+
   //회원가입
   const signup = () => {
     if(checkInput()){
@@ -122,7 +125,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       })
       .then(res => {
         alert("회원가입 완료.");
-        window.location.href = "/";
+        navigate("/");
       })
       .catch(err => {
         alert(`에러 ${err.response.status}`);

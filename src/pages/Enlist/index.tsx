@@ -5,6 +5,7 @@ import EnlistPackageContentProps from '../../components/Contents/EnlistPackage/t
 import { useState } from 'react';
 import axios from 'axios';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Enlist = () => {
 
@@ -19,6 +20,8 @@ const Enlist = () => {
         setList(newList);
     }
 
+    const navigate = useNavigate();
+
     //택배 등록
     const enlistPackageList = () => {
         if(selectRef.current?.innerText !== "회사를 선택해 주세요."){
@@ -30,7 +33,7 @@ const Enlist = () => {
             .catch(err => {
                 if(err.status === 401){
                     alert("로그인을 먼저 해주세요.");
-                    window.location.href = "/";
+                    navigate("/");
                 }
                 else {
                     alert(`등록에 실패했습니다. ${err.status}`);

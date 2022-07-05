@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { Home, Privacy, Enlist, List, Accept } from "./pages";
@@ -33,6 +33,8 @@ function App() {
     phoneNumber: ""
   });
 
+  const navigate = useNavigate();
+
   //자동 로그인
   useEffect(() => {
     const accessToken = getCookie("DCS_accessToken");
@@ -62,6 +64,13 @@ function App() {
         })
     }
   },[])
+
+  const loginCheck = () => {
+    if(user.studentNumber === 0){
+      alert("로그인을 먼저 해주십쇼.");
+      navigate("/");
+    }
+  }
 
   useEffect(() => {
     const close = (e: any) => {
@@ -93,7 +102,7 @@ function App() {
       <Title />
       <Routes>
         <Route path="/" element={<Home setModalState={setModalState} />} />
-        <Route path="/privacy" element={<Privacy user={user}/>} />
+        <Route path="/privacy" element={<Privacy user={user}/>}/>
         <Route path="/list" element={<List />} />
         <Route path="/enlist" element={<Enlist />} />
         <Route path="/accept" element={<Accept />} />
