@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
-import { setCookie } from "../../../cookie";
+import { setCookie } from "../../../Functions/cookie"
 
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;

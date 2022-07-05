@@ -15,7 +15,7 @@ import ClaimModal from "./components/Modals/ClaimModal";
 import FindIdModal from "./components/Modals/FindModal/FindIdModal";
 import FindPwModal from "./components/Modals/FindModal/FindPwModal";
 
-import { setCookie, getCookie } from './cookie';
+import { setCookie, getCookie } from './Functions/cookie';
 import userProps from "./userProps";
 
 //import userProps from './userProps';
