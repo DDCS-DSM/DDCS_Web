@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const PhraseWrapper = styled.div`
-  margin-bottom: 2.5vh;
+  margin-bottom: 10vh;
 
-  height: 60vh;
+  height: 45vh;
   @media ( max-width: 426px ){
     height: 30vh;
     margin-bottom: 4vh;
@@ -11,7 +11,7 @@ export const PhraseWrapper = styled.div`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -19,7 +19,7 @@ export const Phrase = styled.p`
   all: unset;
 
   font-family: "HAN";
-  font-size: 3.5vh;
+  font-size: 3vh;
   @media ( max-width: 426px ){
     font-size: 2vh;
     width: 90vw;
