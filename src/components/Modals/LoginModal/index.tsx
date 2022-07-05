@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
@@ -14,6 +14,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
 
   const idInput = useRef<HTMLInputElement | null>(null);
   const pwInput = useRef<HTMLInputElement | null>(null);
+
+  const [toAdmin, setToAdmin] = useState<boolean>(false);
 
   const checkInput = () => {
     if(
@@ -35,7 +37,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
 
   const login = () => {
     if(checkInput()) {
-      axios.post("/users/token", {
+      axios.post(`${toAdmin ? "/admin" : "/users/token"}`, {
         accountId: idInput.current?.value,
         password: pwInput.current?.value
       })
@@ -59,8 +61,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
           <S.Input type="password" ref={pwInput} placeholder="비밀번호" />
           <S.CheckboxDiv>
             <S.CheckboxWrapper>
-              <S.Checkbox id="saveid" type="checkbox" />
-              <S.Label htmlFor="saveid">아이디 저장</S.Label>
+              <S.Checkbox onChange={(e)=>setToAdmin(e.target.checked)} checked={toAdmin} type="checkbox" />
+              <S.Label>운영자 계정으로 로그인</S.Label>
             </S.CheckboxWrapper>
           </S.CheckboxDiv>
 
