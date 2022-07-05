@@ -42,8 +42,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
         password: pwInput.current?.value
       })
       .then(res => {
-        cookie.save('access_token', res.data.accessToken, { path: '/' });
-        cookie.save('refresh_token', res.data.refreshToken, { path: '/' });
+        cookie.save('DCS_accessToken', res.data.accessToken, { path: '/' });
+        cookie.save('DCS_refreshToken', res.data.refreshToken, { path: '/' });
         alert("로그인 완료.");
         navigate("/");
       })

@@ -37,25 +37,27 @@ function App() {
   useEffect(() => {
     const accessToken = cookie.load("DCS_accessToken");
     const refreshToken = cookie.load("DCS_refreshToken");
-    
     if(accessToken) {
-      axios.get("users/mypage", 
-      {headers: {Authorization: `Barer ${accessToken}`}})
+      axios.defaults.headers.common['Authorization'] = `Barer ${accessToken}`;
+      axios.get("users/mypage")
         .then(res => {
+          console.log(1);
+          setLoginState(true);
           setUser(res.data);
-          axios.defaults.headers.common['Authorization'] = accessToken;
         })
         .catch(err => {
+          console.log(err.response.status);
           if(err.status === 401 && refreshToken){
-            axios.post("/users/token", 
+            axios.patch("/users/token", 
             {accessToken: accessToken, refreshToken: refreshToken})
               .then(res => {
+                setLoginState(true);
                 cookie.save("DCS_accessToken", res.data.accessToken, { path: '/' });
                 cookie.save("DCS_refreshToken", res.data.refreshToken, { path: '/' });
 
-                axios.defaults.headers.common['Authorization'] = res.data.accessToken;
+                axios.defaults.headers.common['Authorization'] = `Barer ${res.data.accessToken}`;
 
-                axios.get("users/mypage", {headers: {Authorization: `Barer ${res.data.accessToken}`}})
+                axios.get("users/mypage")
                   .then(res => setUser(res.data))
               })
           }
