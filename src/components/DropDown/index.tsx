@@ -1,4 +1,5 @@
 import axios from "axios";
+import cookie from 'react-cookies'
 //import { setCookie } from "../../cookie";
 import * as S from "./styles";
 
@@ -11,9 +12,12 @@ const DropDown = ({ setDropDownVisible }: DropDownProps) => {
   const logOut = () => {
     axios.delete("/users/logout")
       .then(res => {
+        alert("로그아웃 되었습니다.");
+        cookie.remove("DCS_accessToken");
+        cookie.remove("DCS-refreshToken");
         window.location.reload();
       })
-      .catch(err => alert("로그아웃에 실패했습니다."))
+      .catch(err => alert(`에러. ${err.response.status}`))
   }
 
   return (

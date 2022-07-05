@@ -15,10 +15,8 @@ import ClaimModal from "./components/Modals/ClaimModal";
 import FindIdModal from "./components/Modals/FindModal/FindIdModal";
 import FindPwModal from "./components/Modals/FindModal/FindPwModal";
 
-import { setCookie, getCookie } from './Functions/cookie';
+import cookie from 'react-cookies'
 import userProps from "./userProps";
-
-//import userProps from './userProps';
 
 axios.defaults.baseURL = "http://3.34.216.253:8080";
 
@@ -37,8 +35,8 @@ function App() {
 
   //자동 로그인
   useEffect(() => {
-    const accessToken = getCookie("DCS_accessToken");
-    const refreshToken = getCookie("DCS_refreshToken");
+    const accessToken = cookie.load("DCS_accessToken");
+    const refreshToken = cookie.load("DCS_refreshToken");
     
     if(accessToken) {
       axios.get("users/mypage", 
@@ -52,8 +50,8 @@ function App() {
             axios.post("/users/token", 
             {accessToken: accessToken, refreshToken: refreshToken})
               .then(res => {
-                setCookie("DCS_accessToken", res.data.accessToken, 30);
-                setCookie("DCS_refreshToken", res.data.refreshToken, 60*24*7);
+                cookie.save("DCS_accessToken", res.data.accessToken, { path: '/' });
+                cookie.save("DCS_refreshToken", res.data.refreshToken, { path: '/' });
 
                 axios.defaults.headers.common['Authorization'] = res.data.accessToken;
 

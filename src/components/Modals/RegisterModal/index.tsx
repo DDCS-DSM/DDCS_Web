@@ -19,6 +19,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
 
   const [onVerification, setOnVerification] = useState<boolean>(false);
 
+  //모달 안닫치는 버그 있음.
   const checkInput = () => {
     if (
       nameInput.current &&
@@ -30,7 +31,11 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       pwInput.current &&
       pwInput.current.value &&
       pwCheckInput.current &&
-      pwCheckInput.current.value
+      pwCheckInput.current.value&&
+      phoneNumberInput.current&&
+      phoneNumberInput.current.value&&
+      studentNumberInput.current&&
+      studentNumberInput.current.value
     ) {
       if(pwInput.current.value === pwCheckInput.current.value) 
         return true;

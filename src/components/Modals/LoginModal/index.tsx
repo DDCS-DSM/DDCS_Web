@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 
-import { setCookie } from "../../../Functions/cookie"
+import cookie from 'react-cookies'
 
 interface LoginModalInterface {
   setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
@@ -42,12 +42,14 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
         password: pwInput.current?.value
       })
       .then(res => {
-        setCookie('access_token', res.data.access_token, 30);
-        setCookie('refresh_token', res.data.refresh_token, 60*24*7);
+        cookie.save('access_token', res.data.accessToken, { path: '/' });
+        cookie.save('refresh_token', res.data.refreshToken, { path: '/' });
         alert("로그인 완료.");
         navigate("/");
       })
-      .catch(err => alert(`에러 ${err.status}`))
+      .catch(err => {
+        alert(`에러 ${err.response.status}`)
+      })
     }
   }
 
