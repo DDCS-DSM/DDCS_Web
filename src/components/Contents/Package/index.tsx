@@ -4,16 +4,16 @@ import PackageContentProps from "./type";
 import { useLocation } from "react-router-dom";
 //import axios from "axios";
 
-const PackageContent = ({ id, company, presentee, date }: PackageContentProps) => {
+const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps) => {
   
   const location = useLocation();
   const pathname = location.pathname;
 
   function packageClickEvent(){
-    if(pathname === "list"){
+    if(pathname === "/list"){
 
     }
-    else if (pathname === "accept"){
+    else if (pathname === "/accept"){
 
     }
   }
@@ -21,8 +21,8 @@ const PackageContent = ({ id, company, presentee, date }: PackageContentProps) =
   return (
     <S.Package onClick={() => packageClickEvent()}>
       <S.Icon src={box} />
-      <S.Instance>{company}</S.Instance>
-      <S.Instance>{presentee}</S.Instance>
+      <S.Instance>{courierCompany}</S.Instance>
+      <S.Instance>{name}</S.Instance>
       <S.Instance>{date}</S.Instance>
     </S.Package>
   );
@@ -35,7 +35,7 @@ const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
         <>
           {lists.map(i => {
             return(
-              <PackageContent id={i.id} company={i.company} presentee={i.presentee} date={i.date}/>
+              <PackageContent key={i.id} id={i.id} courierCompany={i.courierCompany} name={i.name} date={i.date}/>
             )
           })}
         </>

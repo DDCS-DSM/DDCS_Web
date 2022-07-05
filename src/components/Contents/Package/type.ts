@@ -1,6 +1,6 @@
 export default interface PackageContentProps {
     id: number;
-    company: string;
-    presentee: string;
+    courierCompany: string;
+    name: string;
     date: string;
 }
