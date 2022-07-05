@@ -83,7 +83,7 @@ function App() {
   }, [setModalState]);
 
   return (
-    <BrowserRouter>
+    <>
       <GlobalStyle />
       {modalState === "login" && (
         <LoginModal
@@ -108,7 +108,7 @@ function App() {
         <Route path="/accept" element={<Accept />} />
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }
 
