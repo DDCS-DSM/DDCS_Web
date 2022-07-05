@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 import { Home, Privacy, Enlist, List, Accept } from "./pages";
@@ -32,6 +32,7 @@ function App() {
   });
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   //자동 로그인
   useEffect(() => {
@@ -64,6 +65,13 @@ function App() {
         })
     }
   },[])
+
+  useEffect(() => {
+    if(user.studentNumber === 0 && location.pathname !== "/"){
+      navigate("/");  
+      alert("로그인을 먼저 해주십쇼.");
+    }
+  },[location.pathname])
 
   const loginCheck = () => {
     if(user.studentNumber === 0){
