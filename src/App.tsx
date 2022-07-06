@@ -68,7 +68,7 @@ function App() {
       navigate("/");  
       alert("로그인을 먼저 해주십쇼.");
     }
-  },[])
+  },[location.pathname, navigate, user.studentNumber])
 
   interface winProps extends globalThis.Window { 
     ReactNativeWebView?: {
