@@ -51,13 +51,17 @@ const Enlist = () => {
             <S.SchemaWrapper/>
             <S.Company ref={selectRef}>
                 <option>회사를 선택해 주세요.</option>
-                <option>우체국 택배</option>
+                <option>쿠팡</option>
                 <option>CJ 대한통운</option>
-                <option>한진택배</option>
-                <option>롯대택배</option>
+                <option>한진</option>
+                <option>롯대</option>
+                <option>로젠</option>
+                <option>우체국</option>
                 <option>기타</option>
             </S.Company>
-            <EnlistPackage list={list} setList={setList} />
+            <S.List>
+                <EnlistPackage list={list} setList={setList} />
+            </S.List>
             <S.ButtonDiv>
                 <S.Button onClick={()=>addPackage()}>추가</S.Button>
                 <S.Button onClick={()=>enlistPackageList()}>등록</S.Button>

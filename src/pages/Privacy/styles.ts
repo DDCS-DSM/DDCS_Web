@@ -55,20 +55,3 @@ export const Instance = styled.div`
   justify-content: left;
   align-items: center;
 `;
-
-export const InstanceInput = styled.input`
-  padding-left: 2vw;
-  width: 56vw;
-
-  display: flex;
-  justify-content: left;
-  align-items: center;
-
-  outline: 0;
-  border: 0;
-
-  font-size: 2.5vh;
-  @media ( max-width: 426px ){
-    font-size: 2vh;
-  }
-`;

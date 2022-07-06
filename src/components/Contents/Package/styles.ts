@@ -61,6 +61,10 @@ export const Instance = styled.div`
   }
 `;
 
+export const InstanceInput = styled.input`
+
+`
+
 export const Icon = styled.img`
   width: 4.5vh;
   height: 4.5vh;

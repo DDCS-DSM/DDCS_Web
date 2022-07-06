@@ -1,34 +1,47 @@
 import * as S from "./styles";
 import { box } from "../../../assets/images";
 import PackageContentProps from "./type";
-import { useLocation } from "react-router-dom";
-//import axios from "axios";
+import { useState } from "react";
+import axios from "axios";
+
+let endRewrite: Function;
 
 const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps) => {
-  
-  const location = useLocation();
-  const pathname = location.pathname;
 
-  function packageClickEvent(){
-    if(pathname === "/list"){
-
-    }
-    else if (pathname === "/accept"){
-
-    }
-  }
+  const [onReWrite, setOnReWrite] = useState<boolean>(false);
+  const [newName, setNewName] = useState<string>(name);
 
   return (
-    <S.Package onClick={() => packageClickEvent()}>
+    <S.Package>
       <S.Icon src={box} />
       <S.Instance>{courierCompany}</S.Instance>
-      <S.Instance>{name}</S.Instance>
+      {!onReWrite ?
+        <S.Instance>{name}</S.Instance>
+        :
+        <S.InstanceInput value={newName} onChange={(e)=>setNewName(e.target.value)} onBlur={()=>endRewrite(id, setNewName, newName, name)}/>
+      }
       <S.Instance>{date}</S.Instance>
     </S.Package>
   );
 };
 
 const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
+
+  endRewrite = (
+    id: number, 
+    setOnReWrite: React.Dispatch<React.SetStateAction<boolean>>,
+    newName: string,
+    name: string) => {
+
+    setOnReWrite(false);
+
+    if(newName !== name){
+      axios.post(`/delivery/${id}/${newName}`)
+        .then(res => alert("변경완료."))
+        .catch(err => alert(`에러. ${err.response.status}`))
+    }
+  }
+
   return(
     <S.List>
       {lists.length ?

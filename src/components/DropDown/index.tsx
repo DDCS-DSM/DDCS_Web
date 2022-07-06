@@ -15,6 +15,7 @@ const DropDown = ({ setDropDownVisible }: DropDownProps) => {
         alert("로그아웃 되었습니다.");
         cookie.remove("DCS_accessToken");
         cookie.remove("DCS-refreshToken");
+        axios.defaults.headers.common['Authorization'] = "";
         window.location.reload();
       })
       .catch(err => alert(`에러. ${err.response.status}`))
@@ -23,7 +24,7 @@ const DropDown = ({ setDropDownVisible }: DropDownProps) => {
   return (
     <S.Wrapper onClick={() => setDropDownVisible(false)}>
       <S.Background>
-        <S.Content to="/privacy">정보 변경</S.Content>
+        <S.Content to="/privacy">프로필</S.Content>
         <S.Content onClick={()=>alert("미구현")} to="/">문의하기</S.Content>
         <S.Content onClick={()=>logOut()} to="/">로그아웃</S.Content>
       </S.Background>

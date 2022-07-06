@@ -27,6 +27,15 @@ export const Company = styled.select`
   }
 `
 
+export const List = styled.div`
+  min-height: 40vw;
+  margin: 0 auto;
+  width: 75vw;
+  @media ( max-width: 425px ){
+    width: 90vw;
+  }
+`
+
 export const ButtonDiv = styled.div`
   display: flex;
   justify-content: center;

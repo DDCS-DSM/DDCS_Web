@@ -44,8 +44,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
       .then(res => {
         cookie.save('DCS_accessToken', res.data.accessToken, { path: '/' });
         cookie.save('DCS_refreshToken', res.data.refreshToken, { path: '/' });
-        alert("로그인 완료.");
         navigate("/");
+        window.location.reload();
       })
       .catch(err => {
         alert(`에러 ${err.response.status}`)

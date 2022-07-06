@@ -5,8 +5,8 @@ export const PhraseWrapper = styled.div`
 
   height: 45vh;
   @media ( max-width: 426px ){
-    height: 30vh;
-    margin-bottom: 4vh;
+    height: 25vh;
+    margin-bottom: 6vh;
   }
 
   display: flex;
