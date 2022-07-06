@@ -98,6 +98,28 @@ function App() {
     return () => window.removeEventListener("keydown", close);
   }, [setModalState]);
 
+  const nomalBodyCss = `      
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;`
+
+  useEffect(()=>{
+    if(modalState){
+      document.body.style.cssText = `
+      position: fixed; 
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 100%;
+      ${nomalBodyCss}`;
+    }
+    else{
+      document.body.style.cssText = nomalBodyCss;
+    }
+  },[modalState])
+
   return (
     <>
       <GlobalStyle />
