@@ -16,7 +16,7 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
       <S.Icon src={box} />
       <S.Instance>{courierCompany}</S.Instance>
       {!onReWrite ?
-        <S.Instance>{name}</S.Instance>
+        <S.Instance onClick={()=>setOnReWrite(true)}>{name}</S.Instance>
         :
         <S.InstanceInput value={newName} onChange={(e)=>setNewName(e.target.value)} onBlur={()=>endRewrite(id, setNewName, newName, name)}/>
       }
