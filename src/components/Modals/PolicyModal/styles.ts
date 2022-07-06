@@ -15,22 +15,6 @@ export const Filter = styled.div`
   z-index: 1;
 `;
 
-export const Background = styled.div`
-  background-color: #fff;
-
-  width: 60vh;
-  @media (max-width: 426px) {
-    width: 90vw;
-  }
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  border-radius: 1.5vh;
-  z-index: 2;
-`;
-
 export const Close = styled.div`
   position: absolute;
 
@@ -45,28 +29,6 @@ export const Close = styled.div`
   font-weight: 100;
 
   cursor: pointer;
-`;
-
-export const Title = styled.div`
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-
-  font-family: "HAN";
-  font-size: 5vh;
-  font-weight: 600;
-  @media (max-width: 426px) {
-    font-size: 25px;
-  }
-`;
-
-export const Text = styled.div`
-  margin-bottom: 0.4vh;
-
-  font-family: "HAN";
-  font-size: 2vh;
-  @media (max-width: 426px) {
-    font-size: 1.8vh;
-  }
 `;
 
 export const SchemaWrapper = styled.div`
@@ -161,7 +123,7 @@ export const Label = styled.label`
   font-size: 1.75vh;
 
   @media (max-width: 426px) {
-    font-size: 1.3vh;
+    font-size: 11px;
   }
 `;
 
@@ -171,41 +133,5 @@ export const SubText = styled.div`
   text-align: center;
   @media (max-width: 426px) {
     font-size: 10px;
-  }
-`;
-
-export const Button = styled.button`
-  all: unset;
-  background-color: #f6f6f6;
-
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-
-  width: 45vh;
-  height: 6vh;
-
-  font-family: "HAN";
-  font-size: 2.5vh;
-  text-align: center;
-
-  border-radius: 1.5vh;
-
-  @media (max-width: 426px) {
-    width: 70vw;
-    height: 35px;
-    font-size: 12px;
-    border-radius: 10px;
-  }
-
-  cursor: pointer;
-  transition: filter 0.25s;
-
-  :disabled {
-    cursor: default;
-    filter: brightness(90%);
-  }
-
-  :hover:enabled {
-    filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
   }
 `;

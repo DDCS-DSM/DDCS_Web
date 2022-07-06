@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
+import { Title, Wrapper, Filter, Background, Close, Input } from "../styles";
 
 import cookie from 'react-cookies'
 
@@ -40,6 +41,9 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
       axios.post(`${toAdmin ? "/admin" : "/users/token"}`, {
         accountId: idInput.current?.value,
         password: pwInput.current?.value
+      },
+      {
+        headers:{Authorization: ""}
       })
       .then(res => {
         cookie.save('DCS_accessToken', res.data.accessToken, { path: '/' });
@@ -54,13 +58,13 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
   }
 
   return (
-    <S.Filter>
-      <S.Background>
-        <S.Close onClick={() => setModalState("")}>✕</S.Close>
-        <S.Title>로그인</S.Title>
-        <S.Wrapper>
-          <S.Input ref={idInput} placeholder="아이디" />
-          <S.Input type="password" ref={pwInput} placeholder="비밀번호" />
+    <Filter>
+      <Background>
+        <Close onClick={() => setModalState("")}>✕</Close>
+        <Title>로그인</Title>
+        <Wrapper onSubmit={()=> login()}>
+          <Input ref={idInput} placeholder="아이디" />
+          <Input type="password" ref={pwInput} placeholder="비밀번호" />
           <S.CheckboxDiv>
             <S.CheckboxWrapper>
               <S.Checkbox onChange={(e)=>setToAdmin(e.target.checked)} checked={toAdmin} type="checkbox" />
@@ -69,7 +73,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
           </S.CheckboxDiv>
 
           <S.Button onClick={()=>login()}>로그인</S.Button>
-        </S.Wrapper>
+        </Wrapper >
         <S.TextWrapper>
           <S.Text>
             계정이 없으신가요?
@@ -84,8 +88,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
           <S.Link onClick={() => setModalState("findid")}>아이디 찾기</S.Link>
           <S.Link onClick={() => setModalState("findpw")}>비밀번호 찾기</S.Link>
         </S.TextWrapper>
-      </S.Background>
-    </S.Filter>
+      </Background>
+    </Filter>
   );
 };
 

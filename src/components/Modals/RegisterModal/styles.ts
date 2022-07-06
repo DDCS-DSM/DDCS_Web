@@ -1,35 +1,5 @@
 import styled from "styled-components";
 
-export const Filter = styled.div`
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.25);
-
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 1;
-`;
-
-export const Background = styled.div`
-  background-color: #fff;
-
-  width: 60vh;
-  @media (max-width: 426px) {
-    width: 90vw;
-  }
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  border-radius: 1.5vh;
-  z-index: 2;
-`;
-
 export const Close = styled.div`
   position: absolute;
 
@@ -44,31 +14,6 @@ export const Close = styled.div`
   font-weight: 100;
 
   cursor: pointer;
-`;
-
-export const Title = styled.div`
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-
-  font-family: "HAN";
-  font-size: 5vh;
-  @media (max-width: 426px) {
-    font-size: 4vh;
-  }
-  font-weight: 600;
-`;
-
-export const Wrapper = styled.form`
-  height: 82.5vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  
-  @media (max-width: 426px) {
-    width: 80vw;
-  }
 `;
 
 export const Input = styled.input`
@@ -88,6 +33,8 @@ export const Input = styled.input`
 
   @media (max-width: 426px) {
     width: 72vw;
+    font-size: 12px;
+    height: 40px;
   }
 `;
 
@@ -96,11 +43,22 @@ interface downPorps {
   check?: boolean;
 }
 
+export const Wrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width: 426px) {
+    width: 80vw;
+  }
+`;
+
 export const Check = styled.div<downPorps>`
 
   color: ${props => props.check ? "blue" : "black"};
 
-  margin-bottom: ${(props) => props.down ? 72.5 - props.down : 72.5}vh;
+  margin-bottom: ${(props) => props.down ? 70 - props.down : 70}vh;
   margin-left: 35vh;
   
   position: absolute;
@@ -122,36 +80,3 @@ export const Check = styled.div<downPorps>`
     margin-left: 56vw;
   }
 `
-
-export const Button = styled.button`
-  all: unset;
-  background-color: #f6f6f6;
-
-  margin-top: 3vh;
-  margin-bottom: 3vh;
-
-  width: 45vh;
-  height: 6vh;
-
-  font-family: "HAN";
-  font-size: 2.5vh;
-  @media (max-width: 426px) {
-    font-size: 12px;
-    width: 75vw;
-  }
-  text-align: center;
-
-  border-radius: 1.5vh;
-
-  cursor: pointer;
-  transition: filter 0.25s;
-
-  :disabled {
-    cursor: default;
-    filter: brightness(90%);
-  }
-
-  :hover:enabled {
-    filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
-  }
-`;

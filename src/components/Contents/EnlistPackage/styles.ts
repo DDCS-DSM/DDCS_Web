@@ -28,7 +28,7 @@ export const Package = styled.div`
         padding-right: 0; 
         margin-top: 3vw;
         input{
-            font-size: 1.4vh;
+            font-size: 12px;
             height: 8vw;
             padding: 0 2vw;
         }

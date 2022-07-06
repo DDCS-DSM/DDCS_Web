@@ -21,9 +21,9 @@ export const Company = styled.select`
   margin-top: 2vw;
   padding: 0vw 0.6vw;
   @media ( max-width: 426px ){
-    height: 8vw;
+    height: 9vw;
     margin-top: 3vw;
-    font-size: 1.4vh;
+    font-size: 12px;
   }
 `
 

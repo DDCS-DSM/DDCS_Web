@@ -16,7 +16,7 @@ const FindPwModal = ({ setModalState }: LoginModalInterface) => {
   return (
     <S.Filter>
       <S.Background>
-        <S.Close onClick={() => setModalState("login")}>←</S.Close>
+        <S.Close onClick={() => setModalState("login")}>← </S.Close>
         <S.Title>비밀번호 찾기</S.Title>
         <S.Wrapper>
           <S.Input ref={inputRef} placeholder="아이디" />

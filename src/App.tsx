@@ -12,8 +12,8 @@ import LoginModal from "./components/Modals/LoginModal";
 import PolicyModal from "./components/Modals/PolicyModal";
 import RegisterModal from "./components/Modals/RegisterModal";
 import ClaimModal from "./components/Modals/ClaimModal";
-import FindIdModal from "./components/Modals/FindModal/FindIdModal";
-import FindPwModal from "./components/Modals/FindModal/FindPwModal";
+import FindIdModal from "./components/Modals/FindIdModal";
+import FindPwModal from "./components/Modals/FindPwModal";
 
 import cookie from 'react-cookies'
 import userProps from "./userProps";

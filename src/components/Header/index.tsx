@@ -17,6 +17,18 @@ const Header = ({
 }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
+  interface winProps extends globalThis.Window { 
+    ReactNativeWebView?: {
+      postMessage(msg: string): void; 
+    }
+  };
+
+  const test = () => {
+    const win: winProps = window;
+    if(win.ReactNativeWebView)
+      win.ReactNativeWebView.postMessage(JSON.stringify({type: "123", data: "123"}));
+  }
+
   return (
     <S.PreHeader>
       <S.Header>
@@ -24,6 +36,7 @@ const Header = ({
           <S.Icon src={logo} />
           <S.Text>DCS</S.Text>
         </S.LeftContents>
+        <button onClick={()=>test()}>test</button>
         {loginState ? (
           <S.RightContents onClick={() => setDropDownVisible(true)}>
             <S.Text>{user.studentNumber} {user.name}</S.Text>

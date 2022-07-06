@@ -2,6 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
+import { Title, Filter, Button, Background, Close, Wrapper, Input } from "../styles";
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -138,46 +139,46 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
     }
   }
 
-  return (
-    <S.Filter>
-      <S.Background>
-        <S.Close
+  return(
+    <Filter>
+      <Background>
+        <Close
           onClick={() => {
             setModalState("policy");
           }}
         >
           ←
-        </S.Close>
-        <S.Title>회원가입</S.Title>
-        <S.Wrapper onSubmit={(e) => confirmRegister(e)}>
+        </Close>
+        <Title>회원가입</Title>
+        <S.Wrapper onSubmit={() => signup()}>
 
-          <S.Input ref={idInput} placeholder="아이디" />
+          <Input ref={idInput} placeholder="아이디" />
           <S.Check onClick={()=>duplicationCheck("account_id")}>중복 확인</S.Check>
 
-          <S.Input ref={nameInput} placeholder="학번" />
-          <S.Check down={16.5} onClick={()=>duplicationCheck("student-number")}>중복 확인</S.Check>
+          <Input ref={nameInput} placeholder="학번" />
+          <S.Check down={16} onClick={()=>duplicationCheck("student-number")}>중복 확인</S.Check>
 
-          <S.Input ref={nameInput} placeholder="이름" />
+          <Input ref={nameInput} placeholder="이름" />
 
-          <S.Input ref={phoneNumberInput} placeholder="전화번호" />
-          <S.Check down={50} onClick={()=>duplicationCheck("phone-number")}>중복 확인</S.Check>
+          <Input ref={phoneNumberInput} placeholder="전화번호" />
+          <S.Check down={48} onClick={()=>duplicationCheck("phone-number")}>중복 확인</S.Check>
 
-          <S.Input ref={emailInput} placeholder="이메일 (dsm.hs.kr)" />
+          <Input ref={emailInput} placeholder="이메일 (dsm.hs.kr)" />
 
-          <S.Input ref={emailCheckInput} placeholder="이메일 인증 번호" />
+          <Input ref={emailCheckInput} placeholder="이메일 인증 번호" />
 
           {onVerification ?
-            <S.Check down={83} onClick={()=>emailAuthentication()}>인증</S.Check>
+            <S.Check down={80} onClick={()=>emailAuthentication()}>인증</S.Check>
             :
-            <S.Check down={83} onClick={()=>requestEmailVerification()}>전송 요청</S.Check>
+            <S.Check down={80} onClick={()=>requestEmailVerification()}>전송 요청</S.Check>
           }
-          <S.Input ref={pwInput} type="password" placeholder="비밀번호" />
-          <S.Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
+          <Input ref={pwInput} type="password" placeholder="비밀번호" />
+          <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
 
-          <S.Button onClick={()=>signup()}>회원가입</S.Button>
+          <Button onClick={()=>signup()}>회원가입</Button>
         </S.Wrapper>
-      </S.Background>
-    </S.Filter>
+      </Background>
+    </Filter>
   );
 };
 

@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import * as S from "./styles";
+import { Background, Title, Filter, Close, Text, Button } from '../styles'
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -10,19 +11,19 @@ const PolicyModal = ({ setModalState }: RegisterModalInterface) => {
   const [checkedState, setCheckedState] = useState<boolean>(true);
 
   return (
-    <S.Filter>
-      <S.Background>
-        <S.Close
+    <Filter>
+      <Background>
+        <Close
           onClick={() => {
             setModalState("login");
           }}
         >
           ←
-        </S.Close>
-        <S.Title>회원가입</S.Title>
-        <S.Text>이용 고객 (또는 회원) 은(는) 서비스 회원가입,</S.Text>
-        <S.Text>고객 상담 및 고지사항 전달 등을 위해 </S.Text>
-        <S.Text>아래와 같이 개인정보를 수집 및 이용합니다.</S.Text>
+        </Close>
+        <Title>회원가입</Title>
+        <Text>이용 고객 (또는 회원) 은(는) 서비스 회원가입,</Text>
+        <Text>고객 상담 및 고지사항 전달 등을 위해 </Text>
+        <Text>아래와 같이 개인정보를 수집 및 이용합니다.</Text>
         <S.SchemaWrapper>
           <S.Schema>수집 항목</S.Schema>
           <S.Schema>수집 목적</S.Schema>
@@ -66,16 +67,16 @@ const PolicyModal = ({ setModalState }: RegisterModalInterface) => {
         <S.SubText>ㅤ</S.SubText>
         <S.SubText>이 외 서비스 이용과정에서 별도 동의를 통해</S.SubText>
         <S.SubText>추가정보 수집이 있을 수 있습니다.</S.SubText>
-        <S.Button
+        <Button
           onClick={() => {
             setModalState("register");
           }}
           disabled={checkedState}
         >
           다음
-        </S.Button>
-      </S.Background>
-    </S.Filter>
+        </Button>
+      </Background>
+    </Filter>
   );
 };
 
