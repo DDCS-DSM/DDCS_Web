@@ -52,6 +52,7 @@ export const Background = styled.div`
   width: 60vh;
   @media (max-width: 426px) {
     width: 80%;
+    min-height: 340px;
   }
 
   position: absolute;
@@ -105,7 +106,7 @@ export const Close = styled.div`
   font-weight: 100;
 
   @media (max-width: 426px) {
-    margin-left: 20px;
+    margin-left: 10px;
     margin-top: 5px;
     font-size: 20px;
   }
