@@ -118,7 +118,7 @@ function App() {
     else{
       document.body.style.cssText = nomalBodyCss;
     }
-  },[modalState])
+  },[modalState, nomalBodyCss])
 
   return (
     <>
