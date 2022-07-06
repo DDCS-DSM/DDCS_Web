@@ -42,15 +42,20 @@ function App() {
       axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
       axios.get("users/mypage")
         .then(res => {
-          console.log(1);
           setLoginState(true);
           setUser(res.data);
+          const win: winProps = window;
+          if(win.ReactNativeWebView)
+            win.ReactNativeWebView.postMessage(JSON.stringify({type: "phone", data: user.phoneNumber}));
         })
         .catch(err => {
           console.log(err.response.status);
           if(err.status === 401 && refreshToken){
             axios.patch("/users/token", 
-            {accessToken: accessToken, refreshToken: refreshToken})
+            {accessToken: accessToken, refreshToken: refreshToken},
+            {
+              headers:{Authorization: ""}
+            })
               .then(res => {
                 setLoginState(true);
                 cookie.save("DCS_accessToken", res.data.accessToken, { path: '/' });
@@ -59,7 +64,12 @@ function App() {
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
 
                 axios.get("users/mypage")
-                  .then(res => setUser(res.data))
+                  .then(res => {
+                    const win: winProps = window;
+                    if(win.ReactNativeWebView)
+                      win.ReactNativeWebView.postMessage(JSON.stringify({type: "phone", data: user.phoneNumber}));
+                    setUser(res.data)
+                  })
               })
           }
         })
