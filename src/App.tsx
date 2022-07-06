@@ -64,6 +64,10 @@ function App() {
           }
         })
     }
+    if(user.studentNumber === 0 && location.pathname !== "/"){
+      navigate("/");  
+      alert("로그인을 먼저 해주십쇼.");
+    }
   },[])
 
   interface winProps extends globalThis.Window { 
@@ -80,10 +84,8 @@ function App() {
   },[user])
 
   useEffect(() => {
-    if(user.studentNumber === 0 && location.pathname !== "/"){
-      navigate("/");  
-      alert("로그인을 먼저 해주십쇼.");
-    }
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   },[location.pathname])
 
   useEffect(() => {
