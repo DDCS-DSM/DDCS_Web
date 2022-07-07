@@ -6,8 +6,12 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import FCM, {fcmProps} from '../../FCM';
-//const fcm : fcmProps = FCM;
+import userProps from "../../userProps";
+/*
+import { initializeApp } from "firebase-admin/app";
+import admin from "firebase-admin";
+
+initializeApp();*/
 
 const Enlist = () => {
 
@@ -26,21 +30,13 @@ const Enlist = () => {
 
     //택배 등록
     const enlistPackageList = () => {
-        if(selectRef.current?.innerText !== "회사를 선택해 주세요."){
+        if(selectRef.current?.value){
             axios.post("/delivery", {
-                couriercompany: selectRef.current?.innerText,
+                couriercompany: selectRef.current?.value,
                 phoneNumberRequestList: list
             })
             .then(res => {
                 alert("등록 되었습니다.");
-                /*
-                fcm.send(message, function(err: any, response: any){
-                    if (err) {
-                        console.log("Something has gone wrong!");
-                    } else {
-                        console.log("Successfully sent with response: ", response);
-                    }
-                })*/
             })
             .catch(err => {
                 if(err.status === 401){
@@ -62,14 +58,14 @@ const Enlist = () => {
             <Title>택배 등록</Title>
             <S.SchemaWrapper/>
             <S.Company ref={selectRef}>
-                <option>회사를 선택해 주세요.</option>
-                <option>쿠팡</option>
-                <option>CJ 대한통운</option>
-                <option>한진</option>
-                <option>롯대</option>
-                <option>로젠</option>
-                <option>우체국</option>
-                <option>기타</option>
+                <option value="">회사를 선택해 주세요.</option>
+                <option value="쿠팡">쿠팡</option>
+                <option value="CJ 대한통운">CJ 대한통운</option>
+                <option value="한진">한진</option>
+                <option value="롯대">롯대</option>
+                <option value="로젠">로젠</option>
+                <option value="우체국">우체국</option>
+                <option value="기타">기타</option>
             </S.Company>
             <S.List>
                 <EnlistPackage list={list} setList={setList} />

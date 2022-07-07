@@ -6,7 +6,12 @@ import PackageContentProps from "../../components/Contents/Package/type";
 
 const PackageList = () => {
   
-  const [lists, setLists] = useState<PackageContentProps[]>([]);
+  const [lists, setLists] = useState<PackageContentProps[]>([{
+    id: 1,
+    courierCompany: "string",
+    name: "string",
+    date: "string",
+  }]);
   const [page, setPage] = useState<number>(1);
 
   const loadNextPage = () => {

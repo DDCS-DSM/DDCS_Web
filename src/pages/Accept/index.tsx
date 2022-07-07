@@ -5,11 +5,12 @@ import PackageContentProps from "../../components/Contents/Package/type";
 
 const Accept = () => {
 
-    const [lists, setLists] = useState<PackageContentProps[]>([]);
-
-    useEffect(()=>{
-        setLists([]);
-    },[])
+    const [lists, setLists] = useState<PackageContentProps[]>([{
+        id: 1,
+        courierCompany: "string",
+        name: "string",
+        date: "string",
+    }]);
 
     return(
         <>

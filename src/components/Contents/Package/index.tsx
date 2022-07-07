@@ -3,6 +3,7 @@ import { box } from "../../../assets/images";
 import PackageContentProps from "./type";
 import { useState } from "react";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 
 let endRewrite: Function;
 
@@ -11,20 +12,28 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
   const [onReWrite, setOnReWrite] = useState<boolean>(false);
   const [newName, setNewName] = useState<string>(name);
 
+  const location = useLocation();
+
   return (
     <S.Package>
       <S.Icon src={box} />
       <S.Instance>{courierCompany}</S.Instance>
-      {!onReWrite ?
-        <S.Instance onClick={()=>setOnReWrite(true)}>{name}</S.Instance>
+      {location.pathname === "/list" ?
+        <S.Instance>{name}</S.Instance>
         :
-        <S.InstanceInput value={newName} onChange={(e)=>setNewName(e.target.value)} onBlur={()=>endRewrite(id, setNewName, newName, name)}/>
+        <>
+          {!onReWrite ?
+            <S.Instance onClick={()=>setOnReWrite(true)}>{name}</S.Instance>
+            :
+            <S.InstanceInput value={newName} onChange={(e)=>setNewName(e.target.value)}/>
+          }
+        </>
       }
       <S.Instance>{date}</S.Instance>
     </S.Package>
   );
 };
-
+//onBlur={()=>endRewrite(id, setNewName, newName, name)}
 const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
 
   endRewrite = (
@@ -36,7 +45,7 @@ const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
     setOnReWrite(false);
 
     if(newName !== name){
-      axios.post(`/delivery/${id}/${newName}`)
+      axios.patch(`/delivery/${id}/${newName}`)
         .then(res => alert("변경완료."))
         .catch(err => alert(`에러. ${err.response.status}`))
     }
