@@ -2,9 +2,9 @@ var https = require('https');
 var HttpsProxyAgent = require('https-proxy-agent');
 var retry = require('retry');
 var firebaseadmin = require("firebase-admin");
-const TopicRequest = require('../lib/topic_request');
-const TopicOptions = require('../lib/topic_options');
-const TopicData = require('../lib/topic_data');
+const TopicRequest = require('./topic_request');
+const TopicOptions = require('./topic_options');
+const TopicData = require('./topic_data');
 
 
 function FCM(accountKey, proxy_url=null, name=null) {
