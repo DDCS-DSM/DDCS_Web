@@ -43,17 +43,6 @@ interface downPorps {
   check?: boolean;
 }
 
-export const Wrapper = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-
-  @media (max-width: 426px) {
-    width: 80vw;
-  }
-`;
-
 export const Check = styled.div<downPorps>`
 
   color: ${props => props.check ? "blue" : "black"};

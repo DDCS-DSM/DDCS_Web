@@ -1,16 +1,18 @@
 import * as S from "./styles";
 import { arrow, logo } from "../../../assets/images";
+import userProps from "../../../userProps";
 
 interface CardProps {
-  index: number;
-  setModalState?: React.Dispatch<React.SetStateAction<string>>;
+  index: number,
+  setModalState?: React.Dispatch<React.SetStateAction<string>>,
+  user? : userProps
 }
 
-const MenuCard = ({ index, setModalState }: CardProps): JSX.Element => {
+const MenuCard = ({ index, setModalState, user} : CardProps): JSX.Element => {
   switch (index) {
     case 1:
       return (
-        <S.Card to="/list">
+        <S.Card to={user?.teacher ? "/accept" : "/list"}>
           <S.LeftDiv>
             <img src={logo} alt="logo" />
             <S.TitleDiv>

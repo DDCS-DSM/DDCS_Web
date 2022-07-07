@@ -1,12 +1,11 @@
 import Menu from "../../components/Menu";
 import * as S from "./styles";
 import { Title } from "../../styles/common";
+import userProps from '../../userProps';
 
-interface HomeProps {
-  setModalState: React.Dispatch<React.SetStateAction<string>>;
-}
+type HomeProps = React.Dispatch<React.SetStateAction<string>>;
 
-function Home({ setModalState }: HomeProps) {
+function Home({setModalState, user}: {setModalState: HomeProps, user: userProps}) {
   return (
     <>
       <Title>DCS란 무엇인가요?</Title>
@@ -17,7 +16,7 @@ function Home({ setModalState }: HomeProps) {
         <S.Phrase>DCS는 온라인으로 명부를 작성하고</S.Phrase>
         <S.Phrase>온라인으로 명부를 확인할 수 있는 시스템입니다.</S.Phrase>
       </S.PhraseWrapper>
-      <Menu setModalState={setModalState} />
+      <Menu user={user} setModalState={setModalState}/>
     </>
   );
 }

@@ -6,11 +6,13 @@ import { useMediaQuery } from "react-responsive";
 
 import * as S from "./styles";
 
-interface MenuProps {
-  setModalState: React.Dispatch<React.SetStateAction<string>>;
-}
+import userProps from "../../userProps";
 
-const Menu = ({ setModalState }: MenuProps) => {
+type MenuProps = React.Dispatch<React.SetStateAction<string>>
+
+
+
+const Menu = ({setModalState, user}: {setModalState: MenuProps, user: userProps}) => {
   const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   return (
@@ -19,13 +21,13 @@ const Menu = ({ setModalState }: MenuProps) => {
       {isMobile ? (
         <S.CardDiv>
           <Card index={1} />
-          <Card index={2} setModalState={setModalState} />
+          <Card index={2} user={user} setModalState={setModalState} />
           <Card index={3} />
         </S.CardDiv>
       ) : (
         <S.Wrapper>
           <MenuContent index={1} />
-          <MenuContent index={2} setModalState={setModalState} />
+          <MenuContent index={2} user={user} setModalState={setModalState} />
           <MenuContent index={3} />
         </S.Wrapper>
       )}

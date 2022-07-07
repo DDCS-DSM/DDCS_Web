@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
 
 import { Home, Privacy, Enlist, List, Accept } from "./pages";
 
@@ -18,6 +17,9 @@ import FindPwModal from "./components/Modals/FindPwModal";
 import cookie from 'react-cookies'
 import userProps from "./userProps";
 
+import isLogined from "./isLogined";
+
+import axios from "axios";
 axios.defaults.baseURL = "http://3.34.216.253:8080";
 
 function App() {
@@ -29,7 +31,8 @@ function App() {
     email: "",
     studentNumber: 0,
     phoneNumber: "",
-    admin: false
+    teacher: false,
+    courier: false
   });
 
   const navigate = useNavigate();
@@ -41,6 +44,21 @@ function App() {
     }
   };
 
+      /*
+      const win: winProps = window;
+      if(win.ReactNativeWebView)
+        win.ReactNativeWebView.postMessage(JSON.stringify({type: "phone", data: user.phoneNumber}));*/
+
+  const getUser = () => {
+    axios.get("users/mypage")
+    .then(res => setUser(res.data))
+    .catch(err => {
+      axios.get("/admin/verification/teacher")
+        .then(res => setUser({...user, teacher: true}))
+      axios.get("/admin/verification/courier")
+        .then(res => setUser({...user, courier: true}))
+    })
+  }
 
   //자동 로그인
   useEffect(() => {
@@ -68,25 +86,25 @@ function App() {
 
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
 
-                axios.get("users/mypage")
-                  .then(res => {
-                    const win: winProps = window;
-                    if(win.ReactNativeWebView)
-                      win.ReactNativeWebView.postMessage(JSON.stringify({type: "phone", data: user.phoneNumber}));
-                    setUser(res.data)
-                  })
+                getUser();
               })
           }
+          else if(err.response.status === 404){
+            axios.get("/admin/verification/teacher")
+              .then(res => setUser({...user, teacher: true}))
+            axios.get("/admin/verification/courier")
+              .then(res => setUser({...user, courier: true}))
+          }               
         })
-    }
-    if(user.studentNumber === 0 && location.pathname !== "/"){
+    }/*
+    if(isLogined(user) && location.pathname !== "/"){
       navigate("/");  
       alert("로그인을 먼저 해주십쇼.");
+    }*/
+    else if(user.teacher === false && user.courier === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
+      alert("권한이 없습니다.");
     }
-    else if(user.admin === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
-      alert("어드민 만 접근 가능 합니다.");
-    }
-  },[])
+  },[location.pathname, navigate, getUser, isLogined, user])
 
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
@@ -144,10 +162,10 @@ function App() {
       <Header loginState={loginState} setModalState={setModalState} user={user}/>
       <Title />
       <Routes>
-        <Route path="/" element={<Home setModalState={setModalState} />} />
+        <Route path="/" element={<Home user={user} setModalState={setModalState} />} />
         <Route path="/privacy" element={<Privacy user={user}/>}/>
         <Route path="/list" element={<List />} />
-        <Route path="/enlist" element={<Enlist />} />
+        <Route path="/enlist" element={<Enlist/>} />
         <Route path="/accept" element={<Accept />} />
       </Routes>
       <Footer />

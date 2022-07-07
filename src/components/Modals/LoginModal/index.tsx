@@ -57,7 +57,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
       <Background>
         <Close onClick={() => setModalState("")}>✕</Close>
         <Title>로그인</Title>
-        <Wrapper onSubmit={()=> login()}>
+        <Wrapper>
           <Input ref={idInput} placeholder="아이디" />
           <Input type="password" ref={pwInput} placeholder="비밀번호" />
           <S.CheckboxDiv>

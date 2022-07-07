@@ -149,7 +149,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           ←
         </Close>
         <Title>회원가입</Title>
-        <S.Wrapper onSubmit={() => signup()}>
+        <Wrapper onSubmit={() => signup()}>
 
           <Input ref={idInput} placeholder="아이디" />
           <S.Check onClick={()=>duplicationCheck("account_id")}>중복 확인</S.Check>
@@ -175,7 +175,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
 
           <Button onClick={()=>signup()}>회원가입</Button>
-        </S.Wrapper>
+        </Wrapper>
       </Background>
     </Filter>
   );

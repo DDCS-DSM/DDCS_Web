@@ -4,5 +4,6 @@ export default interface userProps {
 	email: string,
 	studentNumber: number,
 	phoneNumber: string,
-	admin: boolean
+	teacher: boolean,
+	courier: boolean
 }

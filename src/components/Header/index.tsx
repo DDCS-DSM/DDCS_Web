@@ -4,6 +4,11 @@ import * as S from "./styles";
 import { logo, login } from "../../assets/images";
 import userProps from "../../userProps";
 
+//import { initializeApp } from "firebase-admin/app";
+//import admin from "firebase-admin";
+
+//initializeApp();
+
 interface HeaderInterface {
   loginState: boolean;
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -17,17 +22,27 @@ const Header = ({
 }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
+  
   interface winProps extends globalThis.Window { 
     ReactNativeWebView?: {
       postMessage(msg: string): void; 
     }
   };
-/*
+
   const test = () => {
     const win: winProps = window;
     if(win.ReactNativeWebView)
       win.ReactNativeWebView.postMessage(JSON.stringify({type: "123", data: "123"}));
-  }*/
+    const message = {
+      topic: "123"
+    }
+    /*
+  getMessaging().send(message)
+  .then((response) => {
+    // Response is a message ID string.
+    console.log('Successfully sent message:', response);
+  })*/
+  }
 
   return (
     <S.PreHeader>
@@ -38,7 +53,7 @@ const Header = ({
         </S.LeftContents>
         {loginState ? (
           <S.RightContents onClick={() => setDropDownVisible(true)}>
-            <S.Text>{user.studentNumber} {user.name}</S.Text>
+            <S.Text>{user.teacher || user.courier ? "어드민" : `${user.studentNumber} ${user.name}`}</S.Text>
             <S.Icon src={login} />
           </S.RightContents>
         ) : (
