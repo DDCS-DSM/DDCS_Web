@@ -20,7 +20,6 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
 
   const [onVerification, setOnVerification] = useState<boolean>(false);
 
-  //모달 안닫치는 버그 있음.
   const checkInput = () => {
     if (
       nameInput.current &&

@@ -3,5 +3,6 @@ export default interface userProps {
 	accountId: string,
 	email: string,
 	studentNumber: number,
-	phoneNumber: string
+	phoneNumber: string,
+	admin: boolean
 }

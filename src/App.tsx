@@ -28,19 +28,26 @@ function App() {
     accountId: "",
     email: "",
     studentNumber: 0,
-    phoneNumber: ""
+    phoneNumber: "",
+    admin: false
   });
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  interface winProps extends globalThis.Window { 
+    ReactNativeWebView?: {
+      postMessage(msg: string): void; 
+    }
+  };
+
 
   //자동 로그인
   useEffect(() => {
     const accessToken = cookie.load("DCS_accessToken");
     const refreshToken = cookie.load("DCS_refreshToken");
     if(accessToken) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-      axios.get("users/mypage")
+      axios.get("users/mypage", {headers:{Authorization: `Bearer ${accessToken}`}})
         .then(res => {
           setLoginState(true);
           setUser(res.data);
@@ -78,20 +85,10 @@ function App() {
       navigate("/");  
       alert("로그인을 먼저 해주십쇼.");
     }
-  },[location.pathname, navigate, user.studentNumber])
-
-  interface winProps extends globalThis.Window { 
-    ReactNativeWebView?: {
-      postMessage(msg: string): void; 
+    else if(user.admin === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
+      alert("어드민 만 접근 가능 합니다.");
     }
-  };
-
-  useEffect(()=>{
-    const win: winProps = window;
-    if(user.studentNumber !== 0 && win.ReactNativeWebView) {
-      win.ReactNativeWebView.postMessage(String(user.studentNumber));
-    }
-  },[user])
+  },[location.pathname, navigate, user.admin, user.phoneNumber, user.studentNumber])
 
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
