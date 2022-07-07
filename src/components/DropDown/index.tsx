@@ -10,7 +10,8 @@ interface DropDownProps {
 const DropDown = ({ setDropDownVisible }: DropDownProps) => {
 
   const logOut = () => {
-    axios.delete("/users/logout")
+    const accessToken = cookie.load("DCS_accessToken");
+    axios.delete("/users/logout", {headers:{Authorization: `Bearer ${accessToken}`}})
       .then(res => {
         alert("로그아웃 되었습니다.");
         cookie.remove("DCS_accessToken");

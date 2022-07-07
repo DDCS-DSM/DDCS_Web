@@ -34,21 +34,16 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
     }
   }
 
-  const navigate = useNavigate();
-
   const login = () => {
     if(checkInput()) {
       axios.post(`${toAdmin ? "/admin" : "/users/token"}`, {
         accountId: idInput.current?.value,
         password: pwInput.current?.value
       },
-      {
-        headers:{Authorization: ""}
-      })
+      {headers:{Authorization: ""}})
       .then(res => {
-        cookie.save('DCS_accessToken', res.data.accessToken, { path: '/' });
-        cookie.save('DCS_refreshToken', res.data.refreshToken, { path: '/' });
-        navigate("/");
+        cookie.save('DCS_accessToken', res.data.accessToken, { path: '/'});
+        cookie.save('DCS_refreshToken', res.data.refreshToken, { path: '/'});
         window.location.reload();
       })
       .catch(err => {

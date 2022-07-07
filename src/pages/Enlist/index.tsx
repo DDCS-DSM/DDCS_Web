@@ -6,8 +6,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import FCM, {fcmProps} from 'fcm-node';
-const fcm : fcmProps = FCM;
+//import FCM, {fcmProps} from '../../FCM';
+//const fcm : fcmProps = FCM;
 
 const Enlist = () => {
 
@@ -33,29 +33,14 @@ const Enlist = () => {
             })
             .then(res => {
                 alert("등록 되었습니다.");
-
-                var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
-                    to: 'registration_token', 
-                    collapse_key: 'your_collapse_key',
-                    
-                    notification: {
-                        title: 'Title of your push notification', 
-                        body: 'Body of your push notification' 
-                    },
-                    
-                    data: {  //you can send only notification or only data(or include both)
-                        my_key: 'my value',
-                        my_another_key: 'my another value'
-                    }
-                };
-                
+                /*
                 fcm.send(message, function(err: any, response: any){
                     if (err) {
                         console.log("Something has gone wrong!");
                     } else {
                         console.log("Successfully sent with response: ", response);
                     }
-                })
+                })*/
             })
             .catch(err => {
                 if(err.status === 401){

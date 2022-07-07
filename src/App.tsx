@@ -57,16 +57,14 @@ function App() {
         })
         .catch(err => {
           console.log(err.response.status);
-          if(err.status === 401 && refreshToken){
+          if(err.response.status === 401){
             axios.patch("/users/token", 
             {accessToken: accessToken, refreshToken: refreshToken},
-            {
-              headers:{Authorization: ""}
-            })
+            {headers:{Authorization: ""}})
               .then(res => {
                 setLoginState(true);
-                cookie.save("DCS_accessToken", res.data.accessToken, { path: '/' });
-                cookie.save("DCS_refreshToken", res.data.refreshToken, { path: '/' });
+                cookie.save("DCS_accessToken", res.data.accessToken, { path: '/', maxAge: 30 });
+                cookie.save("DCS_refreshToken", res.data.refreshToken, { path: '/', maxAge: 7*24*60 });
 
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
 
@@ -88,7 +86,7 @@ function App() {
     else if(user.admin === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
       alert("어드민 만 접근 가능 합니다.");
     }
-  },[location.pathname, navigate, user.admin, user.phoneNumber, user.studentNumber])
+  },[])
 
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
