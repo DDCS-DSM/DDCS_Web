@@ -28,7 +28,7 @@ const MenuCard = ({ index, setModalState, user} : CardProps): JSX.Element => {
         <S.Card
           to="/"
           onClick={() => {
-            if (setModalState) setModalState("claim");
+            if (setModalState) setModalState("");
           }}
         >
           <S.LeftDiv>

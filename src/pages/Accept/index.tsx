@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Package from "../../components/Contents/Package";
 import { Title, SchemaWrapper, Schema, Button } from "../../styles/common"
 import PackageContentProps from "../../components/Contents/Package/type";

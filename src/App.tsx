@@ -17,10 +17,11 @@ import FindPwModal from "./components/Modals/FindPwModal";
 import cookie from 'react-cookies'
 import userProps from "./userProps";
 
-import isLogined from "./isLogined";
+import accessCheck from "./accessCheck";
 
 import axios from "axios";
 axios.defaults.baseURL = "http://3.34.216.253:8080";
+
 
 function App() {
   const [loginState, setLoginState] = useState<boolean>(false);
@@ -96,15 +97,9 @@ function App() {
               .then(res => setUser({...user, courier: true}))
           }               
         })
-    }/*
-    if(isLogined(user) && location.pathname !== "/"){
-      navigate("/");  
-      alert("로그인을 먼저 해주십쇼.");
-    }*/
-    else if(user.teacher === false && user.courier === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
-      alert("권한이 없습니다.");
     }
-  },[location.pathname, navigate, getUser, isLogined, user])
+    accessCheck(user, location, navigate);
+  },[location.pathname, navigate, getUser, user])
 
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
@@ -164,9 +159,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home user={user} setModalState={setModalState} />} />
         <Route path="/privacy" element={<Privacy user={user}/>}/>
-        <Route path="/list" element={<List />} />
+        <Route path="/list" element={<List/>} />
         <Route path="/enlist" element={<Enlist/>} />
-        <Route path="/accept" element={<Accept />} />
+        <Route path="/accept" element={<Accept/>} />
       </Routes>
       <Footer />
     </>

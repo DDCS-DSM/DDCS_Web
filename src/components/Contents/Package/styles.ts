@@ -4,7 +4,7 @@ export const List = styled.div`
   height: 60vw;
   margin: 0 auto;
   width: 75vw;
-  @media ( max-width: 425px ){
+  @media ( max-width: 426px ){
     width: 90vw;
   }
   h2{
@@ -12,14 +12,14 @@ export const List = styled.div`
     margin-top: 10vw;
     font-size: 1.5vw;
     color: #ccc;
-    @media ( max-width: 425px ){
+    @media ( max-width: 426px ){
       font-size: 5vw;
     }
   }
 `
 
 export const Package = styled.div`
-  background-color: #f6f6f6;
+  background-color: #f9f9f9;
 
   margin-top: 3.25vh;
 
@@ -27,7 +27,7 @@ export const Package = styled.div`
 
   display: flex;
   justify-content: right;
-  @media ( max-width: 425px ){
+  @media ( max-width: 426px ){
     justify-content: normal;
     img{
       padding: 0 5vw;
@@ -74,6 +74,9 @@ export const InstanceInput = styled.input`
   font-size: 2.25vh;
   font-weight: 600;
   text-align: center;
+  @media ( max-width: 426px ){
+    margin: 0;
+  }
 `
 
 export const Icon = styled.img`

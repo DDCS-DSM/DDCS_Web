@@ -6,14 +6,10 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import userProps from "../../userProps";
-/*
-import { initializeApp } from "firebase-admin/app";
-import admin from "firebase-admin";
-
-initializeApp();*/
 
 const Enlist = () => {
+
+    const navigate = useNavigate();
 
     const [list, setList] = useState<EnlistPackageContentProps[]>([]);
     
@@ -25,8 +21,6 @@ const Enlist = () => {
         newList.push({phoneNumber: ""});
         setList([...newList]);
     }
-
-    const navigate = useNavigate();
 
     //택배 등록
     const enlistPackageList = () => {

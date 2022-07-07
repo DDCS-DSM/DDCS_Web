@@ -1,11 +1,8 @@
 import * as S from "./styles";
 import { Title } from "../../styles/common";
 import userProps from "../../userProps";
-//import { useRef } from "react";
 
 const Privacy = ({user}: {user: userProps}) => {
-
-  //const emailRef = useRef<HTMLInputElement>(null);
 
   return (
     <>

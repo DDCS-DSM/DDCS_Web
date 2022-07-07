@@ -6,6 +6,7 @@ import userProps from '../../userProps';
 type HomeProps = React.Dispatch<React.SetStateAction<string>>;
 
 function Home({setModalState, user}: {setModalState: HomeProps, user: userProps}) {
+
   return (
     <>
       <Title>DCS란 무엇인가요?</Title>

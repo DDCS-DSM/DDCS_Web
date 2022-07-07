@@ -26,7 +26,7 @@ const MenuContent = ({ index, setModalState, user} : MenuContentProps) => {
         <S.Wrapper
           to="/"
           onClick={() => {
-            if (setModalState) setModalState("claim");
+            if (setModalState) setModalState("");
           }}
         >
           <S.Background src={Cat} />

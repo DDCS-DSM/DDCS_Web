@@ -5,7 +5,7 @@ import { Title, SchemaWrapper, Schema, Button } from "../../styles/common";
 import PackageContentProps from "../../components/Contents/Package/type";
 
 const PackageList = () => {
-  
+
   const [lists, setLists] = useState<PackageContentProps[]>([{
     id: 1,
     courierCompany: "string",
