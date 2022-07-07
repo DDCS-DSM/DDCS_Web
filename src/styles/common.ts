@@ -23,22 +23,24 @@ export const SchemaWrapper = styled.div`
   height: 6.5vh;
 
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
+
+  div:nth-child(1){
+    padding-left: 9vh;
+  }
 
   border-bottom: 0.25vh solid #000;
   @media ( max-width: 426px ){
-    justify-content: normal;
     width: 90vw;
     div:nth-child(1){
-      padding-left: 19vw;
+      padding-left: 7.5vh;
     }
   }
 `;
 
 export const Schema = styled.div`
   width: 22.5vw;
-
   font-family: "HAN";
   font-size: 2.25vh;
   text-align: center;

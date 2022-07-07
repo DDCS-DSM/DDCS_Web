@@ -98,7 +98,7 @@ function App() {
           }               
         })
     }
-    accessCheck(user, location, navigate);
+    //accessCheck(user, location, navigate);
   },[location.pathname, navigate, getUser, user])
 
   useEffect(() => {

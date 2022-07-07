@@ -1,11 +1,12 @@
 import * as S from "./styles";
-import { box } from "../../../assets/images";
+import { box, del } from "../../../assets/images";
 import PackageContentProps from "./type";
 import { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 
 let endRewrite: Function;
+let deletePackage: Function;
 
 const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps) => {
 
@@ -16,20 +17,26 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
 
   return (
     <S.Package>
-      <S.Icon src={box} />
-      <S.Instance>{courierCompany}</S.Instance>
       {location.pathname === "/list" ?
-        <S.Instance>{name}</S.Instance>
+        <S.Icon src={box} />
         :
-        <>
-          {!onReWrite ?
-            <S.Instance onClick={()=>setOnReWrite(true)}>{name}</S.Instance>
-            :
-            <S.InstanceInput value={newName} onChange={(e)=>setNewName(e.target.value)}/>
-          }
-        </>
+        <S.Delete src={del} onClick={()=>deletePackage(id)}/>
       }
-      <S.Instance>{date}</S.Instance>
+      <S.PackageWrapper>
+        <S.Instance>{courierCompany}</S.Instance>
+        {location.pathname === "/list" ?
+          <S.Instance>{name}</S.Instance>
+          :
+          <>
+            {!onReWrite ?
+              <S.Instance onClick={()=>setOnReWrite(true)}>{name}</S.Instance>
+              :
+              <S.InstanceInput value={newName} onChange={(e)=>setNewName(e.target.value)} onBlur={()=>setOnReWrite(false)}/>
+            }
+          </>
+        }
+        <S.Instance>{date}</S.Instance>
+      </S.PackageWrapper>
     </S.Package>
   );
 };
@@ -49,6 +56,12 @@ const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
         .then(res => alert("변경완료."))
         .catch(err => alert(`에러. ${err.response.status}`))
     }
+  }
+
+  deletePackage = (id: number) => {
+    axios.delete(`/delivery/${id}`)
+      .then(res => alert("삭제되었습니다."))
+      .catch(err => alert(`에러. ${err.response.status}`))
   }
 
   return(
