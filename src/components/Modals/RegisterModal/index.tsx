@@ -18,8 +18,6 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   const phoneNumberInput = useRef<HTMLInputElement>(null);
   const studentNumberInput = useRef<HTMLInputElement>(null);
 
-  const [onVerification, setOnVerification] = useState<boolean>(false);
-
   const checkInput = () => {
     if (
       nameInput.current &&
@@ -93,7 +91,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       axios.post("/users/email-verifications", {email: emailInput.current.value})
         .then(res => alert("요청 되었습니다."))
         .catch(err => alert(`에러 ${err.response.status}`))
-      setOnVerification(true);
+      //setOnVerification(true);
     }
     else{
       alert("이메일을 입력해주세요.");
@@ -106,7 +104,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       axios.put("/users/email-verifications", {email: emailInput.current?.value, code: emailCheckInput.current?.value})
         .then(res => {
           alert("인증 되었습니다.");
-          setOnVerification(true);
+          //setOnVerification(true);
         })
         .catch(err => alert(`에러 ${err.status}`));
     }
@@ -154,23 +152,10 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <Input ref={idInput} placeholder="아이디" />
           <S.Check onClick={()=>duplicationCheck("account_id")}>중복 확인</S.Check>
 
-          <Input ref={nameInput} placeholder="학번" />
-          <S.Check down={16} onClick={()=>duplicationCheck("student-number")}>중복 확인</S.Check>
-
           <Input ref={nameInput} placeholder="이름" />
 
           <Input ref={phoneNumberInput} placeholder="전화번호" />
-          <S.Check down={48} onClick={()=>duplicationCheck("phone-number")}>중복 확인</S.Check>
 
-          <Input ref={emailInput} placeholder="이메일 (dsm.hs.kr)" />
-
-          <Input ref={emailCheckInput} placeholder="이메일 인증 번호" />
-
-          {onVerification ?
-            <S.Check down={80} onClick={()=>emailAuthentication()}>인증</S.Check>
-            :
-            <S.Check down={80} onClick={()=>requestEmailVerification()}>전송 요청</S.Check>
-          }
           <Input ref={pwInput} type="password" placeholder="비밀번호" />
           <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
 

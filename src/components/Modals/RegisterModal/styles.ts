@@ -38,16 +38,9 @@ export const Input = styled.input`
   }
 `;
 
-interface downPorps {
-  down?: number;
-  check?: boolean;
-}
+export const Check = styled.div`
 
-export const Check = styled.div<downPorps>`
-
-  color: ${props => props.check ? "blue" : "black"};
-
-  margin-bottom: ${(props) => props.down ? 70 - props.down : 70}vh;
+  margin-bottom: 70vh;
   margin-left: 35vh;
   
   position: absolute;

@@ -7,12 +7,7 @@ import GlobalStyle from "./styles";
 import Title from "./components/Title";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import LoginModal from "./components/Modals/LoginModal";
-import PolicyModal from "./components/Modals/PolicyModal";
-import RegisterModal from "./components/Modals/RegisterModal";
-import ClaimModal from "./components/Modals/ClaimModal";
-import FindIdModal from "./components/Modals/FindIdModal";
-import FindPwModal from "./components/Modals/FindPwModal";
+import * as M from "./components/Modals"
 
 import cookie from 'react-cookies'
 import userProps from "./userProps";
@@ -124,6 +119,7 @@ function App() {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;`
 
+  //모달 상태일 시 스크롤 정지
   useEffect(()=>{
     if(modalState){
       document.body.style.cssText = `
@@ -142,18 +138,18 @@ function App() {
     <>
       <GlobalStyle />
       {modalState === "login" && (
-        <LoginModal
+        <M.LoginModal
           setModalState={setModalState}
           setLoginState={setLoginState}
         />
       )}
-      {modalState === "policy" && <PolicyModal setModalState={setModalState} />}
+      {modalState === "policy" && <M.PolicyModal setModalState={setModalState} />}
       {modalState === "register" && (
-        <RegisterModal setModalState={setModalState} />
+        <M.RegisterModal setModalState={setModalState} />
       )}
-      {modalState === "claim" && <ClaimModal setModalState={setModalState} />}
-      {modalState === "findid" && <FindIdModal setModalState={setModalState} />}
-      {modalState === "findpw" && <FindPwModal setModalState={setModalState} />}
+      {modalState === "claim" && <M.ClaimModal setModalState={setModalState} />}
+      {modalState === "findid" && <M.FindIdModal setModalState={setModalState} />}
+      {modalState === "findpw" && <M.FindPwModal setModalState={setModalState} />}
       <Header loginState={loginState} setModalState={setModalState} user={user}/>
       <Title />
       <Routes>

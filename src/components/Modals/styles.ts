@@ -23,7 +23,7 @@ export const Title = styled.div`
     margin: 30px 0;
     font-size: 23px;
   }
-  font-weight: 600;
+  //font-weight: 600;
 `;
 
 export const Text = styled.div`
