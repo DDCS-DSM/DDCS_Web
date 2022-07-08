@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
-import { Home, Privacy, Enlist, List, Accept, Developers } from "./pages";
+import { Home, Privacy, Enlist, Developers } from "./pages";
 
 import GlobalStyle from "./styles";
 import Title from "./components/Title";
