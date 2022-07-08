@@ -44,17 +44,6 @@ function App() {
       if(win.ReactNativeWebView)
         win.ReactNativeWebView.postMessage(JSON.stringify({type: "phone", data: user.phoneNumber}));*/
 
-  const getUser = () => {
-    axios.get("users/mypage")
-    .then(res => setUser(res.data))
-    .catch(err => {
-      axios.get("/admin/verification/teacher")
-        .then(res => setUser({...user, teacher: true}))
-      axios.get("/admin/verification/courier")
-        .then(res => setUser({...user, courier: true}))
-    })
-  }
-
   //자동 로그인
   useEffect(() => {
     const accessToken = cookie.load("DCS_accessToken");
@@ -80,20 +69,19 @@ function App() {
                 cookie.save("DCS_refreshToken", res.data.refreshToken, { path: '/', maxAge: 7*24*60 });
 
                 axios.defaults.headers.common['Authorization'] = `Bearer ${res.data.accessToken}`;
-
-                getUser();
               })
           }
           else if(err.response.status === 404){
-            axios.get("/admin/verification/teacher")
+            axios.get("/admin/verification/teacher", {headers:{Authorization: `Bearer ${accessToken}`}})
               .then(res => setUser({...user, teacher: true}))
-            axios.get("/admin/verification/courier")
+            axios.get("/admin/verification/courier", {headers:{Authorization: `Bearer ${accessToken}`}})
               .then(res => setUser({...user, courier: true}))
           }               
         })
     }
+    //접근 권한 체크
     //accessCheck(user, location, navigate);
-  },[location.pathname, navigate, getUser, user])
+  },[location.pathname, navigate, user])
 
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
