@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import * as S from "./styles";
 import { Background, Title, Filter, Close, Text, Button } from '../styles'
+import { leftArrow } from "../../../assets/images/icons"
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -14,11 +15,11 @@ const PolicyModal = ({ setModalState }: RegisterModalInterface) => {
     <Filter>
       <Background>
         <Close
+          src={leftArrow}
           onClick={() => {
             setModalState("login");
           }}
         >
-          ←
         </Close>
         <Title>회원가입</Title>
         <Text>이용 고객 (또는 회원) 은(는) 서비스 회원가입,</Text>

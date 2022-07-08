@@ -93,17 +93,16 @@ export const Input = styled.input`
   box-sizing: border-box;
 `;
 
-export const Close = styled.div`
+export const Close = styled.img`
   position: absolute;
 
   width: 100%;
 
-  margin-left: 4vh;
-  margin-top: 2vh;
+  left: 2vh;
+  top: 2vh;
 
-  font-family: "HAN";
-  font-size: 2.8vh;
-  font-weight: 500;
+  height: 2.5vh;
+  width: 2.5vh;
 
   @media (max-width: 426px) {
     margin-left: 10px;

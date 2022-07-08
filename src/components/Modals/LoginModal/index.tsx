@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import * as S from "./styles";
 import { Title, Wrapper, Filter, Background, Close, Input } from "../styles";
-
+import { del } from "../../../assets/images/icons"
 import cookie from 'react-cookies'
 
 interface LoginModalInterface {
@@ -54,7 +54,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
   return (
     <Filter>
       <Background>
-        <Close onClick={() => setModalState("")}>✕</Close>
+        <Close src={del} onClick={() => setModalState("")} />
         <Title>로그인</Title>
         <Wrapper>
           <Input ref={idInput} placeholder="아이디" />

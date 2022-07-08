@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { Title, Filter, Background, Close, Wrapper, Input } from "../styles";
+import { leftArrow } from "../../../assets/images/icons"
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -140,12 +141,11 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
     <Filter>
       <Background>
         <Close
+          src={leftArrow}
           onClick={() => {
             setModalState("policy");
           }}
-        >
-          ←
-        </Close>
+        />
         <Title>회원가입</Title>
         <Wrapper onSubmit={() => signup()}>
 
