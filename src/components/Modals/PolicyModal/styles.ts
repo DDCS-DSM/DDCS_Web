@@ -79,7 +79,7 @@ export const InstanceWrapper = styled.div`
 export const Instance = styled.div`
   width: 18vh;
 
-  font-size: 1.5vh;
+  font-size: 1.6vh;
   text-align: center;
 
   display: flex;
@@ -133,5 +133,36 @@ export const SubText = styled.div`
   text-align: center;
   @media (max-width: 426px) {
     font-size: 10px;
+  }
+`;
+
+export const Button = styled.button`
+  all: unset;
+  background-color: #f6f6f6;
+
+  margin-top: 5vh;
+  margin-bottom: 6vh;
+
+  width: 45vh;
+  height: 6vh;
+
+  font-family: "HAN";
+  font-size: 2.5vh;
+  text-align: center;
+
+  border-radius: 1.5vh;
+
+  @media (max-width: 426px) {
+    width: 70vw;
+    height: 35px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  cursor: pointer;
+
+  :disabled {
+    cursor: default;
+    filter: brightness(90%);
   }
 `;

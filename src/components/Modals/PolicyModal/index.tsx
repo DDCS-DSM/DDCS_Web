@@ -42,7 +42,7 @@ const PolicyModal = ({ setModalState }: RegisterModalInterface) => {
             <span>본인 여부 확인</span>
           </S.Instance>
           <S.Instance>
-            <span>회원 탈퇴 시까지</span>
+            <span>회원 탈퇴후 3개월</span>
           </S.Instance>
         </S.InstanceWrapper>
         <S.CheckboxWrapper>
@@ -68,14 +68,14 @@ const PolicyModal = ({ setModalState }: RegisterModalInterface) => {
         <S.SubText>ㅤ</S.SubText>
         <S.SubText>이 외 서비스 이용과정에서 별도 동의를 통해</S.SubText>
         <S.SubText>추가정보 수집이 있을 수 있습니다.</S.SubText>
-        <Button
+        <S.Button
           onClick={() => {
             setModalState("register");
           }}
           disabled={checkedState}
         >
           다음
-        </Button>
+        </S.Button>
       </Background>
     </Filter>
   );
