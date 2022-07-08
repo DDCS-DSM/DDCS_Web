@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Footer = styled.div`
-  background-color: #f6f6f6;
+  background-color: #fafafa;
 
   margin-top: 15vh;
 
@@ -36,7 +36,7 @@ export const Schema = styled.div`
   margin-left: 1.25vw;
   margin-right: 1.25vw;
   margin-bottom: 1vh;
-  width: 20vw;
+  width: 15vw;
 
   font-family: "HAN";
   font-size: 2.2vh;
@@ -67,9 +67,9 @@ export const Instance = styled.div`
   font-family: "HAN";
   font-size: 2vh;
   text-align: center;
-  width: 20vw;
+  width: 15vw;
   
-  margin-top: 1.25vw;
+  margin-top: 1vw;
   margin-left: 1.25vw;
   margin-right: 1.25vw;
 
