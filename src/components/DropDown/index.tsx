@@ -2,7 +2,7 @@ import axios from "axios";
 import cookie from 'react-cookies'
 //import { setCookie } from "../../cookie";
 import * as S from "./styles";
-import { code, list, log, login, user} from "../../assets/images/icons"
+import { code, list, log, login, user, notice} from "../../assets/images/icons"
 import { useNavigate } from "react-router-dom";
 
 interface DropDownProps {
@@ -68,6 +68,10 @@ const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownPro
             로그아웃
           </S.Content>
         }
+        <S.Content onClick={()=>navigate("/notice")}>
+          <img src={notice}/>
+          공지사항
+        </S.Content>
         <S.Content onClick={()=>navigate("/developers")}>
           <img src={code}/>
           개발자 소개

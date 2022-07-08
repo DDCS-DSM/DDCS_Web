@@ -11,3 +11,4 @@ export { default as mail} from "./mail.png";
 export { default as box } from "./box.png";
 export { default as logo } from "./logo.png";
 export { default as checkmark } from "./checkmark.png"
+export { default as notice } from "./notice.png"
