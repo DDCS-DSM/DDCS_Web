@@ -3,24 +3,25 @@ import styled from 'styled-components'
 export const Package = styled.div`
     
     display: flex;
+    align-items: center;
     
-    margin-top: 2vw;
-    border: 1px solid #eee;
-    padding-left: 1.5vw;
+    margin-top: 4vh;
+    height: 5vh;
 
-    background-color: #F9F9F9;
-
-    border-radius: 1vh;
+    span{
+        font-size: 3vh;
+        font-family: "HAN"
+        margin-top: 2vh;
+        padding-right: 1vw;
+    }
 
     input{
+        height: 5vh;
         box-sizing: border-box;
-        padding: 0 0.6vw;
-        height: 2.5vw;
-        border-radius: 0.5vh;
-        border: 1px solid #ccc;
+        border: 0;
+        border-bottom: 0.2vh solid black;
         outline: 0;
         width: 100%;
-        margin: 1.5vw 0;
     }
 
     @media ( max-width: 425px ){
@@ -32,16 +33,5 @@ export const Package = styled.div`
             height: 8vw;
             padding: 0 2vw;
         }
-    }
-`
-
-export const Close = styled.div`
-    text-align: center;
-    width: 1.5vw;
-    cursor: pointer;
-    @media ( max-width: 425px ){
-        width: 3vw;
-        font-size: 3vw;
-        padding: 0 1.5vw;
     }
 `

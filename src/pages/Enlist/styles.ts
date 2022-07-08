@@ -13,7 +13,7 @@ export const SchemaWrapper = styled.div`
 `
 
 export const Company = styled.select`
-  height: 2.5vw;
+  height: 5vh;
   border-radius: 1vh;
   border: 1px solid #ccc;
   outline: 0;
@@ -28,7 +28,7 @@ export const Company = styled.select`
 `
 
 export const List = styled.div`
-  min-height: 40vw;
+  min-height: 25vw;
   margin: 0 auto;
   width: 75vw;
   @media ( max-width: 425px ){
@@ -42,12 +42,12 @@ export const ButtonDiv = styled.div`
 `
 
 export const Button = styled.div`
-  margin: 0 1vh;
+  margin: 0 2vh;
   margin-top: 6.5vh;
 
-  background-color: #f6f6f6;
+  background-color: #f8f8f8;
 
-  width: 20vh;
+  width: 30vh;
   height: 6.5vh;
 
   display: flex;
@@ -63,7 +63,7 @@ export const Button = styled.div`
   transition: filter 0.25s;
 
   :hover {
-    filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
+    filter: brightness(97%) drop-shadow(0 0 0.2vh #ddd);
   }
 
   @media ( max-width: 426px ){
