@@ -29,6 +29,7 @@ export const Developer = styled.div`
         height: 16vh;
         border-radius: 50%;
         border: 0.3vh solid #aaa;
+        object-fit: contain;
     }
     display: flex;
     margin-top: 5vh;
@@ -38,17 +39,21 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 2vw;
-    font-family: "HAN";
 `
 
 export const Email = styled.span`
+    margin-bottom: 0.5vh;
 `
 
 export const Name = styled.span`
     font-size: 3vh;
     font-weight: 600;
+    font-family: "HAN";
+    margin-bottom: 1vh;
 `
 
 export const GitHub = styled.a`
-    margin-top: 0.2vh;
+    cursor: pointer;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: inherit; /* 링크의 색상 제거 */
 `
