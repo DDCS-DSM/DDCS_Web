@@ -87,7 +87,7 @@ function App() {
     }
     //접근 권한 체크
     //accessCheck(user, location, navigate);
-  },[location.pathname, navigate, user])
+  },[location.pathname, navigate, user, ])
 
   useEffect(() => {
     document.body.scrollTop = 0; // For Safari
