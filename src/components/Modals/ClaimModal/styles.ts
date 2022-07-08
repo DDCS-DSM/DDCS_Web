@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { download } from "../../../assets/images";
+import { download } from "../../../assets/images/icons";
 
 export const Filter = styled.div`
   position: fixed;

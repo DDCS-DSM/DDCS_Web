@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { box } from "../../../assets/images";
+import { box } from "../../../assets/images/icons";
 import PackageContentProps from "./type";
 import { useState } from "react";
 import axios from "axios";

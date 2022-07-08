@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { arrow, logo } from "../../../assets/images";
+import { rightArrow, logo } from "../../../assets/images/icons";
 import userProps from "../../../userProps";
 
 interface CardProps {
@@ -20,7 +20,7 @@ const MenuCard = ({ index, setModalState, user} : CardProps): JSX.Element => {
               <S.SubTitle>대기중인 택배를 확인합니다.</S.SubTitle>
             </S.TitleDiv>
           </S.LeftDiv>
-          <img src={arrow} alt="arrow" />
+          <img src={rightArrow} alt="arrow" />
         </S.Card>
       );
     case 2:
@@ -38,7 +38,7 @@ const MenuCard = ({ index, setModalState, user} : CardProps): JSX.Element => {
               <S.SubTitle>택배 수령을 인증합니다.</S.SubTitle>
             </S.TitleDiv>
           </S.LeftDiv>
-          <img src={arrow} alt="arrow" />
+          <img src={rightArrow} alt="arrow" />
         </S.Card>
       );
     case 3:
@@ -51,7 +51,7 @@ const MenuCard = ({ index, setModalState, user} : CardProps): JSX.Element => {
               <S.SubTitle>택배를 등록합니다.</S.SubTitle>
             </S.TitleDiv>
           </S.LeftDiv>
-          <img src={arrow} alt="arrow" />
+          <img src={rightArrow} alt="arrow" />
         </S.Card>
       );
   }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
-import { Home, Privacy, Enlist, Developers, Log } from "./pages";
+import { Home, Privacy, Enlist, Developers, Log, Notice } from "./pages";
 
 import GlobalStyle from "./styles";
 import Title from "./components/Title";
@@ -151,6 +151,7 @@ function App() {
         <Route path="/enlist" element={<Enlist/>} />
         <Route path="/developers" element={<Developers/>} />
         <Route path="/log" element={<Log/>} />
+        <Route path="/notice" element={<Notice/>} />
       </Routes>
       <Footer />
     </>

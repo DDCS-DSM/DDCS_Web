@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DropDown from "../DropDown/index";
 import * as S from "./styles";
-import { logo, login } from "../../assets/images";
+import { logo } from "../../assets/images/icons";
 import userProps from "../../userProps";
 
 //import { initializeApp } from "firebase-admin/app";

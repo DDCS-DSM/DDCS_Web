@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import Banner from "../Background/Banner/Image";
-import { home, developers, log, enlist, privacy } from "../../assets/images";
+import { home, developers, log, enlist, privacy } from "../../assets/images/banners";
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from "react";
 
@@ -29,6 +29,8 @@ const Title = () => {
       case "/privacy":
         setImg(privacy);
         setSubTitle("개인 정보");
+        break;
+      case "/notice":
         break;
       case "/":
         setImg(home);

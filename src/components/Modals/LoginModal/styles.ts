@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { checkmark } from "../../../assets/images";
+import { checkmark } from "../../../assets/images/icons";
 
 export const CheckboxDiv = styled.div`
   width: 100%;
