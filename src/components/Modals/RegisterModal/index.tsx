@@ -2,7 +2,7 @@ import axios from "axios";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
-import { Title, Filter, Button, Background, Close, Wrapper, Input } from "../styles";
+import { Title, Filter, Background, Close, Wrapper, Input } from "../styles";
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -155,11 +155,15 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <Input ref={nameInput} placeholder="이름" />
 
           <Input ref={phoneNumberInput} placeholder="전화번호" />
+          <S.Check down={16} onClick={()=>duplicationCheck("account_id")}>인증 요청</S.Check>
+
+          <Input ref={phoneNumberInput} placeholder="인증번호" />
+          <S.Check down={24} onClick={()=>duplicationCheck("account_id")}>인증 확인</S.Check>
 
           <Input ref={pwInput} type="password" placeholder="비밀번호" />
           <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
 
-          <Button onClick={()=>signup()}>회원가입</Button>
+          <S.Button onClick={()=>signup()}>회원가입</S.Button>
         </Wrapper>
       </Background>
     </Filter>

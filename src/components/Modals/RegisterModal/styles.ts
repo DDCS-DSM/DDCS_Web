@@ -38,12 +38,15 @@ export const Input = styled.input`
   }
 `;
 
-export const Check = styled.div`
+interface CheckProps {
+  down?: number
+}
 
-  margin-bottom: 70vh;
-  margin-left: 35vh;
-  
+export const Check = styled.div<CheckProps>`
+
   position: absolute;
+  margin-top: ${props => props.down ? `${props.down}vh` : 0};
+  margin-left: 35vh;
 
   width: 8vh;
   height: 6vh;
@@ -62,3 +65,38 @@ export const Check = styled.div`
     margin-left: 56vw;
   }
 `
+
+export const Button = styled.button`
+  all: unset;
+  background-color: #f6f6f6;
+
+  margin-bottom: 6vh;
+
+  width: 45vh;
+  height: 6vh;
+
+  font-family: "HAN";
+  font-size: 2.5vh;
+  text-align: center;
+
+  border-radius: 1.5vh;
+
+  @media (max-width: 426px) {
+    width: 70vw;
+    height: 35px;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+
+  cursor: pointer;
+  transition: filter 0.25s;
+
+  :disabled {
+    cursor: default;
+    filter: brightness(90%);
+  }
+
+  :hover:enabled {
+    filter: brightness(95%) drop-shadow(0 0 0.25vh #ddd);
+  }
+`;

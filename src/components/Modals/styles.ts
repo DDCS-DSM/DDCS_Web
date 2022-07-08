@@ -102,8 +102,8 @@ export const Close = styled.div`
   margin-top: 2vh;
 
   font-family: "HAN";
-  font-size: 2.25vh;
-  font-weight: 100;
+  font-size: 2.8vh;
+  font-weight: 500;
 
   @media (max-width: 426px) {
     margin-left: 10px;
