@@ -7,7 +7,6 @@ let setInput: Function;
 const ElistPackageContent = ({ phone, index } : {phone : EnlistPackageContentProps["phoneNumber"], index: number}) => {
   return(
         <S.Package>
-          <span>{index+1}.</span>
           <input placeholder={"전화번호를 입력해주세요."} value={phone} onChange={e =>setInput(e.target.value, index)} onBlur={(e)=>checkRemove(e.target.value, index)}/>
         </S.Package>
     )

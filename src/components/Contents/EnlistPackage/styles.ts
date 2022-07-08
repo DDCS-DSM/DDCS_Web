@@ -3,30 +3,27 @@ import styled from 'styled-components'
 export const Package = styled.div`
     
     display: flex;
-    align-items: center;
     
-    margin-top: 4vh;
-    height: 5vh;
+    margin-top: 2vw;
+    border: 1px solid #eee;
+    padding: 1vw;
 
-    span{
-        font-size: 3vh;
-        font-family: "HAN"
-        margin-top: 2vh;
-        padding-right: 1vw;
-    }
+    background-color: #F9F9F9;
+
+    border-radius: 1vh;
 
     input{
-        height: 5vh;
         box-sizing: border-box;
-        border: 0;
-        border-bottom: 0.2vh solid black;
+        padding: 0 0.6vw;
+        height: 2.5vw;
+        border-radius: 0.5vh;
+        border: 1px solid #ccc;
         outline: 0;
         width: 100%;
     }
 
     @media ( max-width: 425px ){
         padding: 1.5vw 3vw;
-        padding-right: 0; 
         margin-top: 3vw;
         input{
             font-size: 12px;
