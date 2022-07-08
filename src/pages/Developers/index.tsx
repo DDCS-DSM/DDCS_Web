@@ -1,4 +1,5 @@
 import * as S from "./styles"
+import { biscrab } from "../../assets/images/developers"
 
 const Develpoers = () => {
     return(
@@ -7,7 +8,7 @@ const Develpoers = () => {
                 <S.MajorTitle>FrontEnd</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
-                        <img />
+                        <img src={biscrab}/>
                         <S.Info>
                             <S.Name>이상운</S.Name>
                             <S.Email>biscrab@naver.com</S.Email>
@@ -57,7 +58,7 @@ const Develpoers = () => {
                 <S.MajorTitle>Android</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
-                        <img />
+                        <img src={biscrab}/>
                         <S.Info>
                             <S.Name>이상운</S.Name>
                             <S.Email>biscrab@naver.com</S.Email>
@@ -70,7 +71,7 @@ const Develpoers = () => {
                 <S.MajorTitle>Design</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
-                        <img />
+                        <img src={biscrab}/>
                         <S.Info>
                             <S.Name>이상운</S.Name>
                             <S.Email>biscrab@naver.com</S.Email>

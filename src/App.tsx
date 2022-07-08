@@ -137,14 +137,12 @@ function App() {
       {modalState === "claim" && <M.ClaimModal setModalState={setModalState} />}
       {modalState === "findid" && <M.FindIdModal setModalState={setModalState} />}
       {modalState === "findpw" && <M.FindPwModal setModalState={setModalState} />}
-      <Header loginState={loginState} setModalState={setModalState} user={user}/>
+      <Header loginState={loginState} setModalState={setModalState}/>
       <Title />
       <Routes>
-        <Route path="/" element={<Home user={user} setModalState={setModalState} />} />
+        <Route path="/" element={<Home user={user} />} />
         <Route path="/privacy" element={<Privacy user={user}/>}/>
-        <Route path="/list" element={<List/>} />
         <Route path="/enlist" element={<Enlist/>} />
-        <Route path="/accept" element={<Accept/>} />
         <Route path="/developers" element={<Developers/>} />
       </Routes>
       <Footer />

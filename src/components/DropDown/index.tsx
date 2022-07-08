@@ -2,12 +2,16 @@ import axios from "axios";
 import cookie from 'react-cookies'
 //import { setCookie } from "../../cookie";
 import * as S from "./styles";
+import { developers, list, log, login, user} from "../../assets/images/icons"
+import { useNavigate } from "react-router-dom";
 
 interface DropDownProps {
-  setDropDownVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setDropDownVisible: React.Dispatch<React.SetStateAction<boolean>>,
+  loginState: boolean,
+  setModalState: React.Dispatch<React.SetStateAction<string>>
 }
 
-const DropDown = ({ setDropDownVisible }: DropDownProps) => {
+const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownProps) => {
 
   const logOut = () => {
     const accessToken = cookie.load("DCS_accessToken");
@@ -22,12 +26,43 @@ const DropDown = ({ setDropDownVisible }: DropDownProps) => {
       .catch(err => alert(`에러. ${err.response.status}`))
   }
 
+  const navigate = useNavigate();
+
   return (
     <S.Wrapper onClick={() => setDropDownVisible(false)}>
       <S.Background>
-        <S.Content to="/privacy">프로필</S.Content>
-        <S.Content onClick={()=>alert("미구현")} to="/">문의하기</S.Content>
-        <S.Content onClick={()=>logOut()} to="/">로그아웃</S.Content>
+        {loginState ?
+        <S.Content onClick={()=>navigate("/privacy")}>
+          <img src={user}/>
+          내 정보
+        </S.Content>
+        :
+        <></>
+        }
+        <S.Content onClick={()=>navigate("/")}>
+          <img src={list}/>
+          택배목록
+        </S.Content>
+        <S.Content onClick={()=>navigate("/log")}>
+          <img src={log}/>
+          수령내역
+        </S.Content>
+        {!loginState ?
+          <S.Content onClick={()=>setModalState("login")}>
+            <img src={login}/>
+            로그인
+          </S.Content>
+          :
+          <S.Content onClick={()=>logOut()}>
+            <img src={login}/>
+            회원가입
+          </S.Content>
+        }
+        <S.Content onClick={()=>navigate("/developers")}>
+          <img src={developers}/>
+          개발자 소개
+        </S.Content>
+        <S.Content onClick={()=>alert("미구현")}>문의하기</S.Content>
       </S.Background>
     </S.Wrapper>
   );

@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   position: absolute;
-  right: 2vh;
+  left: 2vh;
 
-  width: 15vh;
+  width: 20vh;
   height: max-content;
 
   z-index: 1;
@@ -13,11 +12,12 @@ export const Wrapper = styled.div`
 
 export const Background = styled.div`
   background-color: #fff;
+  box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.2);
 
-  margin-top: 24vh;
+  margin-top: 10vh;
+  transform: translateY(50%);
 
   width: inherit;
-  height: max-content;
 
   display: flex;
   flex-direction: column;
@@ -25,17 +25,17 @@ export const Background = styled.div`
   align-items: center;
 
   box-sizing: border-box;
-  border-radius: 1.5vh;
+  border: 1px solid black;
 `;
 
-export const Content = styled(Link)`
+export const Content = styled.div`
   background-color: #fff;
 
-  width: inherit;
+  width: 100%;
   height: 5vh;
+  padding-left: 2vh;
 
   display: flex;
-  justify-content: center;
   align-items: center;
 
   font-family: "HAN";
@@ -45,56 +45,23 @@ export const Content = styled(Link)`
   text-decoration: none;
 
   box-sizing: border-box;
-  border: 0.1vh solid #ddd;
-  border-bottom: 0;
+  border-bottom: 0.1vh solid #ddd;
   z-index: 2;
   transition: filter 0.1s;
   cursor: pointer;
 
-  :first-child {
-    border-top-left-radius: 0.5vh;
-    border-top-right-radius: 0.5vh;
+  img{
+    margin-top: 0.3vh;
+    weight: 2.3vh;
+    height: 2.3vh;
+    margin-right: 1vh;
   }
 
   :last-child {
-    border-bottom: 0.1vh solid #ddd;
-    border-bottom-left-radius: 0.5vh;
-    border-bottom-right-radius: 0.5vh;
+    border-bottom: 0;
   }
 
   :hover {
     filter: brightness(90%);
-  }
-
-  :first-child:before {
-    position: absolute;
-
-    margin-bottom: 6.25vh;
-    margin-left: 10.4vh;
-
-    width: 0;
-    height: 0;
-
-    border-bottom: 1.25vh solid #ddd;
-    border-left: 0.75vh solid transparent;
-    border-right: 0.75vh solid transparent;
-
-    content: " ";
-  }
-
-  :first-child:after {
-    position: absolute;
-
-    margin-bottom: 5.85vh;
-    margin-left: 10.4vh;
-
-    width: 0;
-    height: 0;
-
-    border-bottom: 1.25vh solid #fff;
-    border-left: 0.75vh solid transparent;
-    border-right: 0.75vh solid transparent;
-
-    content: " ";
   }
 `;

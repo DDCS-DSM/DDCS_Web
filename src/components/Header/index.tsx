@@ -12,13 +12,11 @@ import userProps from "../../userProps";
 interface HeaderInterface {
   loginState: boolean;
   setModalState: React.Dispatch<React.SetStateAction<string>>;
-  user: userProps;
 }
 
 const Header = ({
   loginState,
-  setModalState,
-  user
+  setModalState
 }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
@@ -47,10 +45,21 @@ const Header = ({
   return (
     <S.PreHeader>
       <S.Header>
-        <S.LeftContents to="/">
+        <S.LeftContents onClick={()=>setDropDownVisible(!dropDownVisible)}>
           <S.Icon src={logo} />
           <S.Text>DCS</S.Text>
         </S.LeftContents>
+        {dropDownVisible === true && (
+          <DropDown setDropDownVisible={setDropDownVisible} setModalState={setModalState} loginState={loginState} />
+        )}
+      </S.Header>
+    </S.PreHeader>
+  );
+};
+
+export default Header;
+
+/*
         {loginState ? (
           <S.RightContents onClick={() => setDropDownVisible(true)}>
             <S.Text>{user.teacher || user.courier ? "어드민" : `${user.name}`}</S.Text>
@@ -62,12 +71,4 @@ const Header = ({
             <S.Icon src={login} />
           </S.RightContents>
         )}
-        {dropDownVisible === true && (
-          <DropDown setDropDownVisible={setDropDownVisible} />
-        )}
-      </S.Header>
-    </S.PreHeader>
-  );
-};
-
-export default Header;
+*/

@@ -8,7 +8,7 @@ export const Body = styled.div`
 `
 
 export const Major = styled.div`
-
+    margin-top: 10vh;
 `
 
 export const MajorDiv = styled.div`
@@ -18,7 +18,7 @@ export const MajorDiv = styled.div`
 
 export const MajorTitle = styled.h1`
     font-family: "HAN";
-    margin-bottom: 6vh;
+    margin-bottom: 1vh;
 `
 
 export const Developer = styled.div`
@@ -28,15 +28,17 @@ export const Developer = styled.div`
         width: 16vh;
         height: 16vh;
         border-radius: 50%;
+        border: 0.3vh solid #aaa;
     }
     display: flex;
-    margin-bottom: 5vh;
+    margin-top: 5vh;
 `
 
 export const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 2vw;
+    font-family: "HAN";
 `
 
 export const Email = styled.span`
@@ -44,7 +46,6 @@ export const Email = styled.span`
 
 export const Name = styled.span`
     font-size: 3vh;
-    font-family: "HAN";
     font-weight: 600;
 `
 

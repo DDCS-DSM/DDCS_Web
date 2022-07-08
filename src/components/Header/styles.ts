@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const PreHeader = styled.div`
+
   width: 100%;
   height: 7vh;
 
@@ -19,7 +19,7 @@ export const Header = styled.div`
   align-items: center;
 `;
 
-export const LeftContents = styled(Link)`
+export const LeftContents = styled.div`
   margin-left: 2vh;
 
   width: 11.75vh;
