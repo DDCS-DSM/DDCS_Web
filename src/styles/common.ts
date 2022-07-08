@@ -51,7 +51,7 @@ export const Button = styled.div`
 
   background-color: #f6f6f6;
 
-  width: 20vh;
+  width: 35vh;
   height: 6.5vh;
 
   display: flex;
