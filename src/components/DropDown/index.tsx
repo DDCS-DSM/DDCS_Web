@@ -43,26 +43,35 @@ const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownPro
           <img src={list}/>
           택배목록
         </S.Content>
-        <S.Content onClick={()=>navigate("/log")}>
-          <img src={log}/>
-          수령내역
-        </S.Content>
-        {!loginState ?
-          <S.Content onClick={()=>setModalState("login")}>
-            <img src={login}/>
-            로그인
+        {loginState ?
+          <S.Content onClick={()=>navigate("/log")}>
+            <img src={log}/>
+            수령내역
           </S.Content>
+          :
+          <></>
+        }
+        {!loginState ?
+          <>
+            <S.Content onClick={()=>setModalState("login")}>
+              <img src={login}/>
+              로그인
+            </S.Content>
+            <S.Content onClick={()=>setModalState("policy")}>
+              <img src={login}/>
+              회원가입
+            </S.Content>
+          </>
           :
           <S.Content onClick={()=>logOut()}>
             <img src={login}/>
-            회원가입
+            로그아웃
           </S.Content>
         }
         <S.Content onClick={()=>navigate("/developers")}>
           <img src={developers}/>
           개발자 소개
         </S.Content>
-        <S.Content onClick={()=>alert("미구현")}>문의하기</S.Content>
       </S.Background>
     </S.Wrapper>
   );
