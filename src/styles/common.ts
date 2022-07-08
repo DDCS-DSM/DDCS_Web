@@ -19,16 +19,12 @@ export const Title = styled.div`
 export const SchemaWrapper = styled.div`
   margin: 0 auto;
 
-  width: 75vw;
+  width: 74.4vw;
   height: 6.5vh;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-
-  div:nth-child(1){
-    padding-left: 9vh;
-  }
 
   border-bottom: 0.25vh solid #000;
   @media ( max-width: 426px ){
@@ -40,7 +36,7 @@ export const SchemaWrapper = styled.div`
 `;
 
 export const Schema = styled.div`
-  width: 22.5vw;
+  width: 27.2vh;;
   font-family: "HAN";
   font-size: 2.25vh;
   text-align: center;

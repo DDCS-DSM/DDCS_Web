@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
-import { Home, Privacy, Enlist, Developers } from "./pages";
+import { Home, Privacy, Enlist, Developers, Log } from "./pages";
 
 import GlobalStyle from "./styles";
 import Title from "./components/Title";
@@ -12,7 +12,7 @@ import * as M from "./components/Modals"
 import cookie from 'react-cookies'
 import userProps from "./userProps";
 
-import accessCheck from "./accessCheck";
+//import accessCheck from "./accessCheck";
 
 import axios from "axios";
 axios.defaults.baseURL = "http://3.34.216.253:8080";
@@ -73,9 +73,15 @@ function App() {
           }
           else if(err.response.status === 404){
             axios.get("/admin/verification/teacher", {headers:{Authorization: `Bearer ${accessToken}`}})
-              .then(res => setUser({...user, teacher: true}))
+              .then(res => {
+                setUser({...user, teacher: true})
+                setLoginState(true)
+              })
             axios.get("/admin/verification/courier", {headers:{Authorization: `Bearer ${accessToken}`}})
-              .then(res => setUser({...user, courier: true}))
+              .then(res => {
+                setUser({...user, courier: true})
+                setLoginState(true);
+              })
           }               
         })
     }
@@ -140,10 +146,11 @@ function App() {
       <Header loginState={loginState} setModalState={setModalState}/>
       <Title />
       <Routes>
-        <Route path="/" element={<Home user={user} />} />
+        <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy user={user}/>}/>
         <Route path="/enlist" element={<Enlist/>} />
         <Route path="/developers" element={<Developers/>} />
+        <Route path="/log" element={<Log/>} />
       </Routes>
       <Footer />
     </>
