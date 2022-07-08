@@ -1,7 +1,7 @@
 import userProps from "./userProps";
 
 const isLogined = (user: userProps) => {
-    if(user.studentNumber || user.teacher || user.courier)
+    if(user.phoneNumber || user.teacher || user.courier)
       return true;
     else
       return false;

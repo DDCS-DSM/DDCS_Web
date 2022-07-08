@@ -53,7 +53,7 @@ const Header = ({
         </S.LeftContents>
         {loginState ? (
           <S.RightContents onClick={() => setDropDownVisible(true)}>
-            <S.Text>{user.teacher || user.courier ? "어드민" : `${user.studentNumber} ${user.name}`}</S.Text>
+            <S.Text>{user.teacher || user.courier ? "어드민" : `${user.name}`}</S.Text>
             <S.Icon src={login} />
           </S.RightContents>
         ) : (

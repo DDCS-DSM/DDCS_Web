@@ -25,7 +25,6 @@ function App() {
     name: "",
     accountId: "",
     email: "",
-    studentNumber: 0,
     phoneNumber: "",
     teacher: false,
     courier: false
