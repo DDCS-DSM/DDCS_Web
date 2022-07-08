@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 
-import { Home, Privacy, Enlist, List, Accept } from "./pages";
+import { Home, Privacy, Enlist, List, Accept, Developers } from "./pages";
 
 import GlobalStyle from "./styles";
 import Title from "./components/Title";
@@ -157,6 +157,7 @@ function App() {
         <Route path="/list" element={<List/>} />
         <Route path="/enlist" element={<Enlist/>} />
         <Route path="/accept" element={<Accept/>} />
+        <Route path="/developers" element={<Developers/>} />
       </Routes>
       <Footer />
     </>

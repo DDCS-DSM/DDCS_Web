@@ -10,3 +10,4 @@ export { default as checkmark } from "./checkmark.png";
 export { default as arrow } from "./arrow.png";
 export { default as download } from "./download.png";
 export { default as del } from "./delete.png"
+export { default as developers } from "./developers.png"
