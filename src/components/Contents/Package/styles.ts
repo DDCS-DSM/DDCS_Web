@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const List = styled.div`
-  height: 60vw;
+  min-height: 70vh;
   margin: 0 auto;
   width: 75vw;
   @media ( max-width: 426px ){
