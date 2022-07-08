@@ -1,0 +1,1 @@
+export { default as biscrab } from "./biscrab.png";
