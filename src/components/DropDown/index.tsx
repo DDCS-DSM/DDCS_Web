@@ -2,7 +2,7 @@ import axios from "axios";
 import cookie from 'react-cookies'
 //import { setCookie } from "../../cookie";
 import * as S from "./styles";
-import { developers, list, log, login, user} from "../../assets/images/icons"
+import { code, list, log, login, user} from "../../assets/images/icons"
 import { useNavigate } from "react-router-dom";
 
 interface DropDownProps {
@@ -69,7 +69,7 @@ const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownPro
           </S.Content>
         }
         <S.Content onClick={()=>navigate("/developers")}>
-          <img src={developers}/>
+          <img src={code}/>
           개발자 소개
         </S.Content>
       </S.Background>

@@ -1,11 +1,12 @@
 import * as S from "./styles"
 import { biscrab } from "../../assets/images/developers"
+import { code } from "../../assets/images/icons"
 
 const Develpoers = () => {
     return(
         <S.Body>
             <S.Major>
-                <S.MajorTitle>FrontEnd</S.MajorTitle>
+                <S.MajorTitle><img src={code}/>FrontEnd</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
                         <img src={biscrab}/>
@@ -34,7 +35,7 @@ const Develpoers = () => {
                 </S.MajorDiv>
             </S.Major>
             <S.Major>
-                <S.MajorTitle>BackEnd</S.MajorTitle>
+                <S.MajorTitle><img src={code}/>BackEnd</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
                         <img />
@@ -55,7 +56,7 @@ const Develpoers = () => {
                 </S.MajorDiv>
             </S.Major>
             <S.Major>
-                <S.MajorTitle>Android</S.MajorTitle>
+                <S.MajorTitle><img src={code}/>Android</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
                         <img src={biscrab}/>
@@ -68,7 +69,7 @@ const Develpoers = () => {
                 </S.MajorDiv>
             </S.Major>
             <S.Major>
-                <S.MajorTitle>Design</S.MajorTitle>
+                <S.MajorTitle><img src={code}/>Design</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
                         <img src={biscrab}/>

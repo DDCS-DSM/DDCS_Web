@@ -17,8 +17,17 @@ export const MajorDiv = styled.div`
 `
 
 export const MajorTitle = styled.h1`
+    display: flex;
+    align-items: center;
     font-family: "HAN";
     margin-bottom: 1vh;
+
+    img{
+        width: 5.5vh;
+        height: 5.5vh;
+        margin-top: 0.6vh;
+        margin-right: 2vh;
+    }
 `
 
 export const Developer = styled.div`
