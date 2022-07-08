@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { box, del } from "../../../assets/images";
+import { box } from "../../../assets/images";
 import PackageContentProps from "./type";
 import { useState } from "react";
 import axios from "axios";
@@ -17,12 +17,8 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
 
   return (
     <S.Package>
-      {location.pathname === "/list" ?
-        <S.Icon src={box} />
-        :
-        <S.Delete src={del} onClick={()=>deletePackage(id)}/>
-      }
-      <S.PackageWrapper>
+      <S.Icon src={box} />
+      <S.InstanceDiv>
         <S.Instance>{courierCompany}</S.Instance>
         {location.pathname === "/list" ?
           <S.Instance>{name}</S.Instance>
@@ -36,7 +32,7 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
           </>
         }
         <S.Instance>{date}</S.Instance>
-      </S.PackageWrapper>
+      </S.InstanceDiv>
     </S.Package>
   );
 };

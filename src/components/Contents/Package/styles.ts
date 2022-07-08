@@ -26,7 +26,6 @@ export const Package = styled.div`
   height: 8vh;
 
   display: flex;
-  justify-content: right;
   align-items: center;
 
   @media ( max-width: 426px ){
@@ -36,22 +35,18 @@ export const Package = styled.div`
   border-radius: 1.5vh;
   cursor: pointer;
   transition: filter 0.25s;
-
-  :hover {
-    filter: brightness(97%) drop-shadow(0 0 0.25vh #ddd);
-  }
 `;
 
-export const PackageWrapper = styled.div`
+export const InstanceDiv = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 `
 
 export const Instance = styled.div`
   transform: translateY(-0.2vh);
-  width: 22.5vw;
+  width: 27.2vh;
 
   font-family: "HAN";
   font-size: 2.25vh;
@@ -90,23 +85,13 @@ export const InstanceInput = styled.input`
 `
 
 export const Icon = styled.img`
-  width: 4.5vh;
-  height: 4.5vh;
-  margin: 0 3vh;
+  position: absolute;
+  width: 4.4vh;
+  height: 4.4vh;
+  margin: 0 2.8vh;
   @media ( max-width: 426px ){
     width: 3.5vh;
     height: 3.5vh;
     margin: 0 2vh;
   }
 `;
-
-export const Delete = styled.img`
-  width: 3.5vh;
-  height: 3.5vh;
-  margin: 0 0.8vh;
-  @media ( max-width: 426px ){
-    width: 2.5vh;
-    height: 2.5vh;
-    margin: 0 4vh;
-  }
-`
