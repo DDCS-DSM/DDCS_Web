@@ -6,16 +6,13 @@ import { del } from "../../../assets/images/icons"
 import cookie from 'react-cookies'
 
 interface LoginModalInterface {
-  setLoginState: React.Dispatch<React.SetStateAction<boolean>>;
   setModalState: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
+const LoginModal = ({ setModalState }: LoginModalInterface) => {
 
   const idInput = useRef<HTMLInputElement | null>(null);
   const pwInput = useRef<HTMLInputElement | null>(null);
-
-  const [toAdmin, setToAdmin] = useState<boolean>(false);
 
   const checkInput = () => {
     if(
@@ -35,7 +32,7 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
 
   const login = () => {
     if(checkInput()) {
-      axios.post(`${toAdmin ? "/admin" : "/users/token"}`, {
+      axios.post("/users/token", {
         accountId: idInput.current?.value,
         password: pwInput.current?.value
       },
@@ -61,8 +58,8 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
           <Input type="password" ref={pwInput} placeholder="비밀번호" />
           <S.CheckboxDiv>
             <S.CheckboxWrapper>
-              <S.Checkbox onChange={(e)=>setToAdmin(e.target.checked)} checked={toAdmin} type="checkbox" />
-              <S.Label>운영자 계정으로 로그인</S.Label>
+              <S.Checkbox type="checkbox" />
+              <S.Label>아이디 저장</S.Label>
             </S.CheckboxWrapper>
           </S.CheckboxDiv>
 
@@ -79,8 +76,11 @@ const LoginModal = ({ setLoginState, setModalState }: LoginModalInterface) => {
               회원가입
             </S.Link>
           </S.Text>
-          <S.Link onClick={() => setModalState("findid")}>아이디 찾기</S.Link>
-          <S.Link onClick={() => setModalState("findpw")}>비밀번호 찾기</S.Link>
+          <S.FindDiv>
+            <S.Find onClick={() => setModalState("findid")}>아이디 찾기</S.Find>
+            <span>{"&"}</span>
+            <S.Find onClick={() => setModalState("findpw")}>비밀번호 찾기</S.Find>
+          </S.FindDiv>
         </S.TextWrapper>
       </Background>
     </Filter>

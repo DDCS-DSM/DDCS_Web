@@ -131,10 +131,7 @@ function App() {
     <>
       <GlobalStyle />
       {modalState === "login" && (
-        <M.LoginModal
-          setModalState={setModalState}
-          setLoginState={setLoginState}
-        />
+        <M.LoginModal setModalState={setModalState} />
       )}
       {modalState === "policy" && <M.PolicyModal setModalState={setModalState} />}
       {modalState === "register" && (

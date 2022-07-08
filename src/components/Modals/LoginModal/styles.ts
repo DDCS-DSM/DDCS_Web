@@ -54,9 +54,9 @@ export const Label = styled.label`
 `;
 
 export const TextWrapper = styled.div`
-  margin-bottom: 5vh;
+  margin-bottom: 4vh;
 
-  height: 10vh;
+  height: 7vh;
 
   display: flex;
   flex-direction: column;
@@ -79,6 +79,31 @@ export const Text = styled.div`
     font-size: 11px;
   }
 `;
+
+export const FindDiv = styled.div`
+  display: flex;
+
+  font-family: "HAN";
+  font-size: 1.8vh;
+  @media (max-width: 426px) {
+    font-size: 11px;
+  }
+
+  color: #666;
+
+  cursor: pointer;
+
+  span{
+    margin-right: 1vh;
+  }
+`
+
+export const Find = styled.span`
+  :hover{
+    color: blue;
+    border-bottom: 0.1vh solid blue;
+  }
+`
 
 export const Link = styled.div`
   :first-child {
