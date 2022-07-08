@@ -68,18 +68,16 @@ export const Instance = styled.div`
 export const InstanceInput = styled.input`
   box-sizing: border-box;
   padding: 0 0.5vw;
-  width: 18.5vw;
-  margin: 0 2vw;
+  width: 27.2vh;
   height: 5vh;
   background: none;
   border: 0;
   border-bottom: 0.25vh solid black;
   font-family: "HAN";
-  font-size: 2vh;
+  font-size: 2.25vh;
   font-weight: 600;
   text-align: center;
   @media ( max-width: 426px ){
-    margin: 0;
     font-size: 1.8vh;
   }
 `
