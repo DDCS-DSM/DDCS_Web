@@ -152,6 +152,7 @@ function App() {
         <Route path="/developers" element={<Developers/>} />
         <Route path="/log" element={<Log/>} />
         <Route path="/notice" element={<Notice/>} />
+        <Route path="/notice/:id" element={<Notice/>} />
       </Routes>
       <Footer />
     </>
