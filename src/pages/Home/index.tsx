@@ -1,14 +1,9 @@
 import { useState } from "react";
-import Menu from "../../components/Menu";
-import * as S from "./styles";
 import { Title, SchemaWrapper, Schema, Button } from "../../styles/common";
-import userProps from '../../userProps';
 import Package from "../../components/Contents/Package";
 import PackageContentProps from "../../components/Contents/Package/type";
 
-type HomeProps = React.Dispatch<React.SetStateAction<string>>;
-
-function Home({user}: {user: userProps}) {
+function Home() {
 
   const [lists, setLists] = useState<PackageContentProps[]>([{
     id: 1,
