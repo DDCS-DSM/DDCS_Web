@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { home, list, enlist, accept, developers } from "../../../../assets/images";
+import { home, list, developers, log } from "../../../../assets/images";
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from "react";
 
@@ -15,11 +15,8 @@ const Banner = () => {
       case "/list":
         setImg(list);
         break;
-      case "/enlist":
-        setImg(enlist);
-        break;
-      case "/accept":
-        setImg(accept);
+      case "/log":
+        setImg(log);
         break;
       case "/developers":
         setImg(developers);
