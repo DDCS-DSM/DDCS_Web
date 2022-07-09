@@ -3,4 +3,5 @@ export default interface PackageContentProps {
     courierCompany: string;
     name: string;
     date: string;
+    admin?: boolean;
 }

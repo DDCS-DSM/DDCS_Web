@@ -44,6 +44,21 @@ export const InstanceDiv = styled.div`
   align-items: center;
 `
 
+export const Delete = styled.div`
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: right;
+  height: 4.4vh;
+  width: 75vw;
+  img{
+    position: absolute;
+    width: 3.4vh;
+    height: 3.4vh;
+    margin-right: 1vw;
+  }
+`
+
 export const Instance = styled.div`
   transform: translateY(-0.2vh);
   width: 27.2vh;
@@ -87,9 +102,4 @@ export const Icon = styled.img`
   width: 4.4vh;
   height: 4.4vh;
   margin: 0 2.8vh;
-  @media ( max-width: 426px ){
-    width: 3.5vh;
-    height: 3.5vh;
-    margin: 0 2vh;
-  }
 `;

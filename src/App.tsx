@@ -26,7 +26,7 @@ function App() {
     accountId: "",
     email: "",
     phoneNumber: "",
-    teacher: false,
+    admin: false,
     courier: false
   });
 
@@ -74,7 +74,7 @@ function App() {
           else if(err.response.status === 404){
             axios.get("/admin/verification/teacher", {headers:{Authorization: `Bearer ${accessToken}`}})
               .then(res => {
-                setUser({...user, teacher: true})
+                setUser({...user, admin: true})
                 setLoginState(true)
               })
             axios.get("/admin/verification/courier", {headers:{Authorization: `Bearer ${accessToken}`}})
@@ -143,7 +143,7 @@ function App() {
       <Header loginState={loginState} setModalState={setModalState}/>
       <Title />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home admin={user.admin}/>} />
         <Route path="/privacy" element={<Privacy user={user}/>}/>
         <Route path="/enlist" element={<Enlist/>} />
         <Route path="/developers" element={<Developers/>} />

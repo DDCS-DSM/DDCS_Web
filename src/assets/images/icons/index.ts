@@ -12,3 +12,4 @@ export { default as box } from "./box.png";
 export { default as logo } from "./logo.png";
 export { default as checkmark } from "./checkmark.png"
 export { default as notice } from "./notice.png"
+export { default as thinDel } from "./thinDelete.png"

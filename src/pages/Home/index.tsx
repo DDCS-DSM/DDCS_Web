@@ -3,7 +3,7 @@ import { Title, SchemaWrapper, Schema, Button } from "../../styles/common";
 import Package from "../../components/Contents/Package";
 import PackageContentProps from "../../components/Contents/Package/type";
 
-function Home() {
+function Home({admin} : {admin: boolean}) {
 
   const [lists, setLists] = useState<PackageContentProps[]>([{
     id: 1,
@@ -20,7 +20,7 @@ function Home() {
         <Schema>수령자</Schema>
         <Schema>날짜</Schema>
       </SchemaWrapper>
-      <Package lists={lists}/>
+      <Package lists={lists} admin={admin}/>
       <Button>더보기</Button>
     </>
   );

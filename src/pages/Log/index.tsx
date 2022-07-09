@@ -20,7 +20,7 @@ const Log = () => {
           <Schema>수령자</Schema>
           <Schema>날짜</Schema>
         </SchemaWrapper>
-        <Package lists={lists}/>
+        <Package lists={lists} admin={false}/>
         <Button>더보기</Button>
       </>
     )

@@ -1,15 +1,16 @@
 import * as S from "./styles";
-import { box } from "../../../assets/images/icons";
+import { box, thinDel } from "../../../assets/images/icons";
 import PackageContentProps from "./type";
 import { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
+import userProps from "../../../userProps";
 
 let endRewrite: Function;
 let deletePackage: Function;
 
-const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps) => {
+const PackageContent = ({ id, courierCompany, name, date, admin }: PackageContentProps) => {
 
   const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
@@ -40,11 +41,18 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
         }
         <S.Instance>{date}</S.Instance>
       </S.InstanceDiv>
+      {!isMobile&&admin ?
+        <S.Delete onClick={()=>deletePackage()}>
+          <img src={thinDel}/>
+        </S.Delete>
+        :
+        <></>
+      }
     </S.Package>
   );
 };
 //onBlur={()=>endRewrite(id, setNewName, newName, name)}
-const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
+const List = ({lists, admin} : {lists: PackageContentProps[], admin: userProps["admin"]}): JSX.Element => {
 
   endRewrite = (
     id: number, 
@@ -73,7 +81,7 @@ const List = ({lists} : {lists: PackageContentProps[]}): JSX.Element => {
         <>
           {lists.map(i => {
             return(
-              <PackageContent key={i.id} id={i.id} courierCompany={i.courierCompany} name={i.name} date={i.date}/>
+              <PackageContent key={i.id} id={i.id} courierCompany={i.courierCompany} name={i.name} date={i.date} admin={admin}/>
             )
           })}
         </>
