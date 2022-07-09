@@ -73,7 +73,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
     }
   }
 
-  //이메일 인증 요청
+  //전회번호 인증 요청
   const requestPhoneNumberVerification = () => {
     console.log(phoneNumberInput.current?.value);
     if(phoneNumberInput.current?.value) {
@@ -83,11 +83,11 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       //setOnVerification(true);
     }
     else{
-      alert("이메일을 입력해주세요.");
+      alert("전회번호을 입력해주세요.");
     }
   }
 
-  //이메일 인증
+  //전회번호 인증
   const phoneNumberAuthentication = () => {
     if(phoneNumberInput.current?.value && verificationInput.current?.value) {
       axios.put("/users/email-verifications", {email: phoneNumberInput.current?.value, code: verificationInput.current?.value})
@@ -98,7 +98,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
         .catch(err => alert(`에러 ${err.status}`));
     }
     else{
-      alert("이메일과 코드를 입력해주세요.");
+      alert("전회번호과 코드를 입력해주세요.");
     }
   }
 
@@ -146,7 +146,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <Input ref={verificationInput} placeholder="인증번호" />
           <S.Check down={24} onClick={()=>phoneNumberAuthentication()}>인증 확인</S.Check>
 
-          <Input ref={pwInput} type="password" placeholder="비밀번호" />
+          <Input ref={pwInput} type="password" placeholder="비밀번호 (영어, 숫자, 특수문자 포함 8자 이상)" />
           <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
 
           <S.Button onClick={()=>signup()}>회원가입</S.Button>
