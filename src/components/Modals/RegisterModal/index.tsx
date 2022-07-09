@@ -11,20 +11,16 @@ interface RegisterModalInterface {
 
 const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   const nameInput = useRef<HTMLInputElement>(null);
-  const emailInput = useRef<HTMLInputElement>(null);
-  const emailCheckInput = useRef<HTMLInputElement>(null);
   const idInput = useRef<HTMLInputElement>(null);
   const pwInput = useRef<HTMLInputElement>(null);
   const pwCheckInput = useRef<HTMLInputElement>(null);
   const phoneNumberInput = useRef<HTMLInputElement>(null);
-  const studentNumberInput = useRef<HTMLInputElement>(null);
+  const verificationInput = useRef<HTMLInputElement>(null);
 
   const checkInput = () => {
     if (
       nameInput.current &&
       nameInput.current.value &&
-      emailInput.current &&
-      emailInput.current.value &&
       idInput.current &&
       idInput.current.value &&
       pwInput.current &&
@@ -32,9 +28,7 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       pwCheckInput.current &&
       pwCheckInput.current.value&&
       phoneNumberInput.current&&
-      phoneNumberInput.current.value&&
-      studentNumberInput.current&&
-      studentNumberInput.current.value
+      phoneNumberInput.current.value
     ) {
       if(pwInput.current.value === pwCheckInput.current.value) 
         return true;
@@ -48,48 +42,42 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       return false;
     }
   }
-
+/*
   const confirmRegister = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if(checkInput()){
       setModalState("login");
     }
-  };
+  };*/
 
-  const duplicationCheck = (target: string) => {
+  const duplicationCheck = () => {
 
-    const getParams = () => {
-      switch(target){
-        case "account_id":
-          return idInput.current?.value;
-        case "student-number":
-          return studentNumberInput.current?.value;
-        case "phone-number":
-          return phoneNumberInput.current?.value;
-      }
+    if(idInput.current?.value){
+      axios.head(`/users/account_id/${idInput.current.value}`)
+        .catch(err => {
+          console.log(err);
+          if(err.response.status === 409){
+            alert("이미 존재합니다.");
+          }
+          else if(err.response.status === 404){
+            alert("가능합니다.");
+          }
+          else{
+            alert(`에러 ${err.response.status}`);
+          }
+        })
     }
-
-    axios.head(`/users/${target}/${getParams()}`)
-      .catch(err => {
-        console.log(err);
-        if(err.response.status === 409){
-          alert("이미 존재합니다.");
-        }
-        else if(err.response.status === 404){
-          alert("가능합니다.");
-        }
-        else{
-          alert(`에러 ${err.response.status}`);
-        }
-      })
+    else{
+      alert("아이디를 입력해 주세요.")
+    }
   }
 
   //이메일 인증 요청
-  const requestEmailVerification = () => {
-    console.log(emailInput.current?.value);
-    if(emailInput.current?.value) {
-      axios.post("/users/email-verifications", {email: emailInput.current.value})
+  const requestPhoneNumberVerification = () => {
+    console.log(phoneNumberInput.current?.value);
+    if(phoneNumberInput.current?.value) {
+      axios.post("/users/email-verifications", {email: phoneNumberInput.current.value})
         .then(res => alert("요청 되었습니다."))
         .catch(err => alert(`에러 ${err.response.status}`))
       //setOnVerification(true);
@@ -100,9 +88,9 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   }
 
   //이메일 인증
-  const emailAuthentication = () => {
-    if(emailInput.current?.value && emailCheckInput.current?.value) {
-      axios.put("/users/email-verifications", {email: emailInput.current?.value, code: emailCheckInput.current?.value})
+  const phoneNumberAuthentication = () => {
+    if(phoneNumberInput.current?.value && verificationInput.current?.value) {
+      axios.put("/users/email-verifications", {email: phoneNumberInput.current?.value, code: verificationInput.current?.value})
         .then(res => {
           alert("인증 되었습니다.");
           //setOnVerification(true);
@@ -122,10 +110,8 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       axios.post("/users", {
         accountId: idInput.current?.value, // 6자 이상 아이디
         password: pwInput.current?.value, // 영어, 숫자, 특수문자 포함 8자 이상
-        email: emailInput.current?.value, // 학교 이메일
         name: nameInput.current?.value, // 이름
         phoneNumber: phoneNumberInput.current?.value, // 전화번호
-        studentNumber: studentNumberInput.current?.value // 학번
       })
       .then(res => {
         alert("회원가입 완료.");
@@ -149,16 +135,16 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
         <Title>회원가입</Title>
         <Wrapper onSubmit={() => signup()}>
 
-          <Input ref={idInput} placeholder="아이디" />
-          <S.Check onClick={()=>duplicationCheck("account_id")}>중복 확인</S.Check>
+          <Input ref={idInput} placeholder="아이디 (6자 이상)" />
+          <S.Check onClick={()=>duplicationCheck()}>중복 확인</S.Check>
 
           <Input ref={nameInput} placeholder="이름" />
 
           <Input ref={phoneNumberInput} placeholder="전화번호" />
-          <S.Check down={16} onClick={()=>duplicationCheck("account_id")}>인증 요청</S.Check>
+          <S.Check down={16} onClick={()=>requestPhoneNumberVerification()}>인증 요청</S.Check>
 
-          <Input ref={phoneNumberInput} placeholder="인증번호" />
-          <S.Check down={24} onClick={()=>duplicationCheck("account_id")}>인증 확인</S.Check>
+          <Input ref={verificationInput} placeholder="인증번호" />
+          <S.Check down={24} onClick={()=>phoneNumberAuthentication()}>인증 확인</S.Check>
 
           <Input ref={pwInput} type="password" placeholder="비밀번호" />
           <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />
