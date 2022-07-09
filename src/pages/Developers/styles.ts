@@ -30,12 +30,19 @@ export const MajorTitle = styled.h1`
     align-items: center;
     font-family: "HAN";
     margin-bottom: 1vh;
+    @media ( max-width: 426px ){
+        margin-bottom: 0vh;
+    }
 
     img{
         width: 5.5vh;
         height: 5.5vh;
         margin-top: 0.6vh;
         margin-right: 2vh;
+        @media ( max-width: 426px ){
+            width: 4.5vh;
+            height: 4.5vh;
+        }
     }
 
     @media ( max-width: 426px ){
@@ -53,9 +60,9 @@ export const Developer = styled.div`
         border: 0.3vh solid #aaa;
         object-fit: contain;
         @media ( max-width: 426px ){
-            min-width: 25vw;
-            min-height: 25vw;
-            margin-right: 4vw;
+            min-width: 23vw;
+            min-height: 23vw;
+            margin-right: 3.5vw;
         }
     }
     display: flex;
@@ -66,6 +73,9 @@ export const Info = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 2vw;
+    @media ( max-width: 426px ){
+        font-size: 2.3vh;
+    }
 `
 
 export const Email = styled.span`
