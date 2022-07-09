@@ -5,6 +5,7 @@ import * as S from "./styles";
 import { Title, Filter, Background, Close, Wrapper, Input } from "../styles";
 import { leftArrow } from "../../../assets/images/icons";
 import { useMediaQuery } from "react-responsive";
+import cookie from 'react-cookies';
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -105,6 +106,24 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
     }
   }
 
+  const login = () => {
+    if(checkInput()) {
+      axios.post("/users/token", {
+        accountId: idInput.current?.value,
+        password: pwInput.current?.value
+      },
+      {headers:{Authorization: ""}})
+      .then(res => {
+        cookie.save('DCS_accessToken', res.data.accessToken, { path: '/'});
+        cookie.save('DCS_refreshToken', res.data.refreshToken, { path: '/'});
+        window.location.reload();
+      })
+      .catch(err => {
+        alert(`에러 ${err.response.status}`)
+      })
+    }
+  }
+
   const navigate = useNavigate();
 
   //회원가입
@@ -118,7 +137,8 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
       })
       .then(res => {
         alert("회원가입 완료.");
-        navigate("/");
+        login();
+        setModalState("");
       })
       .catch(err => {
         alert(`에러 ${err.response.status}`);
