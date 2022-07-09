@@ -3,6 +3,6 @@ export default interface userProps {
 	accountId: string,
 	email: string,
 	phoneNumber: string,
-	teacher: boolean,
+	admin: boolean,
 	courier: boolean
 }

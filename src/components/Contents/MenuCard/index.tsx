@@ -12,7 +12,7 @@ const MenuCard = ({ index, setModalState, user} : CardProps): JSX.Element => {
   switch (index) {
     case 1:
       return (
-        <S.Card to={user?.teacher ? "/accept" : "/list"}>
+        <S.Card to={user?.admin ? "/accept" : "/list"}>
           <S.LeftDiv>
             <img src={logo} alt="logo" />
             <S.TitleDiv>

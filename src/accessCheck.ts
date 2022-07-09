@@ -7,7 +7,7 @@ const accessCheck = (user: userProps, location: Location, navigate: NavigateFunc
     alert("로그인을 먼저 해주십쇼.");
     navigate("/");  
   }
-  else if(user.teacher === false && user.courier === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
+  else if(user.admin === false && user.courier === false && (location.pathname === "/enlist" || location.pathname === "/accept")) {
     alert("권한이 없습니다.");
     navigate("/");
   }
