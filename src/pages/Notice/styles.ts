@@ -17,18 +17,19 @@ export const NoticeTitle = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: #f9f9f9;
+  background-color: #fdfdfd;
 
   border-bottom: 0.1vh solid #555; 
 
   padding: 1vh 3vh;
   
   font-family: "HAN";
-  font-size: 3.3vh;
+  font-size: 3vh;
   font-weight: bold;
 
   @media ( max-width: 426px ){
-    font-size: 2.8vh;
+    font-size: 2.5vh;
+    padding: 0.8vh 2vh;
   }
 ` 
 
@@ -36,6 +37,9 @@ export const NoticeInfo = styled.div`
   font-family: "HAN";
   padding: 0.5vh 3vh;
   border-bottom: 0.1vh solid #ddd; 
+  @media ( max-width: 426px ){
+    padding: 0.2vh 2vh;
+  }
 `
 
 export const Content = styled.div`
@@ -90,6 +94,9 @@ export const WriteBody = styled.div`
 export const Date = styled.span`
     font-size: 2.1vh;
     color: #666;
+    @media ( max-width: 426px ){
+        font-size: 1.8vh;
+    }
 `
 
 export const TitleInput = styled.input`

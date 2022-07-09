@@ -3,7 +3,8 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { Title, Filter, Background, Close, Wrapper, Input } from "../styles";
-import { leftArrow } from "../../../assets/images/icons"
+import { leftArrow } from "../../../assets/images/icons";
+import { useMediaQuery } from "react-responsive";
 
 interface RegisterModalInterface {
   setModalState: React.Dispatch<React.SetStateAction<string>>;
@@ -16,6 +17,8 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
   const pwCheckInput = useRef<HTMLInputElement>(null);
   const phoneNumberInput = useRef<HTMLInputElement>(null);
   const verificationInput = useRef<HTMLInputElement>(null);
+
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   const checkInput = () => {
     if (
@@ -141,10 +144,10 @@ const RegisterModal = ({ setModalState }: RegisterModalInterface) => {
           <Input ref={nameInput} placeholder="이름" />
 
           <Input ref={phoneNumberInput} placeholder="전화번호" />
-          <S.Check down={16} onClick={()=>requestPhoneNumberVerification()}>인증 요청</S.Check>
+          <S.Check down={!isMobile ? 16 : 14} onClick={()=>requestPhoneNumberVerification()}>인증 요청</S.Check>
 
           <Input ref={verificationInput} placeholder="인증번호" />
-          <S.Check down={24} onClick={()=>phoneNumberAuthentication()}>인증 확인</S.Check>
+          <S.Check down={!isMobile ? 24 : 21} onClick={()=>phoneNumberAuthentication()}>인증 확인</S.Check>
 
           <Input ref={pwInput} type="password" placeholder="비밀번호 (영어, 숫자, 특수문자 포함 8자 이상)" />
           <Input ref={pwCheckInput} type="password" placeholder="비밀번호 확인" />

@@ -47,6 +47,9 @@ export const Check = styled.div<CheckProps>`
   position: absolute;
   margin-top: ${props => props.down ? `${props.down}vh` : 0};
   margin-left: 35vh;
+  @media (max-width: 426px) {
+    margin-right: 2vw;
+  }
 
   width: 8vh;
   height: 6vh;
