@@ -7,11 +7,11 @@ import * as S from "./styles"
 
 const Notice = () => {
 
-    const [notice, setNotice] = useState<noticeProps>();
+    const [notice, setNotice] = useState<noticeProps>({id: 1, title: "test", createdDate: "123213"});
     
     const navigate = useNavigate();
     const { id } = useParams();
-
+/*
     useEffect(()=>{
         axios.get(`/notice/${id}`)
             .then(res => setNotice(res.data))
@@ -19,14 +19,19 @@ const Notice = () => {
                 alert(`에러. ${err.response.status}`);
                 navigate("/");
             })
-    },[]);
+    },[]);*/
 
     return(
         <>
-            <Title>{notice?.title} ({notice?.createdDate})</Title>
-            <S.List>
-                <span>{notice?.content}</span>
-            </S.List>
+            <S.Body>
+                <S.NoticeTitle>{notice?.title}</S.NoticeTitle>
+                <S.NoticeInfo>
+                    <S.Date>{notice.createdDate}</S.Date>
+                </S.NoticeInfo>
+                <S.Content>
+                    <span>{notice?.content}</span>
+                </S.Content>
+            </S.Body>
         </>
     )
 }

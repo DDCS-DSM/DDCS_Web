@@ -11,8 +11,8 @@ const Notice = () => {
     const { id } = useParams();
     const navigate = useNavigate();
 
-    const [noticeList, setNoticeList] = useState<noticeProps[]>([]);
-
+    const [noticeList, setNoticeList] = useState<noticeProps[]>([{id: 1, title: "test", createdDate: "123213"}]);
+/*
     useEffect(()=>{
         axios.get(`/notice/${id}`)
             .then(res => setNoticeList(res.data))
@@ -20,7 +20,7 @@ const Notice = () => {
                 alert(`에러. ${err.response.status}`);
                 navigate("/");
             })
-    },[])
+    },[])*/
     
     return(
         <>  
@@ -32,10 +32,10 @@ const Notice = () => {
                     <S.List>
                         {noticeList.map((i : noticeProps) => {
                             return(
-                                <S.Content onClick={()=>navigate("/notice/1")}>
+                                <S.Notice onClick={()=>navigate("/notice/1")}>
                                     <span>{i.title}</span>
                                     <S.Date>{i.createdDate}</S.Date>
-                                </S.Content>
+                                </S.Notice>
                             )
                         })}
                     </S.List>

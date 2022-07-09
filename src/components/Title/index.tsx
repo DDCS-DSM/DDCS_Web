@@ -30,13 +30,15 @@ const Title = () => {
         setImg(privacy);
         setSubTitle("개인정보");
         break;
-      case "/notice":
-        setImg(notice);
-        setSubTitle("공지사항");
-        break;
       case "/":
         setImg(home);
         setSubTitle("택배 리스트 확인");
+        break;
+      default:
+        if(pathname.includes("/notice")) {
+          setImg(notice);
+          setSubTitle("공지사항");
+        }
         break;
     }
   },[pathname, ])
