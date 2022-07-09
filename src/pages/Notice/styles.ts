@@ -4,7 +4,7 @@ export const List = styled.div`
 
   border-top: 0.25vh solid #000; 
 
-  min-height: 100vh;
+  min-height: 70vh;
   width: 70vw;
   margin: auto;
 
@@ -22,7 +22,8 @@ export const NoticeTitle = styled.div`
   padding: 1vh 3vh;
   
   font-family: "HAN";
-  font-size: 2.7vh;
+  font-size: 3.3vh;
+  font-weight: bold;
 
   @media ( max-width: 426px ){
     font-size: 2.8vh;
@@ -30,7 +31,8 @@ export const NoticeTitle = styled.div`
 ` 
 
 export const NoticeInfo = styled.div`
-  padding: 0.3vh 3vh;
+  font-family: "HAN";
+  padding: 0.5vh 3vh;
   border-bottom: 0.1vh solid #ddd; 
 `
 
@@ -84,7 +86,7 @@ export const WriteBody = styled.div`
 `
 
 export const Date = styled.span`
-    font-size: 1.7vh;
+    font-size: 2.1vh;
     color: #666;
 `
 
