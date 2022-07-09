@@ -8,4 +8,8 @@ export const Image = styled.img`
 
   object-fit: cover;
   filter: brightness(90%) blur(0.1vh);
+
+  @media ( max-width: 426px ){
+    height: 25vh;
+  }
 `;

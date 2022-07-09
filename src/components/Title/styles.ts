@@ -21,6 +21,9 @@ export const TitleWrapper = styled.div`
     }
   }
   //animation: fade 1s ease-in-out;
+  @media ( max-width: 426px ){
+    height: 25vh;
+  }
 `;
 
 export const Title = styled.div`
@@ -32,6 +35,10 @@ export const Title = styled.div`
   color: #fff;
 
   filter: drop-shadow(0 0.5vh 0.25vh rgba(0, 0, 0, 0.25));
+
+  @media ( max-width: 426px ){
+    font-size: 5vh;
+  }
 `;
 
 export const SubTitle = styled.div`
@@ -42,4 +49,8 @@ export const SubTitle = styled.div`
   color: #eee;
 
   filter: drop-shadow(0 0.5vh 0.25vh rgba(0, 0, 0, 0.25));
+
+  @media ( max-width: 426px ){
+    font-size: 3.2vh;
+  }
 `;
