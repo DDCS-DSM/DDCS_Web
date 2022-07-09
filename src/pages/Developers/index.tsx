@@ -1,5 +1,5 @@
 import * as S from "./styles"
-import { biscrab } from "../../assets/images/developers"
+import { biscrab, rals, smp, skmn, chlml } from "../../assets/images/developers"
 import { code } from "../../assets/images/icons"
 
 const Develpoers = () => {
@@ -17,7 +17,7 @@ const Develpoers = () => {
                         </S.Info>
                     </S.Developer>
                     <S.Developer>
-                        <img />
+                        <img src={rals}/>
                         <S.Info>
                             <S.Name>이진형</S.Name>
                             <S.Email><b>Email:</b> winhave@naver.com</S.Email>
@@ -25,7 +25,7 @@ const Develpoers = () => {
                         </S.Info>
                     </S.Developer>
                     <S.Developer>
-                        <img />
+                        <img src={smp}/>
                         <S.Info>
                             <S.Name>박상민</S.Name>
                             <S.Email><b>Email:</b> smp051215@gmail.com</S.Email>
@@ -38,7 +38,7 @@ const Develpoers = () => {
                 <S.MajorTitle><img src={code}/>BackEnd</S.MajorTitle>
                 <S.MajorDiv>
                     <S.Developer>
-                        <img />
+                        <img src={chlml}/>
                         <S.Info>
                             <S.Name>최희</S.Name>
                             <S.Email><b>Email:</b> cmlgml094356@gmail.com</S.Email>
@@ -46,7 +46,7 @@ const Develpoers = () => {
                         </S.Info>
                     </S.Developer>
                     <S.Developer>
-                        <img />
+                        <img src={skmn}/>
                         <S.Info>
                             <S.Name>박상진</S.Name>
                             <S.Email><b>Email:</b> sangjin170202@naver.com</S.Email>
@@ -80,7 +80,7 @@ const Develpoers = () => {
                         </S.Info>
                     </S.Developer>
                     <S.Developer>
-                        <img />
+                        <img src={rals}/>
                         <S.Info>
                             <S.Name>이진형</S.Name>
                             <S.Email><b>Email:</b> winhave@naver.com</S.Email>
