@@ -5,15 +5,24 @@ export const Body = styled.div`
     left: 50%;
     transform: translateX(-50%);
     width: 60vw;
+    @media ( max-width: 426px ){
+        width: 90vw;
+    }
 `
 
 export const Major = styled.div`
     margin-top: 10vh;
+    @media ( max-width: 426px ){
+        width: 100%;
+    }
 `
 
 export const MajorDiv = styled.div`
     display: flex;
     flex-flow: wrap;
+    @media ( max-width: 426px ){
+        flex-direction: column;
+    }
 `
 
 export const MajorTitle = styled.h1`
@@ -28,17 +37,26 @@ export const MajorTitle = styled.h1`
         margin-top: 0.6vh;
         margin-right: 2vh;
     }
+
+    @media ( max-width: 426px ){
+        font-size: 4vh;
+    }
 `
 
 export const Developer = styled.div`
     width: 30vw;
     box-sizing: border-box;
     img{
-        width: 16vh;
-        height: 16vh;
+        width: 8vw;
+        height: 8vw;
         border-radius: 50%;
         border: 0.3vh solid #aaa;
         object-fit: contain;
+        @media ( max-width: 426px ){
+            min-width: 25vw;
+            min-height: 25vw;
+            margin-right: 4vw;
+        }
     }
     display: flex;
     margin-top: 5vh;

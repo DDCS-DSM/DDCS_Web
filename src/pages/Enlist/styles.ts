@@ -31,7 +31,7 @@ export const List = styled.div`
   min-height: 25vw;
   margin: 0 auto;
   width: 75vw;
-  @media ( max-width: 425px ){
+  @media ( max-width: 426px ){
     width: 90vw;
   }
 `
