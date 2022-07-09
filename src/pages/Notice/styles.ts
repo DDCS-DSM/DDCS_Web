@@ -7,7 +7,9 @@ export const List = styled.div`
   min-height: 70vh;
   width: 70vw;
   margin: auto;
-
+  @media ( max-width: 426px ) {
+      width: 90vw;
+  }
 `
 
 export const NoticeTitle = styled.div`

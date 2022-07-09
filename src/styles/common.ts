@@ -29,9 +29,6 @@ export const SchemaWrapper = styled.div`
   border-bottom: 0.25vh solid #000;
   @media ( max-width: 426px ){
     width: 90vw;
-    div:nth-child(1){
-      padding-left: 7.5vh;
-    }
   }
 `;
 

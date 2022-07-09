@@ -4,11 +4,14 @@ import PackageContentProps from "./type";
 import { useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 
 let endRewrite: Function;
 let deletePackage: Function;
 
 const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps) => {
+
+  const isMobile = useMediaQuery({ query: "(max-width: 700px)" });
 
   const [onReWrite, setOnReWrite] = useState<boolean>(false);
   const [newName, setNewName] = useState<string>(name);
@@ -17,7 +20,11 @@ const PackageContent = ({ id, courierCompany, name, date }: PackageContentProps)
 
   return (
     <S.Package>
-      <S.Icon src={box} />
+      {!isMobile ?
+        <S.Icon src={box} />
+        :
+        <></>
+      }
       <S.InstanceDiv>
         <S.Instance>{courierCompany}</S.Instance>
         {location.pathname === "/list" ?
