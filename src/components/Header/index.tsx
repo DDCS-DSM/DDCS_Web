@@ -12,11 +12,13 @@ import userProps from "../../userProps";
 interface HeaderInterface {
   loginState: boolean;
   setModalState: React.Dispatch<React.SetStateAction<string>>;
+  user: userProps;
 }
 
 const Header = ({
   loginState,
-  setModalState
+  setModalState,
+  user
 }: HeaderInterface): JSX.Element => {
   const [dropDownVisible, setDropDownVisible] = useState<boolean>(false);
 
@@ -50,7 +52,7 @@ const Header = ({
           <S.Text>DCS</S.Text>
         </S.LeftContents>
         {dropDownVisible === true && (
-          <DropDown setDropDownVisible={setDropDownVisible} setModalState={setModalState} loginState={loginState} />
+          <DropDown setDropDownVisible={setDropDownVisible} setModalState={setModalState} loginState={loginState} user={user} />
         )}
       </S.Header>
     </S.PreHeader>

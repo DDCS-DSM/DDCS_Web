@@ -33,7 +33,6 @@ export const Package = styled.div`
   }
 
   border-radius: 1.5vh;
-  cursor: pointer;
   transition: filter 0.25s;
 `;
 

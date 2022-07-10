@@ -2,18 +2,20 @@ import axios from "axios";
 import cookie from 'react-cookies'
 //import { setCookie } from "../../cookie";
 import * as S from "./styles";
-import { code, list, log, login, user, notice} from "../../assets/images/icons"
+import { code, list, log, login, profile, notice} from "../../assets/images/icons"
 import { useNavigate } from "react-router-dom";
+import userProps from "../../userProps";
 
 interface DropDownProps {
   setDropDownVisible: React.Dispatch<React.SetStateAction<boolean>>,
   loginState: boolean,
-  setModalState: React.Dispatch<React.SetStateAction<string>>
+  setModalState: React.Dispatch<React.SetStateAction<string>>,
+  user: userProps
 }
 
-const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownProps) => {
+const DropDown = ({ setDropDownVisible, setModalState, loginState, user }: DropDownProps) => {
 
-  const logOut = () => {
+  const logout = () => {
     const accessToken = cookie.load("DCS_accessToken");
     axios.delete("/users/logout", {headers:{Authorization: `Bearer ${accessToken}`}})
       .then(res => {
@@ -33,8 +35,8 @@ const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownPro
       <S.Background>
         {loginState ?
         <S.Content onClick={()=>navigate("/privacy")}>
-          <img src={user}/>
-          내 정보
+          <img src={profile}/>
+          {user.name}
         </S.Content>
         :
         <></>
@@ -63,7 +65,7 @@ const DropDown = ({ setDropDownVisible, setModalState, loginState }: DropDownPro
             </S.Content>
           </>
           :
-          <S.Content onClick={()=>logOut()}>
+          <S.Content onClick={()=>logout()}>
             <img src={login}/>
             로그아웃
           </S.Content>

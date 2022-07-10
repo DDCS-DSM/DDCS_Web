@@ -17,8 +17,8 @@ const Privacy = ({user}: {user: userProps}) => {
           <S.Instance>{user.name}</S.Instance>
         </S.Item>
         <S.Item>
-          <S.Schema>이메일</S.Schema>
-          <S.Instance>{user.email}</S.Instance>
+          <S.Schema>전화번호</S.Schema>
+          <S.Instance>{user.phoneNumber}</S.Instance>
         </S.Item>
       </S.Table>
     </>

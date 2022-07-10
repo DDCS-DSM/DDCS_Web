@@ -14,7 +14,6 @@ export const SchemaWrapper = styled.div`
 
 export const Company = styled.select`
   height: 5vh;
-  border-radius: 1vh;
   border: 1px solid #ccc;
   outline: 0;
   width: 100%;

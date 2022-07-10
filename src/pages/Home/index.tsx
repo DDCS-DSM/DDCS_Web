@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Title, SchemaWrapper, Schema, Button } from "../../styles/common";
 import Package from "../../components/Contents/Package";
 import PackageContentProps from "../../components/Contents/Package/type";
+import userProps from "../../userProps";
 
-function Home({admin} : {admin: boolean}) {
+function Home({admin} : {admin: userProps["admin"]}) {
 
   const [lists, setLists] = useState<PackageContentProps[]>([{
     id: 1,

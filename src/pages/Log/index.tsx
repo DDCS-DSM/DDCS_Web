@@ -5,12 +5,12 @@ import PackageContentProps from "../../components/Contents/Package/type";
 
 const Log = () => {
 
-    const [lists, setLists] = useState<PackageContentProps[]>([{
-        id: 1,
-        courierCompany: "string",
-        name: "string",
-        date: "string",
-    }]);
+  const [lists, setLists] = useState<PackageContentProps[]>([{
+    id: 1,
+    courierCompany: "string",
+    name: "string",
+    date: "string",
+  }]);
 
     return(
         <>
